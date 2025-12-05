@@ -1,0 +1,88 @@
+[workspace]
+members = [
+    "protocols/mcp",
+]
+resolver = "2"
+
+[workspace.lints.clippy]
+# Production code reliability (MANDATORY) - but allow in test code
+unwrap_used = "deny"
+expect_used = "deny"
+panic = "deny"
+# Performance and best practices
+clone_on_ref_ptr = "warn"
+inefficient_to_string = "warn"
+large_stack_arrays = "warn"
+# Code quality
+missing_docs_in_private_items = "allow"  # Too verbose for internal code
+needless_pass_by_value = "warn"
+
+[workspace.package]
+version = "0.2.3"
+edition = "2021"
+authors = ["rstlix0x0 <rstlix.dev@gmail.com>"]
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/airsstack/airsprotocols"
+rust-version = "1.88"
+
+[workspace.dependencies]
+# Layer 1: AIRS Protocols Crates
+airsprotocols-mcp = { path = "protocols/mcp" }
+
+# Layer 2: Core Runtime Dependencies
+tokio = { version = "1.47", features = ["full"] }
+tokio-stream = { version = "0.1", features = ["sync"] }
+futures = { version = "0.3" }
+
+# Layer 3: Serialization and Data Handling
+serde = { version = "1.0", features = ["derive"] }
+serde_json = { version = "1.0" }
+serde_urlencoded = { version = "0.7" }
+
+# Layer 4: Async and Concurrency
+dashmap = { version = "5.5" }
+async-trait = { version = "0.1.88" }
+
+# Layer 5: Error Handling
+thiserror = { version = "1.0" }
+
+# Layer 6: Utilities
+uuid = { version = "1.6", features = ["v4", "serde"] }
+bytes = { version = "1.5" }
+tokio-util = { version = "0.7", features = ["codec"] }
+tracing = { version = "0.1" }
+tracing-subscriber = { version = "0.3.20", features = ["env-filter"] }
+chrono = { version = "~0.4", features = ["serde"] }
+
+# Layer 7: HTTP Server and Middleware (for MCP HTTP transport)
+axum = { version = "0.8.4", features = ["ws"] }
+hyper = { version = "1.6.0", features = ["full"] }
+tower = { version = "0.5", features = ["full"] }
+tower-http = { version = "0.6", features = ["cors", "trace"] }
+reqwest = { version = "0.12", features = ["json"] }
+deadpool = { version = "0.12" }
+
+# Layer 8: Authentication and Security (for MCP auth)
+jsonwebtoken = { version = "9.3" }
+oauth2 = { version = "4.4" }
+base64 = { version = "0.22" }
+url = { version = "2.5" }
+
+# Layer 9: Additional MCP Dependencies
+regex = { version = "1.11.1" }
+serde_yml = { version = "0.0.12" }
+
+# Layer 10: CLI Framework
+clap = { version = "4.5", features = ["derive", "help", "usage", "error-context"] }
+
+# Layer 11: Testing Utilities
+tempfile = { version = "3.20.0" }
+tokio-test = { version = "0.4" }
+proptest = { version = "1.4" }
+criterion = { version = "0.5", features = ["html_reports"] }
+num_cpus = { version = "1.16" }
+wiremock = { version = "0.6" }
+
+# Layer 12: Cryptographic Dependencies (for OAuth2 examples)
+rsa = { version = "0.10.0-rc.8" }
+sha2 = { version = "0.10" }
