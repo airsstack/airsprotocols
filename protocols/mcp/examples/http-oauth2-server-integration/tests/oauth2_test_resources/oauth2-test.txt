@@ -1,0 +1,1 @@
+Hello from OAuth2 protected MCP server!
