@@ -17,7 +17,7 @@ Communication protocols for AI agents and intelligent systems:
   - JSON-RPC 2.0 foundation with transport abstraction
   - Built-in authentication (API Key, OAuth2) and authorization
   - Stdio and HTTP transport implementations
-  - **Status:** ✅ Available (migrated from airsstack)
+  - **Status:** ✅ Available (v0.2.3)
 
 - **`airsprotocols-a2a`** - Agent-to-Agent Protocol (A2A/ACP)
   - Enable communication between independent AI agents
@@ -132,7 +132,6 @@ For detailed documentation, see [`protocols/mcp/README.md`](protocols/mcp/README
 
 ## 📚 Documentation
 
-- **[Migration Guide](MIGRATIONS.md)** - How we're moving `airs-mcp` from airsstack
 - **[MCP Documentation](protocols/mcp/docs/)** - Complete MCP implementation guide
 - **Protocol Specifications:**
   - [Model Context Protocol](https://modelcontextprotocol.io/)
@@ -153,7 +152,7 @@ For detailed documentation, see [`protocols/mcp/README.md`](protocols/mcp/README
 Contributions are welcome! This project is in active development.
 
 ### Current Focus
-- ✅ MCP migration from airsstack
+- ✅ MCP protocol implementation complete
 - 🚧 A2A protocol implementation
 - 🚧 LLM provider APIs
 
@@ -194,10 +193,10 @@ This project follows open-source best practices:
 
 ## 🗺️ Roadmap
 
-### Phase 1: Foundation (Current)
+### Phase 1: Foundation ✅ Complete
 - [x] Project structure setup
 - [x] Workspace configuration
-- [ ] MCP migration from airsstack
+- [x] MCP protocol implementation
 - [ ] CI/CD pipeline
 
 ### Phase 2: Core Protocols
