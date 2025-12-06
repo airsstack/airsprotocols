@@ -113,7 +113,7 @@ where
         };
 
         let server_info = ServerInfo {
-            name: "airs-mcp-server".to_string(),
+            name: "airsprotocols-mcp-server".to_string(),
             version: env!("CARGO_PKG_VERSION").to_string(),
         };
 

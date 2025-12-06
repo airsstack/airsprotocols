@@ -73,7 +73,7 @@ cargo build --bin http-apikey-client --bin http-mock-server
 
 # Set environment variables for testing
 export PYTHONPATH="$PROJECT_DIR:$PYTHONPATH"
-export RUST_LOG="info,airs_mcp=debug"
+export RUST_LOG="info,airsprotocols_mcp=debug"
 
 if [ "$COMPREHENSIVE" = "true" ]; then
     echo "🚀 Running comprehensive HTTP API Key client integration tests..."

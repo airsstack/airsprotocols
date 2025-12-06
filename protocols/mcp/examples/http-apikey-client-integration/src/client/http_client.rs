@@ -1,6 +1,6 @@
 //! HTTP MCP Client Implementation
 //!
-//! This module provides a high-level HTTP MCP client that uses the airs-mcp
+//! This module provides a high-level HTTP MCP client that uses the airsprotocols-mcp
 //! HttpTransportClient for communication with HTTP MCP servers.
 
 // Layer 1: Standard library imports
@@ -39,7 +39,7 @@ impl HttpMcpClient {
             config.server_url
         );
 
-        // Convert our AuthenticationMethod to airs-mcp AuthMethod
+        // Convert our AuthenticationMethod to airsprotocols-mcp AuthMethod
         let auth_method = match config.auth_method {
             AuthenticationMethod::XApiKey => AuthMethod::ApiKey {
                 key: config.api_key.clone(),
@@ -69,7 +69,7 @@ impl HttpMcpClient {
         let mut builder = HttpTransportClientBuilder::new()
             .endpoint(&server_url)?
             .timeout(config.timeout)
-            .user_agent("airs-mcp-http-client/0.1.0");
+            .user_agent("airsprotocols-mcp-http-client/0.1.0");
 
         // Add authentication only for non-query-parameter methods
         if !matches!(config.auth_method, AuthenticationMethod::QueryParameter) {

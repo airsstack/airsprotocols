@@ -464,7 +464,7 @@ where
     C: AuthzContext + Clone,
 {
     let status = serde_json::json!({
-        "service": "airs-mcp-http-server",
+        "service": "airsprotocols-mcp-http-server",
         "version": env!("CARGO_PKG_VERSION"),
         "protocol": "mcp",
         "transport": "http",

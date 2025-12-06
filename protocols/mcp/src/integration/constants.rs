@@ -9,7 +9,7 @@ pub use crate::protocol::constants::*;
 /// Default configuration values for MCP client
 pub mod defaults {
     /// Default client name
-    pub const CLIENT_NAME: &str = "airs-mcp-client";
+    pub const CLIENT_NAME: &str = "airsprotocols-mcp-client";
 
     /// Default timeout in seconds
     pub const TIMEOUT_SECONDS: u64 = 30;

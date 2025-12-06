@@ -66,7 +66,7 @@ class TestHttpApiKeyIntegration:
         project_dir = Path(__file__).parent.parent
         
         env = os.environ.copy()
-        env["RUST_LOG"] = "info,airs_mcp=debug"
+        env["RUST_LOG"] = "info,airsprotocols_mcp=debug"
         
         print(f"Starting HTTP API Key server on port 3001...")
         cls.server_process = subprocess.Popen([

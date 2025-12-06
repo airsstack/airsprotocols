@@ -114,7 +114,7 @@ impl McpHandler {
             protocol_version: ProtocolVersion::new("2024-11-05").expect("Valid protocol version"),
             capabilities: serde_json::to_value(capabilities).unwrap_or(json!({})),
             server_info: ServerInfo {
-                name: "airs-mcp-stdio-server".to_string(),
+                name: "airsprotocols-mcp-stdio-server".to_string(),
                 version: "0.1.0".to_string(),
             },
         };

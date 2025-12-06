@@ -99,7 +99,7 @@ impl McpHttpHandler {
                 "transport": "http"
             },
             "server": {
-                "name": "airs-mcp-http-server",
+                "name": "airsprotocols-mcp-http-server",
                 "version": "1.0.0"
             },
             "capabilities": {

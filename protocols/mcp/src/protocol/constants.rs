@@ -56,10 +56,10 @@ pub mod error_codes {
 /// Default values for MCP protocol
 pub mod defaults {
     /// Default client name
-    pub const CLIENT_NAME: &str = "airs-mcp-client";
+    pub const CLIENT_NAME: &str = "airsprotocols-mcp-client";
     
     /// Default server name  
-    pub const SERVER_NAME: &str = "airs-mcp-server";
+    pub const SERVER_NAME: &str = "airsprotocols-mcp-server";
     
     /// Default timeout in seconds
     pub const TIMEOUT_SECONDS: u64 = 30;

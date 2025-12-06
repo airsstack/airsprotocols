@@ -149,7 +149,7 @@ impl Default for HttpClientConfig {
     fn default() -> Self {
         Self {
             timeout: Duration::from_secs(30),
-            user_agent: format!("airs-mcp-client/{}", env!("CARGO_PKG_VERSION")),
+            user_agent: format!("airsprotocols-mcp-client/{}", env!("CARGO_PKG_VERSION")),
             headers: HashMap::new(),
             max_redirects: 10,
             accept_invalid_certs: false,

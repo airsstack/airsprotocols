@@ -11,7 +11,7 @@ use crate::oauth2::OAuth2IntegrationError;
 pub struct McpOperations;
 
 impl McpOperations {
-    /// Test MCP operations using OAuth2 access token with airs-mcp HttpTransportClient
+    /// Test MCP operations using OAuth2 access token with airsprotocols-mcp HttpTransportClient
     pub async fn test_operations(mcp_server_url: &str, access_token: &str) -> Result<(), OAuth2IntegrationError> {
         // Create MCP session
         let mut mcp_session = McpSession::new(mcp_server_url, access_token).await?;

@@ -93,7 +93,7 @@ echo "✅ All binaries built successfully!"
 echo ""
 
 # Set environment variables
-export RUST_LOG="info,airs_mcp=debug"
+export RUST_LOG="info,airsprotocols_mcp=debug"
 export PROJECT_DIR="$PROJECT_DIR"
 
 echo "🧪 Running tests..."

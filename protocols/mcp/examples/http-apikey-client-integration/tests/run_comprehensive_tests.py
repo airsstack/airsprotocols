@@ -37,7 +37,7 @@ class TestRunner:
         
         # Set environment variables
         os.environ["PYTHONPATH"] = str(self.test_dir)
-        os.environ["RUST_LOG"] = "info,airs_mcp=debug"
+        os.environ["RUST_LOG"] = "info,airsprotocols_mcp=debug"
         
         print("✅ Environment setup complete")
     

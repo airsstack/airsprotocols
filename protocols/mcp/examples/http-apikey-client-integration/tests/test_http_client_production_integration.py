@@ -69,7 +69,7 @@ class TestHttpClientProductionIntegration:
     def start_production_server(cls):
         """Start the production HTTP server."""
         env = os.environ.copy()
-        env["RUST_LOG"] = "info,airs_mcp=debug"
+        env["RUST_LOG"] = "info,airsprotocols_mcp=debug"
         env["MCP_API_KEY"] = cls.production_api_key
         env["SERVER_HOST"] = "127.0.0.1"
         env["SERVER_PORT"] = "3000"
@@ -110,7 +110,7 @@ class TestHttpClientProductionIntegration:
     def run_client_command(self, command: str, env_vars: Dict[str, str] = None, timeout: int = 30) -> subprocess.CompletedProcess:
         """Run the HTTP client with the given command and environment variables."""
         env = os.environ.copy()
-        env["RUST_LOG"] = "info,airs_mcp=debug"
+        env["RUST_LOG"] = "info,airsprotocols_mcp=debug"
         
         # Set default environment variables for production server
         env["MCP_SERVER_URL"] = self.production_server_url

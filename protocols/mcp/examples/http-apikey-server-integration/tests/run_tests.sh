@@ -35,7 +35,7 @@ cd "$PROJECT_DIR"
 
 # Set environment variables for testing
 export PYTHONPATH="$PROJECT_DIR:$PYTHONPATH"
-export RUST_LOG="info,airs_mcp=debug"
+export RUST_LOG="info,airsprotocols_mcp=debug"
 
 # Run main integration tests with verbose output
 echo "📋 Running main integration tests..."

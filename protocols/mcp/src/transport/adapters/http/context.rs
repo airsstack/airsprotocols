@@ -31,7 +31,7 @@ use chrono::{DateTime, Utc};
 /// let context = HttpContext::new("POST", "/mcp")
 ///     .with_headers(headers)
 ///     .with_remote_addr("192.168.1.100:8080")
-///     .with_user_agent("airs-mcp-client/1.0")
+///     .with_user_agent("airsprotocols-mcp-client/1.0")
 ///     .with_query_param("session_id", "abc123");
 ///
 /// assert_eq!(context.method(), "POST");
@@ -451,14 +451,14 @@ mod tests {
     fn test_http_context_chaining() {
         let context = HttpContext::new("POST", "/mcp")
             .with_remote_addr("192.168.1.100:8080")
-            .with_user_agent("airs-mcp-client/1.0")
+            .with_user_agent("airsprotocols-mcp-client/1.0")
             .with_session_id("session123")
             .with_auth_info("Bearer token456");
 
         assert_eq!(context.remote_addr(), Some("192.168.1.100:8080"));
         assert_eq!(
             context.get_header("user-agent"),
-            Some("airs-mcp-client/1.0")
+            Some("airsprotocols-mcp-client/1.0")
         );
         assert_eq!(context.session_id(), Some("session123"));
         assert_eq!(context.auth_info(), Some("Bearer token456"));

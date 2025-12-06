@@ -1140,7 +1140,7 @@ impl Default for ServerConfig {
     fn default() -> Self {
         Self {
             server_info: ServerInfo {
-                name: "airs-mcp-server".to_string(),
+                name: "airsprotocols-mcp-server".to_string(),
                 version: env!("CARGO_PKG_VERSION").to_string(),
             },
             capabilities: ServerCapabilities::default(),

@@ -202,7 +202,7 @@ impl TransportError {
 /// // Default generic context (for STDIO)
 /// let context = MessageContext::<()>::new("session-123".to_string())
 ///     .with_remote_addr("192.168.1.100:8080".to_string())
-///     .with_user_agent("airs-mcp-client/1.0".to_string());
+///     .with_user_agent("airsprotocols-mcp-client/1.0".to_string());
 ///
 /// assert_eq!(context.session_id(), Some("session-123"));
 /// assert_eq!(context.remote_addr(), Some("192.168.1.100:8080"));

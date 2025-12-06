@@ -155,7 +155,7 @@ impl Default for McpClientConfig {
     fn default() -> Self {
         Self {
             client_info: ClientInfo {
-                name: "airs-mcp-client".to_string(),
+                name: "airsprotocols-mcp-client".to_string(),
                 version: env!("CARGO_PKG_VERSION").to_string(),
             },
             capabilities: ClientCapabilities::default(),

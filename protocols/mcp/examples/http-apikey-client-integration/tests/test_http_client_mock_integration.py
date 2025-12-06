@@ -66,7 +66,7 @@ class TestHttpClientMockIntegration:
     def start_mock_server(cls):
         """Start the HTTP mock server."""
         env = os.environ.copy()
-        env["RUST_LOG"] = "info,airs_mcp=debug"
+        env["RUST_LOG"] = "info,airsprotocols_mcp=debug"
         
         print(f"Starting HTTP mock server on port 3001...")
         cls.mock_server_process = subprocess.Popen([
@@ -101,7 +101,7 @@ class TestHttpClientMockIntegration:
     def run_client_command(self, command: str, env_vars: Dict[str, str] = None, timeout: int = 30) -> subprocess.CompletedProcess:
         """Run the HTTP client with the given command and environment variables."""
         env = os.environ.copy()
-        env["RUST_LOG"] = "info,airs_mcp=debug"
+        env["RUST_LOG"] = "info,airsprotocols_mcp=debug"
         
         # Set default environment variables
         env["MCP_SERVER_URL"] = self.mock_server_url

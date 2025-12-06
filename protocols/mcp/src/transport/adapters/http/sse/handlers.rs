@@ -274,7 +274,7 @@ fn create_initialize_response(request: &JsonRpcRequest) -> JsonRpcResponse {
                 "prompts": {}
             },
             "serverInfo": {
-                "name": "airs-mcp-sse-server",
+                "name": "airsprotocols-mcp-sse-server",
                 "version": "0.1.0"
             }
         })),
