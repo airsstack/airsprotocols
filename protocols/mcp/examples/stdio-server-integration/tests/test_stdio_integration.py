@@ -223,7 +223,7 @@ class StdioMcpTest:
             return False
             
         server_info = result["serverInfo"]
-        if server_info.get("name") != "airs-mcp-stdio-server":
+        if server_info.get("name") != "airsprotocols-mcp-stdio-server":
             self.fail_test("Initialize", f"Unexpected server name: {server_info.get('name')}")
             return False
             

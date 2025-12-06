@@ -106,7 +106,7 @@ class BasicStdioTest:
         assert "protocolVersion" in result
         assert "capabilities" in result
         assert "serverInfo" in result
-        assert result["serverInfo"]["name"] == "airs-mcp-stdio-server"
+        assert result["serverInfo"]["name"] == "airsprotocols-mcp-stdio-server"
         
         print("✅ Initialize test passed")
     

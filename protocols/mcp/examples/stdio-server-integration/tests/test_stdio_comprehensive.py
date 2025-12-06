@@ -178,7 +178,7 @@ class ComprehensiveStdioTest:
         assert "serverInfo" in result
         
         server_info = result["serverInfo"]
-        assert server_info["name"] == "airs-mcp-stdio-server"
+        assert server_info["name"] == "airsprotocols-mcp-stdio-server"
         assert "version" in server_info
     
     def test_tools_complete_workflow(self):
