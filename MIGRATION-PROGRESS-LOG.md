@@ -297,6 +297,44 @@ protocols/mcp/
 
 ---
 
-### Next Step: Step 2.2 (Update Package Metadata)
+### Step 2.2: Update Package Metadata in Cargo.toml ✅
+**Completed:** 09:10
+**Duration:** ~3 minutes
+
+**Actions Taken:**
+- Updated package name: `airs-mcp` → `airsprotocols-mcp`
+- Updated documentation URL: `docs.rs/airs-mcp` → `docs.rs/airsprotocols-mcp`
+- Updated homepage URL: `airsstack/airsstack/.../airs-mcp` → `airsstack/airsprotocols/.../mcp`
+- Added missing workspace dependency: `urlencoding = "2.1"` to workspace Cargo.toml
+
+**Changes Made:**
+
+1. **protocols/mcp/Cargo.toml:**
+   - Line 2: `name = "airsprotocols-mcp"` ✅
+   - Line 13: `documentation = "https://docs.rs/airsprotocols-mcp"` ✅
+   - Line 14: `homepage = "https://github.com/airsstack/airsprotocols/tree/main/protocols/mcp"` ✅
+
+2. **Root Cargo.toml (workspace):**
+   - Added: `urlencoding = { version = "2.1" }` to workspace.dependencies ✅
+
+**Workspace Inheritance Preserved:**
+- version.workspace = true ✅
+- edition.workspace = true ✅
+- authors.workspace = true ✅
+- license.workspace = true ✅
+- repository.workspace = true ✅
+- rust-version.workspace = true ✅
+
+**Verification:**
+- Package name confirmed: `airsprotocols-mcp` ✅
+- TOML syntax validated with cargo metadata ✅
+- No old "airs-mcp" references in Cargo.toml ✅
+- Workspace dependencies resolved ✅
+
+**Result:** Package metadata updated successfully ✅
+
+---
+
+### Next Step: Step 2.3 (Update Example Projects' Cargo.toml)
 
 **Status:** ⏸️ AWAITING APPROVAL TO PROCEED
