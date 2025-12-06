@@ -26,7 +26,7 @@
 //! ## Quick Start
 //!
 //! ```rust
-//! use airs_mcp::{JsonRpcRequest, JsonRpcMessageTrait, RequestId};
+//! use airsprotocols_mcp::{JsonRpcRequest, JsonRpcMessageTrait, RequestId};
 //! use serde_json::json;
 //!
 //! // Create a JSON-RPC request
@@ -51,7 +51,7 @@
 //! Represents a request to invoke a method on the remote peer:
 //!
 //! ```rust
-//! use airs_mcp::{JsonRpcRequest, RequestId};
+//! use airsprotocols_mcp::{JsonRpcRequest, RequestId};
 //! use serde_json::json;
 //!
 //! let request = JsonRpcRequest::new(
@@ -65,7 +65,7 @@
 //! Represents a response to a JSON-RPC request (success or error):
 //!
 //! ```rust
-//! use airs_mcp::{JsonRpcResponse, RequestId};
+//! use airsprotocols_mcp::{JsonRpcResponse, RequestId};
 //! use serde_json::json;
 //!
 //! // Success response
@@ -85,7 +85,7 @@
 //! Represents a notification (one-way message without response):
 //!
 //! ```rust
-//! use airs_mcp::JsonRpcNotification;
+//! use airsprotocols_mcp::JsonRpcNotification;
 //! use serde_json::json;
 //!
 //! let notification = JsonRpcNotification::new(
@@ -99,7 +99,7 @@
 //! All message types implement the `JsonRpcMessage` trait for consistent serialization:
 //!
 //! ```rust
-//! use airs_mcp::{JsonRpcMessageTrait, JsonRpcNotification};
+//! use airsprotocols_mcp::{JsonRpcMessageTrait, JsonRpcNotification};
 //!
 //! let notification = JsonRpcNotification::new("heartbeat", None);
 //!
@@ -118,7 +118,7 @@
 //! Request IDs support both string and numeric formats per JSON-RPC 2.0 specification:
 //!
 //! ```rust
-//! use airs_mcp::RequestId;
+//! use airsprotocols_mcp::RequestId;
 //!
 //! // String-based IDs (UUIDs, custom formats, etc.)
 //! let string_id = RequestId::new_string("req-12345-abcdef");
@@ -136,7 +136,7 @@
 //! All serialization operations return `Result` types with `serde_json::Error`:
 //!
 //! ```rust
-//! use airs_mcp::{JsonRpcRequest, JsonRpcMessageTrait, RequestId};
+//! use airsprotocols_mcp::{JsonRpcRequest, JsonRpcMessageTrait, RequestId};
 //!
 //! let request = JsonRpcRequest::new("test", None, RequestId::new_number(1));
 //!
@@ -247,7 +247,7 @@ pub const VERSION: &str = env!("CARGO_PKG_VERSION");
 /// # Examples
 ///
 /// ```rust
-/// println!("AIRS MCP version: {}", airs_mcp::version());
+/// println!("AIRS MCP version: {}", airsprotocols_mcp::version());
 /// ```
 pub fn version() -> &'static str {
     VERSION

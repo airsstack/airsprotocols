@@ -41,7 +41,7 @@ use super::defaults::{NoLoggingHandler, NoPromptProvider, NoResourceProvider, No
 /// # Examples
 ///
 /// ```rust
-/// use airs_mcp::transport::adapters::http::defaults::DefaultAxumMcpRequestHandler;
+/// use airsprotocols_mcp::transport::adapters::http::defaults::DefaultAxumMcpRequestHandler;
 ///
 /// // Default handler with no providers
 /// let handler = DefaultAxumMcpRequestHandler::new(None, None, None, None);

@@ -4,10 +4,10 @@
 
 use tracing::{info, warn};
 
-use airs_mcp::protocol::transport::{MessageHandler, MessageContext, TransportError};
-use airs_mcp::protocol::message::JsonRpcMessage;
-use airs_mcp::transport::adapters::http::{AxumMcpRequestHandler, HttpContext};
-use airs_mcp::providers::{
+use airsprotocols_mcp::protocol::transport::{MessageHandler, MessageContext, TransportError};
+use airsprotocols_mcp::protocol::message::JsonRpcMessage;
+use airsprotocols_mcp::transport::adapters::http::{AxumMcpRequestHandler, HttpContext};
+use airsprotocols_mcp::providers::{
     CodeReviewPromptProvider, FileSystemResourceProvider, MathToolProvider,
     StructuredLoggingHandler,
 };

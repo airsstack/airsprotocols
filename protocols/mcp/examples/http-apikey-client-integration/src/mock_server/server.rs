@@ -27,7 +27,7 @@ use tower_http::trace::TraceLayer;
 use tracing::{info, warn};
 
 // Layer 3: Internal module imports
-use airs_mcp::protocol::{JsonRpcRequest, JsonRpcResponse};
+use airsprotocols_mcp::protocol::{JsonRpcRequest, JsonRpcResponse};
 use super::responses::MockResponses;
 
 /// Mock server configuration

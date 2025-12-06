@@ -9,7 +9,7 @@ use chrono::{DateTime, Utc};
 use serde_json::{json, Value};
 
 // Layer 3: Internal module imports
-use airs_mcp::protocol::{JsonRpcRequest, JsonRpcResponse, RequestId};
+use airsprotocols_mcp::protocol::{JsonRpcRequest, JsonRpcResponse, RequestId};
 
 /// Mock response generator for MCP operations
 pub struct MockResponses;

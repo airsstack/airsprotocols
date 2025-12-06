@@ -32,7 +32,7 @@ mod proxy;
 mod server;
 mod tokens;
 
-use airs_mcp::{
+use airsprotocols_mcp::{
     authentication::strategies::oauth2::OAuth2Strategy,
     integration::McpServer,
     oauth2::validator::{Jwt, Scope, Validator},
@@ -105,7 +105,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         .with_env_filter(
             std::env::var("RUST_LOG")
                 .unwrap_or_else(|_| {
-                    "oauth2_mcp_integration=debug,airs_mcp=debug,oauth2=debug,jsonwebtoken=debug,axum=info".to_string()
+                    "oauth2_mcp_integration=debug,airsprotocols_mcp=debug,oauth2=debug,jsonwebtoken=debug,axum=info".to_string()
                 })
         )
         .with_target(true)
@@ -203,7 +203,7 @@ struct ServerHandle {
 async fn start_three_server_architecture(
     args: Args,
     test_keys: TestKeys,
-    oauth2_config: Arc<airs_mcp::oauth2::config::OAuth2Config>,
+    oauth2_config: Arc<airsprotocols_mcp::oauth2::config::OAuth2Config>,
 ) -> Result<Vec<ServerHandle>, Box<dyn std::error::Error>> {
     let mut servers = Vec::new();
 
@@ -260,7 +260,7 @@ async fn start_three_server_architecture(
 async fn start_mcp_server(
     bind_addr: String,
     _test_keys: TestKeys,
-    oauth2_config: Arc<airs_mcp::oauth2::config::OAuth2Config>,
+    oauth2_config: Arc<airsprotocols_mcp::oauth2::config::OAuth2Config>,
 ) -> Result<
     JoinHandle<Result<(), Box<dyn std::error::Error + Send + Sync>>>,
     Box<dyn std::error::Error>,

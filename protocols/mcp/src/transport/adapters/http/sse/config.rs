@@ -21,7 +21,7 @@ use crate::transport::adapters::http::config::HttpTransportConfig;
 /// # Examples
 ///
 /// ```rust
-/// use airs_mcp::transport::adapters::http::sse::{HttpSseConfig, MigrationMode};
+/// use airsprotocols_mcp::transport::adapters::http::sse::{HttpSseConfig, MigrationMode};
 /// use std::time::Duration;
 ///
 /// // Default SSE configuration with deprecation warnings

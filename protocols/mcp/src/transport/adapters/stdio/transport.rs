@@ -58,8 +58,8 @@ pub type StdioMessageContext = MessageContext<()>;
 /// # Examples
 ///
 /// ```rust,no_run
-/// use airs_mcp::protocol::{MessageHandler, JsonRpcMessage, TransportError, MessageContext};
-/// use airs_mcp::transport::adapters::stdio::{StdioTransport, StdioTransportBuilder};
+/// use airsprotocols_mcp::protocol::{MessageHandler, JsonRpcMessage, TransportError, MessageContext};
+/// use airsprotocols_mcp::transport::adapters::stdio::{StdioTransport, StdioTransportBuilder};
 /// use async_trait::async_trait;
 /// use std::sync::Arc;
 ///
@@ -85,7 +85,7 @@ pub type StdioMessageContext = MessageContext<()>;
 /// #     example().await
 /// # }
 /// async fn example() -> Result<(), Box<dyn std::error::Error>> {
-///     use airs_mcp::protocol::Transport;
+///     use airsprotocols_mcp::protocol::Transport;
 ///     
 ///     let handler = Arc::new(EchoHandler);
 ///     
@@ -574,8 +574,8 @@ async fn stdin_reader_loop(
 /// # Examples
 ///
 /// ```rust,no_run
-/// use airs_mcp::protocol::{MessageHandler, JsonRpcMessage, MessageContext, TransportError, Transport};
-/// use airs_mcp::transport::adapters::stdio::StdioTransportBuilder;
+/// use airsprotocols_mcp::protocol::{MessageHandler, JsonRpcMessage, MessageContext, TransportError, Transport};
+/// use airsprotocols_mcp::transport::adapters::stdio::StdioTransportBuilder;
 /// use async_trait::async_trait;
 /// use std::sync::Arc;
 ///
@@ -707,8 +707,8 @@ impl StdioTransportBuilder<DefaultStdin, DefaultStdout> {
     ///
     /// This allows fluent transition from production to custom I/O:
     /// ```rust,no_run
-    /// use airs_mcp::transport::adapters::stdio::StdioTransportBuilder;
-    /// use airs_mcp::protocol::{MessageHandler, JsonRpcMessage, MessageContext, TransportError};
+    /// use airsprotocols_mcp::transport::adapters::stdio::StdioTransportBuilder;
+    /// use airsprotocols_mcp::protocol::{MessageHandler, JsonRpcMessage, MessageContext, TransportError};
     /// use async_trait::async_trait;
     /// use std::sync::Arc;
     /// use std::io::Cursor;

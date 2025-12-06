@@ -32,7 +32,7 @@ use super::mcp_request_handler::AxumMcpRequestHandler;
 /// # Examples
 ///
 /// ```rust
-/// use airs_mcp::transport::adapters::http::mcp_request_handler_builder::AxumMcpRequestHandlerBuilder;
+/// use airsprotocols_mcp::transport::adapters::http::mcp_request_handler_builder::AxumMcpRequestHandlerBuilder;
 ///
 /// // Start with defaults
 /// let handler = AxumMcpRequestHandlerBuilder::new()

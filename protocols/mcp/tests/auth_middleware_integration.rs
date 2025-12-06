@@ -9,9 +9,9 @@ use std::time::{Duration, Instant};
 
 use tokio::time::timeout;
 
-use airs_mcp::authentication::{AuthContext, AuthMethod};
-use airs_mcp::transport::adapters::http::auth::middleware::{HttpAuthConfig, HttpAuthMiddleware, HttpAuthRequest, HttpAuthStrategyAdapter};
-use airs_mcp::transport::adapters::http::auth::oauth2::error::HttpAuthError;
+use airsprotocols_mcp::authentication::{AuthContext, AuthMethod};
+use airsprotocols_mcp::transport::adapters::http::auth::middleware::{HttpAuthConfig, HttpAuthMiddleware, HttpAuthRequest, HttpAuthStrategyAdapter};
+use airsprotocols_mcp::transport::adapters::http::auth::oauth2::error::HttpAuthError;
 
 // ================================================================================================
 // Test Utilities

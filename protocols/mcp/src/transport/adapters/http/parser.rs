@@ -31,8 +31,8 @@ use crate::transport::error::TransportError;
 ///
 /// ```rust
 /// # tokio_test::block_on(async {
-/// use airs_mcp::transport::adapters::http::RequestParser;
-/// use airs_mcp::transport::adapters::http::config::ParserConfig;
+/// use airsprotocols_mcp::transport::adapters::http::RequestParser;
+/// use airsprotocols_mcp::transport::adapters::http::config::ParserConfig;
 ///
 /// let config = ParserConfig::new();
 /// let parser = RequestParser::new(config);

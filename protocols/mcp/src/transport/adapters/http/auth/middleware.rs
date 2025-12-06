@@ -25,7 +25,7 @@ use super::oauth2::error::HttpAuthError;
 /// # Examples
 ///
 /// ```rust
-/// # use airs_mcp::transport::adapters::http::auth::middleware::HttpAuthConfig;
+/// # use airsprotocols_mcp::transport::adapters::http::auth::middleware::HttpAuthConfig;
 /// let config = HttpAuthConfig::default();
 /// ```
 #[derive(Debug, Clone)]
@@ -102,7 +102,7 @@ impl HttpAuthRequest {
     ///
     /// ```rust
     /// # use std::collections::HashMap;
-    /// # use airs_mcp::transport::adapters::http::auth::middleware::HttpAuthRequest;
+    /// # use airsprotocols_mcp::transport::adapters::http::auth::middleware::HttpAuthRequest;
     /// let headers = HashMap::new();
     /// let query_params = HashMap::new();
     /// let request = HttpAuthRequest::new(headers, "/mcp/tools".to_string(), query_params);
@@ -165,9 +165,9 @@ impl fmt::Display for HttpAuthRequest {
 ///
 /// ```rust
 /// # use async_trait::async_trait;
-/// # use airs_mcp::transport::adapters::http::auth::middleware::{HttpAuthStrategyAdapter, HttpAuthRequest};
-/// # use airs_mcp::transport::adapters::http::auth::oauth2::error::HttpAuthError;
-/// # use airs_mcp::authentication::{AuthContext, AuthMethod};
+/// # use airsprotocols_mcp::transport::adapters::http::auth::middleware::{HttpAuthStrategyAdapter, HttpAuthRequest};
+/// # use airsprotocols_mcp::transport::adapters::http::auth::oauth2::error::HttpAuthError;
+/// # use airsprotocols_mcp::authentication::{AuthContext, AuthMethod};
 /// # 
 /// # #[derive(Clone, Debug)]
 /// # struct MockAuthAdapter;
@@ -259,11 +259,11 @@ pub trait HttpAuthStrategyAdapter: Send + Sync + Clone + 'static {
 /// # Examples
 ///
 /// ```rust
-/// # use airs_mcp::transport::adapters::http::auth::middleware::{
+/// # use airsprotocols_mcp::transport::adapters::http::auth::middleware::{
 /// #     HttpAuthMiddleware, HttpAuthConfig, HttpAuthStrategyAdapter, HttpAuthRequest
 /// # };
-/// # use airs_mcp::authentication::{AuthContext, AuthMethod};
-/// # use airs_mcp::transport::adapters::http::auth::oauth2::error::HttpAuthError;
+/// # use airsprotocols_mcp::authentication::{AuthContext, AuthMethod};
+/// # use airsprotocols_mcp::transport::adapters::http::auth::oauth2::error::HttpAuthError;
 /// # 
 /// # // Mock adapter for the example
 /// # #[derive(Clone, Debug)]
@@ -315,11 +315,11 @@ where
     /// # Examples
     ///
     /// ```rust
-    /// # use airs_mcp::transport::adapters::http::auth::middleware::{
+    /// # use airsprotocols_mcp::transport::adapters::http::auth::middleware::{
     /// #     HttpAuthMiddleware, HttpAuthConfig, HttpAuthStrategyAdapter, HttpAuthRequest
     /// # };
-    /// # use airs_mcp::authentication::{AuthContext, AuthMethod};
-    /// # use airs_mcp::transport::adapters::http::auth::oauth2::error::HttpAuthError;
+    /// # use airsprotocols_mcp::authentication::{AuthContext, AuthMethod};
+    /// # use airsprotocols_mcp::transport::adapters::http::auth::oauth2::error::HttpAuthError;
     /// # 
     /// # // Mock adapter for the example
     /// # #[derive(Clone, Debug)]

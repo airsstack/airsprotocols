@@ -36,8 +36,8 @@ use crate::protocol::{JsonRpcRequest, JsonRpcResponse, TransportClient, Transpor
 /// # Examples
 ///
 /// ```rust,no_run
-/// use airs_mcp::transport::adapters::http::{HttpTransportClient, HttpTransportClientBuilder, AuthMethod};
-/// use airs_mcp::protocol::{TransportClient, JsonRpcRequest, RequestId};
+/// use airsprotocols_mcp::transport::adapters::http::{HttpTransportClient, HttpTransportClientBuilder, AuthMethod};
+/// use airsprotocols_mcp::protocol::{TransportClient, JsonRpcRequest, RequestId};
 /// use serde_json::json;
 /// use std::time::Duration;
 /// use url::Url;
@@ -268,7 +268,7 @@ impl TransportClient for HttpTransportClient {
 /// # Examples
 ///
 /// ```rust,no_run
-/// use airs_mcp::transport::adapters::http::{HttpTransportClientBuilder, AuthMethod};
+/// use airsprotocols_mcp::transport::adapters::http::{HttpTransportClientBuilder, AuthMethod};
 /// use std::time::Duration;
 /// use std::collections::HashMap;
 ///

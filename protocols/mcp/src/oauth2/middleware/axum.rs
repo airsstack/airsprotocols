@@ -310,7 +310,7 @@ impl OAuthMiddleware for AxumOAuth2Middleware {
 /// # Example
 ///
 /// ```rust,no_run
-/// use airs_mcp::oauth2::{config::OAuth2Config, middleware::axum::oauth2_middleware_layer};
+/// use airsprotocols_mcp::oauth2::{config::OAuth2Config, middleware::axum::oauth2_middleware_layer};
 /// use axum::{Router, routing::post};
 /// use tower::Layer;
 ///

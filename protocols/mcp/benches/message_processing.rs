@@ -6,7 +6,7 @@
 use criterion::{black_box, criterion_group, criterion_main, BenchmarkId, Criterion, Throughput};
 use serde_json::json;
 
-use airs_mcp::protocol::{JsonRpcMessageTrait, JsonRpcNotification, JsonRpcRequest, RequestId};
+use airsprotocols_mcp::protocol::{JsonRpcMessageTrait, JsonRpcNotification, JsonRpcRequest, RequestId};
 
 /// Create a test request with a payload of the specified size (in KB)
 fn create_test_request(size_kb: usize) -> JsonRpcRequest {

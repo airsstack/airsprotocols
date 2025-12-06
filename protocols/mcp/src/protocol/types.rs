@@ -13,7 +13,7 @@
 //! # Examples
 //!
 //! ```rust
-//! use airs_mcp::protocol::{Uri, ProtocolVersion, ClientInfo};
+//! use airsprotocols_mcp::protocol::{Uri, ProtocolVersion, ClientInfo};
 //!
 //! # fn main() -> Result<(), Box<dyn std::error::Error>> {
 //! // Type-safe protocol construction
@@ -53,7 +53,7 @@ use crate::protocol::constants::methods;
 /// # Examples
 ///
 /// ```rust
-/// use airs_mcp::protocol::ProtocolVersion;
+/// use airsprotocols_mcp::protocol::ProtocolVersion;
 ///
 /// // Create current protocol version
 /// let version = ProtocolVersion::current();
@@ -147,7 +147,7 @@ impl fmt::Display for ProtocolVersion {
 /// # Examples
 ///
 /// ```rust
-/// use airs_mcp::protocol::Uri;
+/// use airsprotocols_mcp::protocol::Uri;
 ///
 /// // Valid URI construction
 /// let uri = Uri::new("file:///path/to/file")?;
@@ -228,7 +228,7 @@ impl fmt::Display for Uri {
 /// # Examples
 ///
 /// ```rust
-/// use airs_mcp::protocol::MimeType;
+/// use airsprotocols_mcp::protocol::MimeType;
 ///
 /// // Valid MIME type construction
 /// let mime = MimeType::new("text/plain")?;
@@ -309,7 +309,7 @@ impl fmt::Display for MimeType {
 /// # Examples
 ///
 /// ```rust
-/// use airs_mcp::protocol::Base64Data;
+/// use airsprotocols_mcp::protocol::Base64Data;
 ///
 /// // Valid base64 construction
 /// let data = Base64Data::new("SGVsbG8gV29ybGQ=")?;
@@ -382,7 +382,7 @@ impl fmt::Display for Base64Data {
 /// # Examples
 ///
 /// ```rust
-/// use airs_mcp::protocol::ClientInfo;
+/// use airsprotocols_mcp::protocol::ClientInfo;
 ///
 /// let client_info = ClientInfo {
 ///     name: "example-client".to_string(),
@@ -405,7 +405,7 @@ pub struct ClientInfo {
 /// # Examples
 ///
 /// ```rust
-/// use airs_mcp::protocol::ServerInfo;
+/// use airsprotocols_mcp::protocol::ServerInfo;
 ///
 /// let server_info = ServerInfo {
 ///     name: "example-server".to_string(),
@@ -1108,7 +1108,7 @@ impl CallToolResponse {
 /// # Examples
 ///
 /// ```rust
-/// use airs_mcp::protocol::types::{ServerConfig, ServerInfo, ServerCapabilities, ProtocolVersion};
+/// use airsprotocols_mcp::protocol::types::{ServerConfig, ServerInfo, ServerCapabilities, ProtocolVersion};
 ///
 /// // Default configuration
 /// let config = ServerConfig::default();

@@ -10,8 +10,8 @@ use std::sync::Arc;
 // (none needed for this module)
 
 // Layer 3: Internal module imports
-use airs_mcp::protocol::TransportError;
-use airs_mcp::transport::adapters::stdio::{StdioTransport, StdioTransportBuilder};
+use airsprotocols_mcp::protocol::TransportError;
+use airsprotocols_mcp::transport::adapters::stdio::{StdioTransport, StdioTransportBuilder};
 use crate::handlers::McpHandler;
 
 /// Create STDIO transport with the provided MCP handler
@@ -36,7 +36,7 @@ use crate::handlers::McpHandler;
 /// ```rust,no_run
 /// use stdio_server_integration::{create_test_environment, create_stdio_transport};
 /// use std::sync::Arc;
-/// use airs_mcp::protocol::Transport;
+/// use airsprotocols_mcp::protocol::Transport;
 ///
 /// # #[tokio::main]
 /// # async fn main() -> Result<(), Box<dyn std::error::Error>> {

@@ -7,7 +7,7 @@ use std::time::Duration;
 
 use url::Url;
 
-use airs_mcp::oauth2::config::{CacheConfig, OAuth2Config, ValidationConfig};
+use airsprotocols_mcp::oauth2::config::{CacheConfig, OAuth2Config, ValidationConfig};
 
 /// Create OAuth2 configuration for the MCP server
 pub fn create_oauth2_config() -> Result<OAuth2Config, Box<dyn std::error::Error>> {

@@ -25,7 +25,7 @@
 //! ## Generic MessageHandler Pattern
 //!
 //! ```rust
-//! use airs_mcp::protocol::{MessageHandler, JsonRpcMessage, MessageContext, TransportError};
+//! use airsprotocols_mcp::protocol::{MessageHandler, JsonRpcMessage, MessageContext, TransportError};
 //! use std::sync::Arc;
 //! use async_trait::async_trait;
 //!
@@ -134,7 +134,7 @@ impl TransportError {
     /// # Examples
     ///
     /// ```rust
-    /// use airs_mcp::protocol::TransportError;
+    /// use airsprotocols_mcp::protocol::TransportError;
     /// use std::time::Duration;
     ///
     /// let timeout_error = TransportError::request_timeout(Duration::from_secs(30));
@@ -155,7 +155,7 @@ impl TransportError {
     /// # Examples
     ///
     /// ```rust
-    /// use airs_mcp::protocol::TransportError;
+    /// use airsprotocols_mcp::protocol::TransportError;
     ///
     /// let invalid_response = TransportError::invalid_response("Missing required 'result' field");
     /// ```
@@ -177,7 +177,7 @@ impl TransportError {
     /// # Examples
     ///
     /// ```rust
-    /// use airs_mcp::protocol::TransportError;
+    /// use airsprotocols_mcp::protocol::TransportError;
     ///
     /// let not_ready = TransportError::not_ready("Transport not connected");
     /// ```
@@ -196,7 +196,7 @@ impl TransportError {
 /// # Examples
 ///
 /// ```rust
-/// use airs_mcp::protocol::MessageContext;
+/// use airsprotocols_mcp::protocol::MessageContext;
 /// use chrono::Utc;
 ///
 /// // Default generic context (for STDIO)
@@ -346,7 +346,7 @@ impl<T> MessageContext<T> {
 /// # Examples
 ///
 /// ```rust
-/// use airs_mcp::protocol::{MessageHandler, JsonRpcMessage, MessageContext, TransportError};
+/// use airsprotocols_mcp::protocol::{MessageHandler, JsonRpcMessage, MessageContext, TransportError};
 /// use async_trait::async_trait;
 /// use std::sync::Arc;
 ///
@@ -419,7 +419,7 @@ pub trait MessageHandler<T = ()>: Send + Sync {
 /// - `transport::adapters::http::HttpTransport` for HTTP-based communication
 ///
 /// ```rust
-/// use airs_mcp::protocol::{Transport, JsonRpcMessage};
+/// use airsprotocols_mcp::protocol::{Transport, JsonRpcMessage};
 /// use async_trait::async_trait;
 ///
 /// // Transport implementations provide event-driven message handling
@@ -527,7 +527,7 @@ pub trait Transport: Send + Sync {
 /// # Examples
 ///
 /// ```rust
-/// use airs_mcp::protocol::{TransportClient, JsonRpcRequest, RequestId};
+/// use airsprotocols_mcp::protocol::{TransportClient, JsonRpcRequest, RequestId};
 /// use serde_json::json;
 ///
 /// async fn example_usage<T: TransportClient>(mut client: T) -> Result<(), Box<dyn std::error::Error>> {
@@ -611,7 +611,7 @@ pub trait TransportClient: Send + Sync {
 /// # Examples
 ///
 /// ```rust
-/// use airs_mcp::protocol::{BoxedTransportClient, TransportError};
+/// use airsprotocols_mcp::protocol::{BoxedTransportClient, TransportError};
 ///
 /// async fn use_any_client(mut client: BoxedTransportClient) -> Result<(), TransportError> {
 ///     // Work with any transport client implementation
@@ -629,7 +629,7 @@ pub type BoxedTransportClient = Box<dyn TransportClient<Error = TransportError>>
 /// # Examples
 ///
 /// ```rust
-/// use airs_mcp::protocol::{TransportClientResult, JsonRpcResponse};
+/// use airsprotocols_mcp::protocol::{TransportClientResult, JsonRpcResponse};
 ///
 /// fn process_response(response: TransportClientResult<JsonRpcResponse>) {
 ///     match response {

@@ -19,7 +19,7 @@ use serde::{Deserialize, Serialize};
 /// # Examples
 ///
 /// ```rust
-/// use airs_mcp::authentication::AuthMethod;
+/// use airsprotocols_mcp::authentication::AuthMethod;
 ///
 /// let oauth2 = AuthMethod::new("oauth2");
 /// let api_key = AuthMethod::new("apikey");

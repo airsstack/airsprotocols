@@ -48,7 +48,7 @@ impl OAuth2MiddlewareCore {
     ///
     /// # Example
     /// ```rust,no_run
-    /// use airs_mcp::oauth2::{OAuth2Config, middleware::OAuth2MiddlewareCore};
+    /// use airsprotocols_mcp::oauth2::{OAuth2Config, middleware::OAuth2MiddlewareCore};
     /// use url::Url;
     ///
     /// # async fn example() -> Result<(), Box<dyn std::error::Error>> {

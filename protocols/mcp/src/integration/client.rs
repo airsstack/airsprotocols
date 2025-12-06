@@ -21,8 +21,8 @@
 //! ## Using HTTP Transport
 //!
 //! ```rust,no_run
-//! use airs_mcp::integration::{McpClientBuilder, McpResult};
-//! use airs_mcp::transport::adapters::http::{HttpTransportClientBuilder, AuthMethod};
+//! use airsprotocols_mcp::integration::{McpClientBuilder, McpResult};
+//! use airsprotocols_mcp::transport::adapters::http::{HttpTransportClientBuilder, AuthMethod};
 //! use std::time::Duration;
 //!
 //! # #[tokio::main]
@@ -59,8 +59,8 @@
 //! ## Using STDIO Transport
 //!
 //! ```rust,no_run
-//! use airs_mcp::integration::{McpClientBuilder, McpResult};
-//! use airs_mcp::transport::adapters::stdio::StdioTransportClientBuilder;
+//! use airsprotocols_mcp::integration::{McpClientBuilder, McpResult};
+//! use airsprotocols_mcp::transport::adapters::stdio::StdioTransportClientBuilder;
 //! use std::time::Duration;
 //!
 //! # #[tokio::main]
@@ -98,7 +98,7 @@
 //!
 //! ```rust,no_run
 //! tracing_subscriber::fmt()
-//!     .with_env_filter("airs_mcp=debug")
+//!     .with_env_filter("airsprotocols_mcp=debug")
 //!     .init();
 //! ```
 
@@ -220,8 +220,8 @@ impl McpClientBuilder {
     ///
     /// # Example
     /// ```rust,no_run
-    /// # use airs_mcp::integration::{McpClientBuilder, McpResult};
-    /// # use airs_mcp::transport::adapters::stdio::StdioTransportClientBuilder;
+    /// # use airsprotocols_mcp::integration::{McpClientBuilder, McpResult};
+    /// # use airsprotocols_mcp::transport::adapters::stdio::StdioTransportClientBuilder;
     /// # async fn example() -> McpResult<()> {
     /// let transport = StdioTransportClientBuilder::new()
     ///     .command("python")
@@ -604,8 +604,8 @@ impl<T: TransportClient + 'static> McpClient<T> {
     ///
     /// # Example
     /// ```rust,no_run
-    /// # use airs_mcp::integration::{McpClientBuilder, McpResult};
-    /// # use airs_mcp::transport::adapters::stdio::StdioTransportClientBuilder;
+    /// # use airsprotocols_mcp::integration::{McpClientBuilder, McpResult};
+    /// # use airsprotocols_mcp::transport::adapters::stdio::StdioTransportClientBuilder;
     /// # async fn example() -> McpResult<()> {
     /// let transport = StdioTransportClientBuilder::new()
     ///     .command("python")

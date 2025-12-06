@@ -19,7 +19,7 @@ use std::ops::{Deref, DerefMut};
 /// # Examples
 ///
 /// ```rust
-/// use airs_mcp::authentication::AuthMetadata;
+/// use airsprotocols_mcp::authentication::AuthMetadata;
 ///
 /// let metadata = AuthMetadata::new()
 ///     .add("client_ip", "192.168.1.1")

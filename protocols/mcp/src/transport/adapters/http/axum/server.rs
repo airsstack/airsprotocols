@@ -91,7 +91,7 @@ impl HttpAuthStrategyAdapter for NoAuth {
 /// # Examples
 ///
 /// ```rust,no_run
-/// use airs_mcp::transport::adapters::http::axum::AxumHttpServer;
+/// use airsprotocols_mcp::transport::adapters::http::axum::AxumHttpServer;
 /// // Default server with no authentication or authorization
 /// // let server = AxumHttpServer::new(...).await?;
 ///
@@ -199,8 +199,8 @@ impl AxumHttpServer<NoAuth> {
     ///
     /// ```rust,no_run
     /// use std::sync::Arc;
-    /// use airs_mcp::transport::adapters::http::auth::middleware::HttpAuthConfig;
-    /// use airs_mcp::transport::adapters::http::axum::AxumHttpServer;
+    /// use airsprotocols_mcp::transport::adapters::http::auth::middleware::HttpAuthConfig;
+    /// use airsprotocols_mcp::transport::adapters::http::axum::AxumHttpServer;
     ///
     /// // Example usage (requires proper setup)
     /// // let server = AxumHttpServer::new(
@@ -259,8 +259,8 @@ impl AxumHttpServer<NoAuth> {
     /// # Examples
     ///
     /// ```rust,no_run
-    /// use airs_mcp::transport::adapters::http::auth::middleware::HttpAuthConfig;
-    /// use airs_mcp::transport::adapters::http::axum::AxumHttpServer;
+    /// use airsprotocols_mcp::transport::adapters::http::auth::middleware::HttpAuthConfig;
+    /// use airsprotocols_mcp::transport::adapters::http::axum::AxumHttpServer;
     ///
     /// // Example usage (requires proper OAuth2 setup)
     /// // let server = AxumHttpServer::new(deps).await?
@@ -363,7 +363,7 @@ where
     /// # Examples
     ///
     /// ```rust,no_run
-    /// use airs_mcp::transport::adapters::http::axum::AxumHttpServer;
+    /// use airsprotocols_mcp::transport::adapters::http::axum::AxumHttpServer;
     ///
     /// // Chain authentication and authorization
     /// // let server = AxumHttpServer::new(deps).await?
@@ -571,8 +571,8 @@ where
     /// # Examples
     ///
     /// ```rust,no_run
-    /// use airs_mcp::transport::adapters::http::DefaultAxumMcpRequestHandler;
-    /// use airs_mcp::transport::adapters::http::axum::AxumHttpServer;
+    /// use airsprotocols_mcp::transport::adapters::http::DefaultAxumMcpRequestHandler;
+    /// use airsprotocols_mcp::transport::adapters::http::axum::AxumHttpServer;
     ///
     /// # async fn example() -> Result<(), Box<dyn std::error::Error>> {
     /// let custom_handler = DefaultAxumMcpRequestHandler::new(

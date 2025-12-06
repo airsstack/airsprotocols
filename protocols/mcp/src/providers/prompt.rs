@@ -28,9 +28,9 @@ use crate::protocol::{Content, Prompt, PromptArgument, PromptMessage};
 /// # Examples
 ///
 /// ```rust
-/// use airs_mcp::providers::PromptProvider;
-/// use airs_mcp::protocol::{Prompt, PromptMessage};
-/// use airs_mcp::integration::{McpResult, McpError};
+/// use airsprotocols_mcp::providers::PromptProvider;
+/// use airsprotocols_mcp::protocol::{Prompt, PromptMessage};
+/// use airsprotocols_mcp::integration::{McpResult, McpError};
 /// use async_trait::async_trait;
 /// use std::collections::HashMap;
 ///

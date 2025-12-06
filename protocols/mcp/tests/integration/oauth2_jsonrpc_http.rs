@@ -12,12 +12,12 @@ use axum::http::StatusCode;
 use serde_json::json;
 use tokio::time::timeout;
 
-use airs_mcp::authorization::{
+use airsprotocols_mcp::authorization::{
     AuthContext, AuthorizationMiddleware, JsonRpcMethodExtractor, ScopeBasedPolicy, ScopeAuthContext,
 };
-use airs_mcp::oauth2::context::AuthContext as OAuth2AuthContext;
-use airs_mcp::shared::jsonrpc::{JsonRpcMessage, JsonRpcRequest};
-use airs_mcp::transport::adapters::http::auth::oauth2::OAuth2StrategyAdapter;
+use airsprotocols_mcp::oauth2::context::AuthContext as OAuth2AuthContext;
+use airsprotocols_mcp::shared::jsonrpc::{JsonRpcMessage, JsonRpcRequest};
+use airsprotocols_mcp::transport::adapters::http::auth::oauth2::OAuth2StrategyAdapter;
 
 /// Test that OAuth2 authentication works correctly with JSON-RPC initialize method
 /// This test specifically validates that methods are extracted from JSON-RPC payloads,
@@ -220,7 +220,7 @@ async fn test_scope_validation_for_mcp_operations() {
 
 // Helper functions for creating mock objects
 
-async fn create_mock_oauth2_adapter() -> OAuth2StrategyAdapter<impl airs_mcp::oauth2::validator::JwtValidator, impl airs_mcp::oauth2::validator::ScopeValidator> {
+async fn create_mock_oauth2_adapter() -> OAuth2StrategyAdapter<impl airsprotocols_mcp::oauth2::validator::JwtValidator, impl airsprotocols_mcp::oauth2::validator::ScopeValidator> {
     // Create a mock OAuth2 strategy adapter for testing
     // This should validate tokens and return appropriate contexts
     todo!("Implement mock OAuth2 adapter - depends on actual OAuth2 infrastructure")

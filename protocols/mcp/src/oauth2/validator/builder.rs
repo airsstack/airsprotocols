@@ -57,9 +57,9 @@ impl From<BuilderError> for OAuth2Error {
 /// # Examples
 ///
 /// ```rust
-/// use airs_mcp::oauth2::validator::ValidatorBuilder;
-/// use airs_mcp::oauth2::config::OAuth2Config;
-/// use airs_mcp::oauth2::validator::{Jwt, Scope};
+/// use airsprotocols_mcp::oauth2::validator::ValidatorBuilder;
+/// use airsprotocols_mcp::oauth2::config::OAuth2Config;
+/// use airsprotocols_mcp::oauth2::validator::{Jwt, Scope};
 ///
 /// # fn main() -> Result<(), Box<dyn std::error::Error>> {
 /// let config = OAuth2Config::default();

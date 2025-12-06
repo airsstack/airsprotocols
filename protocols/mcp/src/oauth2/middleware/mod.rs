@@ -35,7 +35,7 @@
 //! ## Basic Usage with Axum
 //!
 //! ```rust,no_run
-//! use airs_mcp::oauth2::{
+//! use airsprotocols_mcp::oauth2::{
 //!     OAuth2Config,
 //!     middleware::{OAuth2MiddlewareCore, axum::AxumOAuth2Middleware},
 //! };
@@ -64,7 +64,7 @@
 //! ## Custom Framework Integration
 //!
 //! ```rust,no_run
-//! use airs_mcp::oauth2::{
+//! use airsprotocols_mcp::oauth2::{
 //!     middleware::{traits::*, OAuth2MiddlewareCore},
 //!     error::OAuth2Error,
 //! };

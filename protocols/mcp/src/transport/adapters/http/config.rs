@@ -19,7 +19,7 @@ use crate::protocol::types::{ServerCapabilities, ServerConfig};
 /// # Examples
 ///
 /// ```rust
-/// use airs_mcp::transport::adapters::http::HttpTransportConfig;
+/// use airsprotocols_mcp::transport::adapters::http::HttpTransportConfig;
 /// use std::time::Duration;
 ///
 /// // Simple default configuration

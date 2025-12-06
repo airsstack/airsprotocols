@@ -26,7 +26,7 @@ use crate::oauth2::OAuth2Config;
 ///
 /// # Example
 /// ```rust,no_run
-/// use airs_mcp::oauth2::{OAuth2Config, middleware::utils};
+/// use airsprotocols_mcp::oauth2::{OAuth2Config, middleware::utils};
 /// use url::Url;
 ///
 /// # async fn example() -> Result<(), Box<dyn std::error::Error>> {

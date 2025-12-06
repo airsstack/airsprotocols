@@ -11,7 +11,7 @@ use std::{collections::HashMap, net::SocketAddr, sync::Arc};
 use tracing::info;
 
 // Layer 3: Internal module imports
-use airs_mcp::{
+use airsprotocols_mcp::{
     authentication::strategies::apikey::{
         ApiKeyAuthData, ApiKeySource, ApiKeyStrategy, InMemoryApiKeyValidator,
     },

@@ -13,7 +13,7 @@ use tempfile::TempDir;
 use tracing::info;
 
 // Layer 3: Internal module imports
-use airs_mcp::{
+use airsprotocols_mcp::{
     providers::{
         CodeReviewPromptProvider, FileSystemResourceProvider, MathToolProvider,
         StructuredLoggingHandler,

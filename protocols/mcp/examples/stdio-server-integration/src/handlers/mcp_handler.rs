@@ -13,13 +13,13 @@ use tokio::io::{AsyncWriteExt, stdout};
 use tracing::{error, info};
 
 // Layer 3: Internal module imports
-use airs_mcp::protocol::{
+use airsprotocols_mcp::protocol::{
     constants::methods as mcp_methods, CallToolRequest, GetPromptRequest, InitializeResponse,
     JsonRpcMessage, JsonRpcRequest, JsonRpcResponse, LoggingCapabilities, MessageContext,
     MessageHandler, PromptCapabilities, ProtocolVersion, ReadResourceRequest,
     ResourceCapabilities, ServerCapabilities, ServerInfo, ToolCapabilities, TransportError,
 };
-use airs_mcp::providers::{
+use airsprotocols_mcp::providers::{
     CodeReviewPromptProvider, FileSystemResourceProvider, MathToolProvider, PromptProvider,
     ResourceProvider, StructuredLoggingHandler, ToolProvider,
 };

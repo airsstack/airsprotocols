@@ -10,7 +10,7 @@ use serde_json::{json, Value};
 use tokio::net::TcpListener;
 use tracing::{debug, info, warn};
 
-use airs_mcp::oauth2::config::OAuth2Config;
+use airsprotocols_mcp::oauth2::config::OAuth2Config;
 
 use crate::tokens::{generate_test_token, TestKeys, TokenConfig};
 

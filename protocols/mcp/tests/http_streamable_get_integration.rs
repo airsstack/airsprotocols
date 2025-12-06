@@ -12,15 +12,15 @@ use tokio::sync::broadcast;
 use tokio::time::timeout;
 use uuid::Uuid;
 
-use airs_mcp::transport::adapters::http::axum::{
+use airsprotocols_mcp::transport::adapters::http::axum::{
     create_router, McpSseQueryParams, ServerState, SseEvent,
 };
-use airs_mcp::transport::adapters::http::config::HttpTransportConfig;
-use airs_mcp::transport::adapters::http::connection_manager::{
+use airsprotocols_mcp::transport::adapters::http::config::HttpTransportConfig;
+use airsprotocols_mcp::transport::adapters::http::connection_manager::{
     HealthCheckConfig, HttpConnectionManager,
 };
-use airs_mcp::transport::adapters::http::defaults::DefaultAxumMcpRequestHandler;
-use airs_mcp::transport::adapters::http::engine::McpRequestHandler;
+use airsprotocols_mcp::transport::adapters::http::defaults::DefaultAxumMcpRequestHandler;
+use airsprotocols_mcp::transport::adapters::http::engine::McpRequestHandler;
 
 /// Helper to create a test ServerState with all required components
 async fn create_test_server_state() -> ServerState {

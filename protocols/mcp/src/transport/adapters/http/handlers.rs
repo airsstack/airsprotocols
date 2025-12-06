@@ -35,8 +35,8 @@ use crate::transport::adapters::http::HttpContext;
 /// # Examples
 ///
 /// ```rust
-/// use airs_mcp::transport::adapters::http::{HttpContext, McpHttpHandler};
-/// use airs_mcp::protocol::{MessageHandler, JsonRpcRequest, MessageContext, RequestId};
+/// use airsprotocols_mcp::transport::adapters::http::{HttpContext, McpHttpHandler};
+/// use airsprotocols_mcp::protocol::{MessageHandler, JsonRpcRequest, MessageContext, RequestId};
 /// use std::sync::Arc;
 ///
 /// let handler = Arc::new(McpHttpHandler::new());
@@ -233,8 +233,8 @@ impl MessageHandler<HttpContext> for McpHttpHandler {
 /// # Examples
 ///
 /// ```rust
-/// use airs_mcp::transport::adapters::http::{HttpContext, EchoHttpHandler};
-/// use airs_mcp::protocol::{MessageHandler, JsonRpcRequest, MessageContext, RequestId};
+/// use airsprotocols_mcp::transport::adapters::http::{HttpContext, EchoHttpHandler};
+/// use airsprotocols_mcp::protocol::{MessageHandler, JsonRpcRequest, MessageContext, RequestId};
 /// use std::sync::Arc;
 ///
 /// let handler = Arc::new(EchoHttpHandler::new());
@@ -378,8 +378,8 @@ impl MessageHandler<HttpContext> for EchoHttpHandler {
 /// # Examples
 ///
 /// ```rust
-/// use airs_mcp::transport::adapters::http::{HttpContext, StaticFileHandler};
-/// use airs_mcp::protocol::{MessageHandler, JsonRpcRequest, MessageContext, RequestId};
+/// use airsprotocols_mcp::transport::adapters::http::{HttpContext, StaticFileHandler};
+/// use airsprotocols_mcp::protocol::{MessageHandler, JsonRpcRequest, MessageContext, RequestId};
 /// use std::sync::Arc;
 ///
 /// let mut handler = StaticFileHandler::new();

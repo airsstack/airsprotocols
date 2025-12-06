@@ -30,8 +30,8 @@
 //!
 //! ## STDIO Transport (Simple Context)
 //! ```rust
-//! use airs_mcp::transport::adapters::{StdioMessageHandler, StdioTransport};
-//! use airs_mcp::protocol::{MessageHandler, JsonRpcMessage, MessageContext};
+//! use airsprotocols_mcp::transport::adapters::{StdioMessageHandler, StdioTransport};
+//! use airsprotocols_mcp::protocol::{MessageHandler, JsonRpcMessage, MessageContext};
 //! use std::sync::Arc;
 //!
 //! struct MyStdioHandler;
@@ -41,15 +41,15 @@
 //!     async fn handle_message(&self, message: JsonRpcMessage, context: MessageContext<()>) {
 //!         // Handle message with unit context (no transport-specific data)
 //!     }
-//!     async fn handle_error(&self, error: airs_mcp::protocol::TransportError) {}
+//!     async fn handle_error(&self, error: airsprotocols_mcp::protocol::TransportError) {}
 //!     async fn handle_close(&self) {}
 //! }
 //! ```
 //!
 //! ## HTTP Transport (Rich Context)
 //! ```rust
-//! use airs_mcp::transport::adapters::{HttpContext, HttpMessageHandler, HttpTransport};
-//! use airs_mcp::protocol::{MessageHandler, JsonRpcMessage, MessageContext};
+//! use airsprotocols_mcp::transport::adapters::{HttpContext, HttpMessageHandler, HttpTransport};
+//! use airsprotocols_mcp::protocol::{MessageHandler, JsonRpcMessage, MessageContext};
 //! use std::sync::Arc;
 //!
 //! struct MyHttpHandler;
@@ -62,7 +62,7 @@
 //!             println!("HTTP {} {}", http_ctx.method(), http_ctx.path());
 //!         }
 //!     }
-//!     async fn handle_error(&self, error: airs_mcp::protocol::TransportError) {}
+//!     async fn handle_error(&self, error: airsprotocols_mcp::protocol::TransportError) {}
 //!     async fn handle_close(&self) {}
 //! }
 //! ```

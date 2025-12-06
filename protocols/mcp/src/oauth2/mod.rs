@@ -12,7 +12,7 @@
 //! integrates seamlessly with existing HTTP transports:
 //!
 //! ```rust,no_run
-//! use airs_mcp::oauth2::{OAuth2Config, oauth2_middleware_layer};
+//! use airsprotocols_mcp::oauth2::{OAuth2Config, oauth2_middleware_layer};
 //! use axum::{Router, routing::post};
 //! use url::Url;
 //!

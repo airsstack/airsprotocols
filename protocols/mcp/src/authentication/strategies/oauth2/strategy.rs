@@ -29,9 +29,9 @@ use crate::oauth2::validator::{JwtValidator, ScopeValidator, Validator};
 /// # Examples
 ///
 /// ```rust
-/// use airs_mcp::authentication::strategies::oauth2::{OAuth2Strategy, OAuth2Request, OAuth2AuthRequest};
-/// use airs_mcp::oauth2::validator::{Validator, Jwt, Scope};
-/// use airs_mcp::oauth2::config::OAuth2Config;
+/// use airsprotocols_mcp::authentication::strategies::oauth2::{OAuth2Strategy, OAuth2Request, OAuth2AuthRequest};
+/// use airsprotocols_mcp::oauth2::validator::{Validator, Jwt, Scope};
+/// use airsprotocols_mcp::oauth2::config::OAuth2Config;
 ///
 /// # async fn example() -> Result<(), Box<dyn std::error::Error>> {
 /// let config = OAuth2Config::default();

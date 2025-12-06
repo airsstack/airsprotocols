@@ -12,13 +12,13 @@ use std::sync::Arc;
 // Layer 2: Third-party crate imports
 
 // Layer 3: Internal module imports
-use airs_mcp::authentication::{AuthContext, AuthMethod};
-use airs_mcp::authorization::{
+use airsprotocols_mcp::authentication::{AuthContext, AuthMethod};
+use airsprotocols_mcp::authorization::{
     context::{BinaryAuthContext, NoAuthContext, ScopeAuthContext},
     policy::{BinaryAuthorizationPolicy, NoAuthorizationPolicy, ScopeBasedPolicy},
 };
-use airs_mcp::transport::adapters::http::auth::oauth2::error::HttpAuthError;
-use airs_mcp::transport::adapters::http::{
+use airsprotocols_mcp::transport::adapters::http::auth::oauth2::error::HttpAuthError;
+use airsprotocols_mcp::transport::adapters::http::{
     auth::middleware::{HttpAuthConfig, HttpAuthRequest, HttpAuthStrategyAdapter},
     axum::AxumHttpServer,
     config::HttpTransportConfig,

@@ -21,7 +21,7 @@ use chrono::{DateTime, Utc};
 /// # Examples
 ///
 /// ```rust
-/// use airs_mcp::transport::adapters::http::HttpContext;
+/// use airsprotocols_mcp::transport::adapters::http::HttpContext;
 /// use std::collections::HashMap;
 ///
 /// let mut headers = HashMap::new();

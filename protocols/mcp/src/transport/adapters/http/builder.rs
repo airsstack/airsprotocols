@@ -63,9 +63,9 @@ impl From<HttpEngineError> for TransportError {
 /// # Usage
 ///
 /// ```rust,no_run
-/// use airs_mcp::transport::adapters::http::{HttpTransportBuilder, AxumHttpServer};
-/// use airs_mcp::transport::adapters::http::DefaultAxumMcpRequestHandler;
-/// use airs_mcp::integration::server::McpServer;
+/// use airsprotocols_mcp::transport::adapters::http::{HttpTransportBuilder, AxumHttpServer};
+/// use airsprotocols_mcp::transport::adapters::http::DefaultAxumMcpRequestHandler;
+/// use airsprotocols_mcp::integration::server::McpServer;
 ///
 /// # async fn example() -> Result<(), Box<dyn std::error::Error>> {
 /// // Modern zero configuration transport
@@ -281,7 +281,7 @@ impl<E: HttpEngine> Transport for HttpTransport<E> {
 /// # Examples
 ///
 /// ```rust,no_run
-/// use airs_mcp::transport::adapters::http::{HttpTransportBuilder, AxumHttpServer};
+/// use airsprotocols_mcp::transport::adapters::http::{HttpTransportBuilder, AxumHttpServer};
 ///
 /// # async fn example() -> Result<(), Box<dyn std::error::Error>> {
 /// // Tier 1: Zero configuration (beginner-friendly)
@@ -434,8 +434,8 @@ impl<E: HttpEngine> HttpTransportBuilder<E> {
     /// # Examples
     ///
     /// ```rust,no_run
-    /// use airs_mcp::transport::adapters::http::HttpTransportBuilder;
-    /// use airs_mcp::transport::adapters::http::axum::AxumHttpServer;
+    /// use airsprotocols_mcp::transport::adapters::http::HttpTransportBuilder;
+    /// use airsprotocols_mcp::transport::adapters::http::axum::AxumHttpServer;
     ///
     /// # async fn example() -> Result<(), Box<dyn std::error::Error>> {
     /// // Simplest possible usage - just works
@@ -469,8 +469,8 @@ impl<E: HttpEngine> HttpTransportBuilder<E> {
     /// # Examples
     ///
     /// ```rust,no_run
-    /// use airs_mcp::transport::adapters::http::HttpTransportBuilder;
-    /// use airs_mcp::transport::adapters::http::axum::AxumHttpServer;
+    /// use airsprotocols_mcp::transport::adapters::http::HttpTransportBuilder;
+    /// use airsprotocols_mcp::transport::adapters::http::axum::AxumHttpServer;
     ///
     /// # async fn example() -> Result<(), Box<dyn std::error::Error>> {
     /// // Pre-configured engines for common patterns
@@ -508,8 +508,8 @@ impl<E: HttpEngine> HttpTransportBuilder<E> {
     /// # Examples
     ///
     /// ```rust,no_run
-    /// use airs_mcp::transport::adapters::http::HttpTransportBuilder;
-    /// use airs_mcp::transport::adapters::http::axum::AxumHttpServer;
+    /// use airsprotocols_mcp::transport::adapters::http::HttpTransportBuilder;
+    /// use airsprotocols_mcp::transport::adapters::http::axum::AxumHttpServer;
     ///
     /// # async fn example() -> Result<(), Box<dyn std::error::Error>> {
     /// // Full builder pattern control
@@ -554,8 +554,8 @@ impl<E: HttpEngine> HttpTransportBuilder<E> {
     /// # Examples
     ///
     /// ```rust,no_run
-    /// use airs_mcp::transport::adapters::http::HttpTransportBuilder;
-    /// use airs_mcp::transport::adapters::http::axum::AxumHttpServer;
+    /// use airsprotocols_mcp::transport::adapters::http::HttpTransportBuilder;
+    /// use airsprotocols_mcp::transport::adapters::http::axum::AxumHttpServer;
     ///
     /// # async fn example() -> Result<(), Box<dyn std::error::Error>> {
     /// # async fn load_config_from_db() -> Result<(), std::io::Error> { Ok(()) }

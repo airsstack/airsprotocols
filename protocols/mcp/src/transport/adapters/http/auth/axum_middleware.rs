@@ -39,14 +39,14 @@ use super::oauth2::error::HttpAuthError;
 ///
 /// ```rust
 /// # use std::sync::Arc;
-/// # use airs_mcp::transport::adapters::http::auth::{
+/// # use airsprotocols_mcp::transport::adapters::http::auth::{
 /// #     axum_middleware::AxumHttpAuthLayer,
 /// #     middleware::{HttpAuthConfig, HttpAuthMiddleware, HttpAuthStrategyAdapter},
 /// # };
 /// # use tower::ServiceBuilder;
-/// # use airs_mcp::authentication::{AuthContext, AuthMethod};
-/// # use airs_mcp::transport::adapters::http::auth::oauth2::error::HttpAuthError;
-/// # use airs_mcp::transport::adapters::http::auth::middleware::HttpAuthRequest;
+/// # use airsprotocols_mcp::authentication::{AuthContext, AuthMethod};
+/// # use airsprotocols_mcp::transport::adapters::http::auth::oauth2::error::HttpAuthError;
+/// # use airsprotocols_mcp::transport::adapters::http::auth::middleware::HttpAuthRequest;
 /// #
 /// # // Mock adapter for the example
 /// # #[derive(Clone, Debug)]

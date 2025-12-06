@@ -15,7 +15,7 @@
 //! # Examples
 //!
 //! ```rust
-//! use airs_mcp::protocol::{JsonRpcRequest, JsonRpcMessageTrait, RequestId};
+//! use airsprotocols_mcp::protocol::{JsonRpcRequest, JsonRpcMessageTrait, RequestId};
 //! use serde_json::json;
 //!
 //! let request = JsonRpcRequest::new(
@@ -64,7 +64,7 @@ impl JsonRpcMessage {
     /// # Examples
     ///
     /// ```rust
-    /// use airs_mcp::protocol::{JsonRpcMessage, JsonRpcRequest, RequestId};
+    /// use airsprotocols_mcp::protocol::{JsonRpcMessage, JsonRpcRequest, RequestId};
     /// use serde_json::json;
     ///
     /// let request = JsonRpcMessage::Request(JsonRpcRequest::new(
@@ -182,8 +182,8 @@ impl JsonRpcMessage {
     /// # Examples
     ///
     /// ```rust
-    /// use airs_mcp::protocol::{JsonRpcMessage, RequestId};
-    /// use airs_mcp::protocol::constants::error_codes;
+    /// use airsprotocols_mcp::protocol::{JsonRpcMessage, RequestId};
+    /// use airsprotocols_mcp::protocol::constants::error_codes;
     ///
     /// let error_response = JsonRpcMessage::create_error_response(
     ///     error_codes::INVALID_REQUEST,
@@ -236,7 +236,7 @@ impl JsonRpcMessage {
     /// # Examples
     ///
     /// ```rust
-    /// use airs_mcp::protocol::JsonRpcMessage;
+    /// use airsprotocols_mcp::protocol::JsonRpcMessage;
     ///
     /// // Parse from byte slice (most efficient)
     /// let data = br#"{"jsonrpc":"2.0","method":"ping","id":1}"#;
@@ -321,7 +321,7 @@ pub enum JsonRpcMessage {
 /// # Examples
 ///
 /// ```rust
-/// use airs_mcp::protocol::{JsonRpcMessageTrait, JsonRpcRequest, RequestId};
+/// use airsprotocols_mcp::protocol::{JsonRpcMessageTrait, JsonRpcRequest, RequestId};
 ///
 /// let request = JsonRpcRequest::new("ping", None, RequestId::new_number(1));
 ///
@@ -343,7 +343,7 @@ pub trait JsonRpcMessageTrait: Serialize + for<'de> Deserialize<'de> {
     /// # Examples
     ///
     /// ```rust
-    /// use airs_mcp::protocol::{JsonRpcMessageTrait, JsonRpcNotification};
+    /// use airsprotocols_mcp::protocol::{JsonRpcMessageTrait, JsonRpcNotification};
     ///
     /// let notification = JsonRpcNotification::new("heartbeat", None);
     /// let json = notification.to_json().unwrap();
@@ -360,7 +360,7 @@ pub trait JsonRpcMessageTrait: Serialize + for<'de> Deserialize<'de> {
     /// # Examples
     ///
     /// ```rust
-    /// use airs_mcp::protocol::{JsonRpcMessageTrait, JsonRpcRequest, RequestId};
+    /// use airsprotocols_mcp::protocol::{JsonRpcMessageTrait, JsonRpcRequest, RequestId};
     ///
     /// let request = JsonRpcRequest::new("ping", None, RequestId::new_number(1));
     /// let pretty = request.to_json_pretty().unwrap();
@@ -375,7 +375,7 @@ pub trait JsonRpcMessageTrait: Serialize + for<'de> Deserialize<'de> {
     /// # Examples
     ///
     /// ```rust
-    /// use airs_mcp::protocol::{JsonRpcMessageTrait, JsonRpcRequest};
+    /// use airsprotocols_mcp::protocol::{JsonRpcMessageTrait, JsonRpcRequest};
     ///
     /// let json = r#"{"jsonrpc":"2.0","method":"ping","id":1}"#;
     /// let request = JsonRpcRequest::from_json(json).unwrap();
@@ -406,7 +406,7 @@ pub trait JsonRpcMessageTrait: Serialize + for<'de> Deserialize<'de> {
     /// # Examples
     ///
     /// ```rust
-    /// use airs_mcp::protocol::{JsonRpcMessageTrait, JsonRpcRequest, RequestId};
+    /// use airsprotocols_mcp::protocol::{JsonRpcMessageTrait, JsonRpcRequest, RequestId};
     /// use bytes::BytesMut;
     ///
     /// let request = JsonRpcRequest::new("test", None, RequestId::new_string("1"));
@@ -434,7 +434,7 @@ pub trait JsonRpcMessageTrait: Serialize + for<'de> Deserialize<'de> {
     /// # Examples
     ///
     /// ```rust
-    /// use airs_mcp::protocol::{JsonRpcMessageTrait, JsonRpcRequest, RequestId};
+    /// use airsprotocols_mcp::protocol::{JsonRpcMessageTrait, JsonRpcRequest, RequestId};
     ///
     /// let request = JsonRpcRequest::new("test", None, RequestId::new_string("1"));
     /// let bytes = request.to_bytes().unwrap();
@@ -455,7 +455,7 @@ pub trait JsonRpcMessageTrait: Serialize + for<'de> Deserialize<'de> {
     /// # Examples
     ///
     /// ```rust
-    /// use airs_mcp::protocol::{JsonRpcMessageTrait, JsonRpcRequest};
+    /// use airsprotocols_mcp::protocol::{JsonRpcMessageTrait, JsonRpcRequest};
     ///
     /// let json_bytes = br#"{"jsonrpc":"2.0","method":"ping","id":1}"#;
     /// let request = JsonRpcRequest::from_json_bytes(json_bytes).unwrap();
@@ -511,7 +511,7 @@ impl JsonRpcMessage {
 /// # Examples
 ///
 /// ```rust
-/// use airs_mcp::protocol::RequestId;
+/// use airsprotocols_mcp::protocol::RequestId;
 ///
 /// let string_id = RequestId::String("req-123".to_string());
 /// let numeric_id = RequestId::Number(42);
@@ -604,7 +604,7 @@ impl RequestId {
     /// # Examples
     ///
     /// ```rust
-    /// use airs_mcp::protocol::RequestId;
+    /// use airsprotocols_mcp::protocol::RequestId;
     ///
     /// let id = RequestId::new_string("my-request-id");
     /// ```
@@ -617,7 +617,7 @@ impl RequestId {
     /// # Examples
     ///
     /// ```rust
-    /// use airs_mcp::protocol::RequestId;
+    /// use airsprotocols_mcp::protocol::RequestId;
     ///
     /// let id = RequestId::new_number(123);
     /// ```
@@ -630,7 +630,7 @@ impl RequestId {
     /// # Examples
     ///
     /// ```rust
-    /// use airs_mcp::protocol::RequestId;
+    /// use airsprotocols_mcp::protocol::RequestId;
     ///
     /// let id = RequestId::new_null();
     /// ```
@@ -664,7 +664,7 @@ impl fmt::Display for RequestId {
 /// # Examples
 ///
 /// ```rust
-/// use airs_mcp::protocol::{JsonRpcRequest, JsonRpcMessageTrait, RequestId};
+/// use airsprotocols_mcp::protocol::{JsonRpcRequest, JsonRpcMessageTrait, RequestId};
 /// use serde_json::json;
 ///
 /// // Request with parameters
@@ -707,7 +707,7 @@ impl JsonRpcRequest {
     /// # Examples
     ///
     /// ```rust
-    /// use airs_mcp::protocol::{JsonRpcRequest, RequestId};
+    /// use airsprotocols_mcp::protocol::{JsonRpcRequest, RequestId};
     /// use serde_json::json;
     ///
     /// let request = JsonRpcRequest::new(
@@ -744,7 +744,7 @@ impl JsonRpcRequest {
     /// # Examples
     ///
     /// ```rust
-    /// use airs_mcp::protocol::{JsonRpcRequest, RequestId};
+    /// use airsprotocols_mcp::protocol::{JsonRpcRequest, RequestId};
     /// use serde_json::json;
     ///
     /// # fn main() -> Result<(), Box<dyn std::error::Error>> {
@@ -804,7 +804,7 @@ impl JsonRpcMessageTrait for JsonRpcRequest {}
 /// # Examples
 ///
 /// ```rust
-/// use airs_mcp::protocol::{JsonRpcResponse, JsonRpcMessageTrait, RequestId};
+/// use airsprotocols_mcp::protocol::{JsonRpcResponse, JsonRpcMessageTrait, RequestId};
 /// use serde_json::json;
 ///
 /// // Success response
@@ -847,7 +847,7 @@ impl JsonRpcResponse {
     /// # Examples
     ///
     /// ```rust
-    /// use airs_mcp::protocol::{JsonRpcResponse, RequestId};
+    /// use airsprotocols_mcp::protocol::{JsonRpcResponse, RequestId};
     /// use serde_json::json;
     ///
     /// let response = JsonRpcResponse::success(
@@ -874,7 +874,7 @@ impl JsonRpcResponse {
     /// # Examples
     ///
     /// ```rust
-    /// use airs_mcp::protocol::{JsonRpcResponse, RequestId};
+    /// use airsprotocols_mcp::protocol::{JsonRpcResponse, RequestId};
     /// use serde_json::json;
     ///
     /// let response = JsonRpcResponse::error(
@@ -906,8 +906,8 @@ impl JsonRpcResponse {
     /// # Examples
     ///
     /// ```rust
-    /// use airs_mcp::protocol::{JsonRpcResponse, RequestId};
-    /// use airs_mcp::protocol::constants::error_codes;
+    /// use airsprotocols_mcp::protocol::{JsonRpcResponse, RequestId};
+    /// use airsprotocols_mcp::protocol::constants::error_codes;
     ///
     /// let response = JsonRpcResponse::error_standard(
     ///     error_codes::INVALID_PARAMS,
@@ -993,7 +993,7 @@ impl JsonRpcMessageTrait for JsonRpcResponse {}
 /// # Examples
 ///
 /// ```rust
-/// use airs_mcp::protocol::{JsonRpcNotification, JsonRpcMessageTrait};
+/// use airsprotocols_mcp::protocol::{JsonRpcNotification, JsonRpcMessageTrait};
 /// use serde_json::json;
 ///
 /// // Notification with parameters
@@ -1032,7 +1032,7 @@ impl JsonRpcNotification {
     /// # Examples
     ///
     /// ```rust
-    /// use airs_mcp::protocol::JsonRpcNotification;
+    /// use airsprotocols_mcp::protocol::JsonRpcNotification;
     /// use serde_json::json;
     ///
     /// let notification = JsonRpcNotification::new(
@@ -1066,7 +1066,7 @@ impl JsonRpcNotification {
     /// # Examples
     ///
     /// ```rust
-    /// use airs_mcp::protocol::JsonRpcNotification;
+    /// use airsprotocols_mcp::protocol::JsonRpcNotification;
     /// use serde_json::json;
     ///
     /// # fn main() -> Result<(), Box<dyn std::error::Error>> {

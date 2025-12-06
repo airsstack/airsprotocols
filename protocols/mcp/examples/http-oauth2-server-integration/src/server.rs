@@ -5,11 +5,11 @@
 
 use tempfile::TempDir;
 
-use airs_mcp::providers::{
+use airsprotocols_mcp::providers::{
     CodeReviewPromptProvider, FileSystemResourceProvider, MathToolProvider,
     StructuredLoggingHandler,
 };
-use airs_mcp::transport::adapters::http::AxumMcpRequestHandler;
+use airsprotocols_mcp::transport::adapters::http::AxumMcpRequestHandler;
 
 /// Create test environment with filesystem resources and MCP handlers
 ///

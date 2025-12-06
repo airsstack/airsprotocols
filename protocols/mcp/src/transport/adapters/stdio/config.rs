@@ -26,9 +26,9 @@ use crate::protocol::types::{ServerCapabilities, ServerConfig};
 /// # Examples
 ///
 /// ```rust
-/// use airs_mcp::transport::adapters::stdio::StdioTransportConfig;
-/// use airs_mcp::protocol::types::ServerConfig;
-/// use airs_mcp::protocol::transport::TransportConfig;
+/// use airsprotocols_mcp::transport::adapters::stdio::StdioTransportConfig;
+/// use airsprotocols_mcp::protocol::types::ServerConfig;
+/// use airsprotocols_mcp::protocol::transport::TransportConfig;
 /// use std::path::PathBuf;
 ///
 /// // Create with defaults

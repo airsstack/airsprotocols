@@ -13,7 +13,7 @@ use serde_json::{json, Value};
 use tracing::{debug, info};
 use uuid::Uuid;
 
-use airs_mcp::oauth2::types::JwtClaims;
+use airsprotocols_mcp::oauth2::types::JwtClaims;
 
 /// Test JWT signing keys and JWKS data
 #[derive(Clone)]

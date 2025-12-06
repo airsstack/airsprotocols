@@ -34,9 +34,9 @@ use crate::protocol::{Content, MimeType, Resource, ResourceTemplate, Uri};
 /// # Examples
 ///
 /// ```rust
-/// use airs_mcp::providers::ResourceProvider;
-/// use airs_mcp::protocol::{Resource, Content};
-/// use airs_mcp::integration::{McpResult, McpError};
+/// use airsprotocols_mcp::providers::ResourceProvider;
+/// use airsprotocols_mcp::protocol::{Resource, Content};
+/// use airsprotocols_mcp::integration::{McpResult, McpError};
 /// use async_trait::async_trait;
 ///
 /// struct MyResourceProvider;

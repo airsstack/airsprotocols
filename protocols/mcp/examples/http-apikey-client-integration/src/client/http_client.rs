@@ -12,15 +12,15 @@ use tokio::time::timeout;
 use tracing::{error, info, warn};
 
 // Layer 3: Internal module imports
-use airs_mcp::integration::McpClientBuilder;
-use airs_mcp::transport::adapters::http::{AuthMethod, HttpTransportClientBuilder};
+use airsprotocols_mcp::integration::McpClientBuilder;
+use airsprotocols_mcp::transport::adapters::http::{AuthMethod, HttpTransportClientBuilder};
 
 use crate::config::{AuthenticationMethod, ClientConfig};
 
 /// HTTP MCP client with API key authentication support
 pub struct HttpMcpClient {
     client:
-        airs_mcp::integration::McpClient<airs_mcp::transport::adapters::http::HttpTransportClient>,
+        airsprotocols_mcp::integration::McpClient<airsprotocols_mcp::transport::adapters::http::HttpTransportClient>,
     config: ClientConfig,
 }
 

@@ -24,7 +24,7 @@ use crate::transport::error::TransportError;
 /// # Examples
 ///
 /// ```rust
-/// use airs_mcp::transport::adapters::http::axum::AxumHttpServerBuilder;
+/// use airsprotocols_mcp::transport::adapters::http::axum::AxumHttpServerBuilder;
 /// use std::time::Duration;
 ///
 /// // Tier 1: Complete beginner (parameter-free)

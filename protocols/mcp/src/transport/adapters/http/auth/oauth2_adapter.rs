@@ -76,10 +76,10 @@ pub enum HttpAuthError {
 /// # Examples
 ///
 /// ```rust
-/// use airs_mcp::transport::adapters::http::auth::OAuth2StrategyAdapter;
-/// use airs_mcp::authentication::strategies::oauth2::OAuth2Strategy;
-/// use airs_mcp::oauth2::validator::{Validator, Jwt, Scope};
-/// use airs_mcp::oauth2::config::OAuth2Config;
+/// use airsprotocols_mcp::transport::adapters::http::auth::OAuth2StrategyAdapter;
+/// use airsprotocols_mcp::authentication::strategies::oauth2::OAuth2Strategy;
+/// use airsprotocols_mcp::oauth2::validator::{Validator, Jwt, Scope};
+/// use airsprotocols_mcp::oauth2::config::OAuth2Config;
 /// use std::collections::HashMap;
 ///
 /// # async fn example() -> Result<(), Box<dyn std::error::Error>> {

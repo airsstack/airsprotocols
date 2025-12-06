@@ -29,7 +29,7 @@
 //! echo '{"jsonrpc":"2.0","id":1,"method":"ping","params":{}}' | cargo run --bin stdio-server
 //! ```
 
-use airs_mcp::protocol::Transport;
+use airsprotocols_mcp::protocol::Transport;
 
 // Local module declarations (avoid cross-crate imports for editor stability)
 mod handlers;

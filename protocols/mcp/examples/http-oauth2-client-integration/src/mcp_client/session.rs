@@ -7,13 +7,13 @@ use std::time::Duration;
 use tracing::{info, warn};
 
 // Layer 3: Internal module imports
-use airs_mcp::integration::McpClientBuilder;
-use airs_mcp::transport::adapters::http::{AuthMethod, HttpTransportClientBuilder};
+use airsprotocols_mcp::integration::McpClientBuilder;
+use airsprotocols_mcp::transport::adapters::http::{AuthMethod, HttpTransportClientBuilder};
 use crate::oauth2::OAuth2IntegrationError;
 
 /// MCP session manager with OAuth2 authentication
 pub struct McpSession {
-    mcp_client: airs_mcp::integration::McpClient<airs_mcp::transport::adapters::http::HttpTransportClient>,
+    mcp_client: airsprotocols_mcp::integration::McpClient<airsprotocols_mcp::transport::adapters::http::HttpTransportClient>,
 }
 
 impl McpSession {
@@ -59,7 +59,7 @@ impl McpSession {
     }
 
     /// Get mutable reference to the MCP client
-    pub fn client_mut(&mut self) -> &mut airs_mcp::integration::McpClient<airs_mcp::transport::adapters::http::HttpTransportClient> {
+    pub fn client_mut(&mut self) -> &mut airsprotocols_mcp::integration::McpClient<airsprotocols_mcp::transport::adapters::http::HttpTransportClient> {
         &mut self.mcp_client
     }
 

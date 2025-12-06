@@ -7,15 +7,15 @@ use tokio::time::timeout;
 use tracing::{error, info};
 
 // Layer 3: Internal module imports
-use airs_mcp::integration::McpClientBuilder;
-use airs_mcp::transport::adapters::stdio::StdioTransportClientBuilder;
+use airsprotocols_mcp::integration::McpClientBuilder;
+use airsprotocols_mcp::transport::adapters::stdio::StdioTransportClientBuilder;
 
 use crate::config::ClientConfig;
 
 /// MCP client that uses StdioTransportClient for communication
 pub struct StdioMcpClient {
-    client: airs_mcp::integration::McpClient<
-        airs_mcp::transport::adapters::stdio::StdioTransportClient,
+    client: airsprotocols_mcp::integration::McpClient<
+        airsprotocols_mcp::transport::adapters::stdio::StdioTransportClient,
     >,
 }
 

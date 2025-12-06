@@ -8,7 +8,7 @@ use serde_json::json;
 use std::time::Duration;
 use tokio::runtime::Runtime;
 
-use airs_mcp::protocol::message::{
+use airsprotocols_mcp::protocol::message::{
     JsonRpcNotification, JsonRpcRequest, JsonRpcResponse, RequestId,
 };
 

@@ -30,9 +30,9 @@ use crate::protocol::{Content, Tool};
 /// # Examples
 ///
 /// ```rust
-/// use airs_mcp::providers::ToolProvider;
-/// use airs_mcp::protocol::{Tool, Content};
-/// use airs_mcp::integration::{McpResult, McpError};
+/// use airsprotocols_mcp::providers::ToolProvider;
+/// use airsprotocols_mcp::protocol::{Tool, Content};
+/// use airsprotocols_mcp::integration::{McpResult, McpError};
 /// use async_trait::async_trait;
 /// use serde_json::Value;
 ///

@@ -20,7 +20,7 @@ use crate::authentication::method::AuthMethod;
 /// # Examples
 ///
 /// ```rust
-/// use airs_mcp::authentication::{AuthContext, AuthMethod};
+/// use airsprotocols_mcp::authentication::{AuthContext, AuthMethod};
 ///
 /// // OAuth2 strategy defines its own data structure
 /// #[derive(Debug, Clone)]

@@ -25,8 +25,8 @@ use crate::oauth2::{context::AuthContext, error::OAuth2Result, types::JwtClaims}
 /// # Examples
 ///
 /// ```rust
-/// use airs_mcp::oauth2::validator::{Validator, Jwt, Scope};
-/// use airs_mcp::oauth2::config::OAuth2Config;
+/// use airsprotocols_mcp::oauth2::validator::{Validator, Jwt, Scope};
+/// use airsprotocols_mcp::oauth2::config::OAuth2Config;
 ///
 /// # fn main() -> Result<(), Box<dyn std::error::Error>> {
 /// let config = OAuth2Config::default();
