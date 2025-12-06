@@ -636,3 +636,30 @@ cargo build -p airsprotocols-mcp --all-features
 
 **Next Step:** Step 3.2 - Run All Tests
 
+
+---
+
+### Update: Workspace Build Now Working (2025-12-06)
+
+After investigation and pinning dependencies (axum v0.8.4, tower-http v0.6.6), the workspace-level build now succeeds:
+
+```bash
+cargo build --workspace --all-features
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.44s
+```
+
+**Root cause analysis:**
+- Original workspace has 3 members (airs-mcp, airs-memspec, airs-mcpserver-fs)
+- Migrated workspace has 1 member (airsprotocols-mcp)
+- Single-member workspace + --all-features + dev-dependencies = less constrained feature resolution
+- Multiple members provide constraints that prevent incompatible feature combinations
+- Pinning dependencies resolved the version conflict
+
+**Resolution:**
+- Cargo.lock created with pinned versions
+- Both build methods now work:
+  - `cargo build --workspace --all-features` ✅
+  - `cargo build -p airsprotocols-mcp --all-features` ✅
+
+**Step 3.1 Status:** ✅ COMPLETE - Build successful
+
