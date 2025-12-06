@@ -1,0 +1,655 @@
+   Compiling tokio v1.48.0
+   Compiling typenum v1.19.0
+   Compiling zerocopy v0.8.31
+   Compiling serde v1.0.228
+   Compiling zerocopy-derive v0.8.31
+   Compiling const-oid v0.10.1
+   Compiling crossbeam-utils v0.8.21
+   Compiling base64ct v1.8.0
+   Compiling pem-rfc7468 v1.0.0
+   Compiling libm v0.2.15
+   Compiling der v0.8.0-rc.10
+   Compiling either v1.15.0
+   Compiling rayon-core v1.13.0
+   Compiling rand_core v0.10.0-rc-2
+   Compiling url v2.5.7
+   Compiling serde_urlencoded v0.7.1
+   Compiling spki v0.8.0-rc.4
+   Compiling generic-array v0.14.7
+   Compiling hybrid-array v0.4.5
+   Compiling crossbeam-epoch v0.9.18
+   Compiling plotters-backend v0.3.7
+   Compiling subtle v2.6.1
+   Compiling ciborium-io v0.2.2
+   Compiling plotters-svg v0.3.7
+   Compiling crossbeam-deque v0.8.6
+   Compiling crypto-bigint v0.7.0-rc.10
+   Compiling chrono v0.4.42
+   Compiling crypto-common v0.2.0-rc.5
+   Compiling crypto-common v0.1.7
+   Compiling block-buffer v0.10.4
+   Compiling digest v0.10.7
+   Compiling sha1 v0.10.6
+   Compiling sha2 v0.10.9
+   Compiling itertools v0.10.5
+   Compiling async-stream-impl v0.3.6
+   Compiling tokio-util v0.7.17
+   Compiling tokio-rustls v0.24.1
+   Compiling tokio-native-tls v0.3.1
+   Compiling ppv-lite86 v0.2.21
+   Compiling half v2.7.1
+   Compiling deadpool v0.12.3
+   Compiling h2 v0.4.12
+   Compiling rand_chacha v0.9.0
+   Compiling h2 v0.3.27
+   Compiling tower v0.5.2
+   Compiling rand v0.9.2
+   Compiling rand_chacha v0.3.1
+   Compiling rand v0.8.5
+   Compiling tungstenite v0.26.2
+   Compiling ciborium-ll v0.2.2
+   Compiling tokio-stream v0.1.17
+   Compiling digest v0.11.0-rc.4
+   Compiling wait-timeout v0.2.1
+   Compiling bit-vec v0.8.0
+   Compiling cast v0.3.0
+   Compiling same-file v1.0.6
+   Compiling tokio-tungstenite v0.26.2
+   Compiling quick-error v1.2.3
+   Compiling rusty-fork v0.3.1
+   Compiling tower-http v0.6.6
+   Compiling criterion-plot v0.5.0
+   Compiling walkdir v2.5.0
+   Compiling bit-set v0.8.0
+   Compiling crypto-primes v0.7.0-pre.4
+   Compiling signature v3.0.0-rc.5
+   Compiling ciborium v0.2.2
+   Compiling async-stream v0.3.6
+   Compiling jsonwebtoken v9.3.1
+   Compiling rayon v1.11.0
+   Compiling serde_yml v0.0.12
+   Compiling plotters v0.3.7
+   Compiling pkcs8 v0.11.0-rc.8
+   Compiling pkcs1 v0.8.0-rc.4
+   Compiling assert-json-diff v2.0.2
+   Compiling tinytemplate v1.2.1
+   Compiling rand_xorshift v0.4.0
+   Compiling is-terminal v0.4.17
+   Compiling anes v0.1.6
+   Compiling oorandom v11.1.5
+   Compiling unarray v0.1.4
+   Compiling rsa v0.10.0-rc.10
+   Compiling hyper v0.14.32
+   Compiling proptest v1.9.0
+   Compiling tokio-test v0.4.4
+   Compiling hyper v1.8.1
+   Compiling criterion v0.5.1
+   Compiling hyper-util v0.1.19
+   Compiling hyper-rustls v0.24.2
+   Compiling reqwest v0.11.27
+   Compiling hyper-tls v0.6.0
+   Compiling axum v0.8.4
+   Compiling reqwest v0.12.24
+   Compiling wiremock v0.6.5
+   Compiling oauth2 v4.4.2
+   Compiling airsprotocols-mcp v0.2.3 (/Users/hiraq/Projects/airsstack/airsprotocols/protocols/mcp)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 25.50s
+     Running unittests src/lib.rs (target/debug/deps/airsprotocols_mcp-cb325e3b5ecdae54)
+
+running 352 tests
+test authentication::manager::tests::test_default_constants ... ok
+test authentication::context::tests::test_auth_context_map_data ... ok
+test authentication::error::tests::test_auth_result ... ok
+test authentication::context::tests::test_auth_context_creation ... ok
+test authentication::context::tests::test_auth_context_with_expiration ... ok
+test authentication::error::tests::test_auth_error_display ... ok
+test authentication::context::tests::test_auth_context_metadata ... ok
+test authentication::metadata::tests::test_auth_metadata_creation ... ok
+test authentication::manager::tests::test_manager_config ... ok
+test authentication::metadata::tests::test_auth_metadata_deref ... ok
+test authentication::method::tests::test_auth_method_creation ... ok
+test authentication::metadata::tests::test_auth_metadata_from_hashmap ... ok
+test authentication::method::tests::test_auth_method_display ... ok
+test authentication::method::tests::test_auth_method_from_str ... ok
+test authentication::strategies::oauth2::request::tests::test_oauth2_auth_request_trait_implementation ... ok
+test authentication::strategies::apikey::validator::tests::test_in_memory_validator_invalid_key ... ok
+test authentication::strategies::apikey::validator::tests::test_in_memory_validator_valid_key ... ok
+test authentication::manager::tests::test_authentication_manager ... ok
+test authentication::strategies::apikey::types::tests::test_api_key_sources ... ok
+test authentication::strategies::apikey::strategy::tests::test_api_key_strategy_invalid_key ... ok
+test authentication::strategies::oauth2::request::tests::test_oauth2_request_builder_pattern ... ok
+test authentication::strategies::apikey::strategy::tests::test_api_key_strategy_valid_key ... ok
+test authentication::strategies::oauth2::request::tests::test_oauth2_request_creation ... ok
+test authentication::strategies::oauth2::strategy::tests::test_oauth2_strategy_clone ... ok
+test authentication::strategies::oauth2::strategy::tests::test_oauth2_strategy_method ... ok
+test authentication::strategies::oauth2::strategy::tests::test_oauth2_strategy_jwt_validation_failure ... ok
+test authentication::strategies::oauth2::strategy::tests::test_oauth2_strategy_scope_validation_failure ... ok
+test authorization::context::tests::test_no_auth_context ... ok
+test authentication::strategies::oauth2::strategy::tests::test_oauth2_strategy_validate ... ok
+test authorization::context::tests::test_binary_auth_context ... ok
+test authorization::context::tests::test_scope_auth_context ... ok
+test authentication::strategies::oauth2::strategy::tests::test_oauth2_strategy_successful_authentication ... ok
+test authentication::strategies::oauth2::strategy::tests::test_oauth2_strategy_token_only_authentication ... ok
+test authorization::context::tests::test_scope_auth_context_expiration ... ok
+test authorization::context::tests::test_scope_auth_context_mutation ... ok
+test authorization::context::tests::test_scope_auth_context_wildcard ... ok
+test authorization::context::tests::test_type_aliases ... ok
+test authorization::error::tests::test_access_denied_error ... ok
+test authorization::error::tests::test_expired_error ... ok
+test authorization::error::tests::test_internal_error ... ok
+test authorization::error::tests::test_insufficient_scope_error ... ok
+test authorization::error::tests::test_invalid_context_error ... ok
+test authorization::error::tests::test_method_not_authorized_error ... ok
+test authorization::extractor::tests::test_composite_method_extractor_debug ... ok
+test authorization::extractor::tests::test_http_path_method_extractor ... ok
+test authorization::extractor::tests::test_http_path_method_extractor_api_v1 ... ok
+test authorization::extractor::tests::test_http_path_method_extractor_empty_path ... ok
+test authorization::extractor::tests::test_json_rpc_method_extractor ... ok
+test authorization::extractor::tests::test_json_rpc_method_extractor_missing_method ... ok
+test authorization::extractor::tests::test_json_rpc_method_extractor_empty_method ... ok
+test authorization::extractor::tests::test_static_method_extractor ... ok
+test authorization::middleware::tests::test_middleware_builder ... ok
+test authorization::middleware::tests::test_authorization_request ... ok
+test authorization::middleware::tests::test_scope_middleware_authorized ... ok
+test authorization::middleware::tests::test_scope_middleware_unauthorized ... ok
+test authorization::middleware::tests::test_no_auth_middleware ... ok
+test authorization::middleware::tests::test_scope_middleware_wildcard ... ok
+test authorization::policy::tests::test_binary_authorization_policy_deny ... ok
+test authorization::policy::tests::test_binary_authorization_policy_allow ... ok
+test authorization::policy::tests::test_no_authorization_policy ... ok
+test authorization::policy::tests::test_scope_based_policy_exact_match ... ok
+test authorization::policy::tests::test_scope_based_policy_insufficient_scope ... ok
+test authorization::policy::tests::test_scope_based_policy_wildcard_match ... ok
+test integration::client::tests::test_client_creation ... ok
+test integration::error::tests::test_capability_error ... ok
+test integration::error::tests::test_connection_error_classification ... ok
+test integration::error::tests::test_custom_error ... ok
+test integration::client::tests::test_initialization ... ok
+test integration::error::tests::test_error_categories ... ok
+test integration::client::tests::test_client_close ... ok
+test integration::error::tests::test_error_creation ... ok
+test integration::client::tests::test_double_initialization ... ok
+test integration::error::tests::test_recoverable_classification ... ok
+test integration::error::tests::test_timeout_error ... ok
+test integration::error::tests::test_tool_execution_error ... ok
+test integration::server::tests::test_server_creation ... ok
+test integration_tests::test_crate_public_api ... ok
+test integration_tests::test_json_rpc_compliance ... ok
+test integration_tests::test_request_id_types ... ok
+test integration_tests::test_message_trait_consistency ... ok
+test integration_tests::test_round_trip_serialization ... ok
+test integration_tests::test_version_info ... ok
+test oauth2::config::tests::test_default_scope_mappings ... ok
+test oauth2::config::tests::test_scope_mapping_equality ... ok
+test oauth2::config::tests::test_config_validation ... ok
+test oauth2::config::tests::test_config_builder ... ok
+test oauth2::config::tests::test_default_config ... ok
+test oauth2::context::tests::test_audit_log_entry ... ok
+test oauth2::context::tests::test_auth_context_builders ... ok
+test oauth2::context::tests::test_auth_context_creation ... ok
+test oauth2::context::tests::test_expiration_checking ... ok
+test oauth2::context::tests::test_log_summary ... ok
+test oauth2::context::tests::test_scope_checking ... ok
+test oauth2::context::tests::test_scope_pattern_matching ... ok
+test oauth2::error::tests::test_bearer_token_error ... ok
+test oauth2::error::tests::test_error_codes ... ok
+test oauth2::error::tests::test_status_codes ... ok
+test oauth2::error::tests::test_www_authenticate_header ... ok
+test oauth2::lifecycle::cache::tests::test_cache_store_and_retrieve ... ok
+test oauth2::lifecycle::cache::tests::test_clear_expired ... ok
+test oauth2::lifecycle::cache::tests::test_lru_eviction ... ok
+test oauth2::lifecycle::cache::tests::test_cache_metrics ... ok
+test oauth2::lifecycle::cache::tests::test_cache_removal ... ok
+test oauth2::lifecycle::cache::tests::test_list_keys ... ok
+test oauth2::lifecycle::config::tests::test_builder_fluent_api ... ok
+test oauth2::lifecycle::config::tests::test_cache_strategy_hybrid ... ok
+test oauth2::lifecycle::config::tests::test_config_builder ... ok
+test oauth2::lifecycle::config::tests::test_config_default ... ok
+test oauth2::lifecycle::manager::tests::test_cleanup_expired_tokens ... ok
+test oauth2::lifecycle::manager::tests::test_builder_pattern ... ok
+test oauth2::lifecycle::manager::tests::test_lifecycle_manager_creation ... ok
+test oauth2::lifecycle::manager::tests::test_store_and_retrieve_token ... ok
+test oauth2::lifecycle::manager::tests::test_token_invalidation ... ok
+test oauth2::lifecycle::manager::tests::test_get_lifecycle_metrics ... ok
+test oauth2::lifecycle::refresh::tests::test_refresh_config_builder ... ok
+test oauth2::lifecycle::refresh::tests::test_refresh_strategy_default ... ok
+test oauth2::lifecycle::refresh::tests::test_handle_error_response ... ok
+test oauth2::lifecycle::refresh::tests::test_parse_refresh_response ... ok
+test oauth2::lifecycle::refresh::tests::test_should_refresh_expired_token ... ok
+test oauth2::lifecycle::refresh::tests::test_build_refresh_params ... ok
+test oauth2::lifecycle::refresh::tests::test_should_not_refresh_valid_token ... ok
+test oauth2::lifecycle::traits::tests::test_trait_object_compatibility ... ok
+test oauth2::lifecycle::traits::tests::test_trait_send_sync ... ok
+test oauth2::lifecycle::types::tests::test_cache_metrics_hit_ratio ... ok
+test oauth2::lifecycle::types::tests::test_lifecycle_event_timestamps ... ok
+test oauth2::lifecycle::types::tests::test_refresh_token_request_builder ... ok
+test oauth2::lifecycle::types::tests::test_token_cache_entry_expiration ... ok
+test oauth2::lifecycle::types::tests::test_token_cache_key_string_conversion ... ok
+test oauth2::lifecycle::types::tests::test_token_cache_key_with_scope ... ok
+test oauth2::lifecycle::types::tests::test_token_cache_entry_refresh_threshold ... ok
+test oauth2::lifecycle::types::tests::test_token_status_usability ... ok
+test oauth2::metadata::tests::test_metadata_creation ... ok
+test oauth2::metadata::tests::test_metadata_handler ... ok
+test oauth2::metadata::tests::test_metadata_with_extensions ... ok
+test oauth2::metadata::tests::test_metadata_serialization ... ok
+test oauth2::metadata::tests::test_scope_extraction ... ok
+test oauth2::lifecycle::refresh::tests::test_metrics_calculation ... ok
+test oauth2::lifecycle::refresh::tests::test_should_refresh_near_expiration ... ok
+test oauth2::lifecycle::refresh::tests::test_validate_refresh_token ... ok
+test oauth2::middleware::axum::tests::test_axum_middleware_creation ... ok
+test oauth2::middleware::axum::tests::test_error_response_creation ... ok
+test oauth2::middleware::axum::tests::test_public_layer_function ... ok
+test oauth2::middleware::traits::tests::test_auth_provider_trait_design ... ok
+test oauth2::middleware::types::tests::test_cors_config_default ... ok
+test oauth2::middleware::core::tests::test_config_trait_implementation ... ok
+test oauth2::middleware::axum::tests::test_header_conversion ... ok
+test oauth2::middleware::types::tests::test_error_conversions ... ok
+test oauth2::middleware::types::tests::test_middleware_config_default ... ok
+test oauth2::middleware::types::tests::test_middleware_context ... ok
+test oauth2::middleware::core::tests::test_core_creation ... ok
+test oauth2::middleware::core::tests::test_should_skip_auth ... ok
+test oauth2::middleware::core::tests::test_extract_scopes_from_token ... ok
+test oauth2::types::tests::test_jwks_response_deserialization ... ok
+test oauth2::types::tests::test_jwt_claims_deserialization ... ok
+test oauth2::validator::builder::tests::test_builder_creation ... ok
+test oauth2::validator::builder::tests::test_builder_missing_components ... ok
+test oauth2::validator::builder::tests::test_builder_type_safety ... ok
+test oauth2::middleware::utils::tests::test_builder_fluent_api ... ok
+test oauth2::middleware::utils::tests::test_create_default_core ... ok
+test oauth2::middleware::utils::tests::test_middleware_builder ... ok
+test oauth2::validator::scope::tests::test_batch_validation ... ok
+test oauth2::validator::scope::tests::test_default_mappings ... ok
+test oauth2::validator::scope::tests::test_method_configuration_check ... ok
+test oauth2::validator::scope::tests::test_scope_inspection ... ok
+test oauth2::validator::scope::tests::test_scope_trait_implementation ... ok
+test oauth2::validator::validator::tests::test_batch_validation ... ok
+test oauth2::validator::validator::tests::test_jwt_validation_failure ... ok
+test oauth2::validator::validator::tests::test_method_only_validation ... ok
+test oauth2::validator::validator::tests::test_scope_validation_failure ... ok
+test oauth2::validator::validator::tests::test_successful_validation ... ok
+test oauth2::validator::validator::tests::test_token_only_validation ... ok
+test oauth2::validator::validator::tests::test_zero_cost_composition ... ok
+test protocol::transport::tests::test_convenience_error_constructors ... ok
+test protocol::transport::tests::test_transport_client_basic_call ... ok
+test protocol::transport::tests::test_transport_client_close ... ok
+test protocol::transport::tests::test_transport_client_not_ready ... ok
+test protocol::transport::tests::test_transport_client_timeout ... ok
+test providers::logging::tests::test_file_logging_handler ... ok
+test providers::logging::tests::test_invalid_log_level ... ok
+test providers::logging::tests::test_logging_stats ... ok
+test oauth2::lifecycle::cache::tests::test_cache_expiration ... ok
+test providers::logging::tests::test_structured_logging_handler ... ok
+test providers::logging::tests::test_structured_logging_with_buffer ... ok
+test providers::prompt::tests::test_analysis_provider ... ok
+test providers::prompt::tests::test_code_review_provider ... ok
+test providers::prompt::tests::test_documentation_provider ... ok
+test providers::resource::tests::test_configuration_provider ... ok
+test providers::resource::tests::test_file_system_provider_invalid_path ... ok
+test providers::resource::tests::test_file_system_provider_creation ... ok
+test providers::tool::tests::test_math_provider_add ... ok
+test providers::tool::tests::test_math_provider_divide_by_zero ... ok
+test providers::tool::tests::test_system_provider_echo ... ok
+test providers::tool::tests::test_text_provider_word_count ... ok
+test transport::adapters::http::auth::apikey::adapter::tests::test_bearer_token_extraction ... ok
+test providers::resource::tests::test_file_system_provider_list_resources ... ok
+test transport::adapters::http::auth::apikey::adapter::tests::test_custom_config ... ok
+test transport::adapters::http::auth::apikey::adapter::tests::test_custom_header_extraction ... ok
+test transport::adapters::http::auth::apikey::adapter::tests::test_invalid_api_key ... ok
+test transport::adapters::http::auth::apikey::adapter::tests::test_query_parameter_extraction ... ok
+test transport::adapters::http::auth::apikey::adapter::tests::test_missing_api_key ... ok
+test transport::adapters::http::auth::axum_middleware::tests::test_axum_middleware_failed_auth ... ok
+test transport::adapters::http::auth::axum_middleware::tests::test_axum_middleware_successful_auth ... ok
+test transport::adapters::http::auth::axum_middleware::tests::test_create_auth_error_response ... ok
+test transport::adapters::http::auth::axum_middleware::tests::test_extract_auth_request ... ok
+test transport::adapters::http::auth::jsonrpc_authorization::tests::test_authorization_layer_creation ... ok
+test transport::adapters::http::auth::jsonrpc_authorization::tests::test_insufficient_scope_authorization ... ok
+test transport::adapters::http::auth::jsonrpc_authorization::tests::test_jsonrpc_request_method_extraction ... ok
+test transport::adapters::http::auth::jsonrpc_authorization::tests::test_scope_authorization ... ok
+test transport::adapters::http::auth::middleware::tests::test_http_auth_config_default ... ok
+test transport::adapters::http::auth::middleware::tests::test_http_auth_middleware_creation ... ok
+test transport::adapters::http::auth::middleware::tests::test_http_auth_middleware_with_default_config ... ok
+test transport::adapters::http::auth::middleware::tests::test_http_auth_request_builder ... ok
+test oauth2::validator::builder::tests::test_custom_mappings_validator ... ok
+test transport::adapters::http::auth::middleware::tests::test_http_auth_request_creation ... ok
+test oauth2::validator::builder::tests::test_default_validator_creation ... ok
+test transport::adapters::http::auth::middleware::tests::test_middleware_accessors ... ok
+test transport::adapters::http::auth::middleware::tests::test_http_auth_request_display ... ok
+test transport::adapters::http::auth::middleware::tests::test_middleware_authenticate_skip_adapter_paths ... ok
+test transport::adapters::http::auth::middleware::tests::test_middleware_authenticate_skip_config_paths ... ok
+test transport::adapters::http::auth::oauth2::adapter::tests::test_http_auth_request_creation ... ok
+test transport::adapters::http::auth::middleware::tests::test_middleware_display ... ok
+test transport::adapters::http::auth::middleware::tests::test_middleware_authenticate_success ... ok
+test oauth2::validator::jwt::tests::test_scope_extraction ... ok
+test transport::adapters::http::auth::oauth2::adapter::tests::test_http_auth_request_display ... ok
+test transport::adapters::http::auth::oauth2::adapter::tests::test_http_auth_request_with_client_id ... ok
+test oauth2::validator::jwt::tests::test_jwt_trait_implementation ... ok
+test transport::adapters::http::auth::oauth2::adapter::tests::test_oauth2_strategy_adapter_creation ... ok
+test transport::adapters::http::auth::oauth2::error::tests::test_authentication_failed_error ... ok
+test transport::adapters::http::auth::oauth2::error::tests::test_conversion_to_auth_error ... ok
+test transport::adapters::http::auth::oauth2::error::tests::test_malformed_auth_error ... ok
+test transport::adapters::http::auth::oauth2::error::tests::test_missing_api_key_conversion ... ok
+test transport::adapters::http::auth::oauth2::error::tests::test_missing_api_key_error ... ok
+test oauth2::validator::builder::tests::test_convenience_functions_interface ... ok
+test transport::adapters::http::auth::oauth2::error::tests::test_missing_header_conversion ... ok
+test transport::adapters::http::auth::oauth2::error::tests::test_missing_header_error ... ok
+test transport::adapters::http::auth::oauth2::extractor::tests::test_extract_bearer_token_case_insensitive ... ok
+test transport::adapters::http::auth::oauth2::extractor::tests::test_extract_bearer_token_malformed ... ok
+test transport::adapters::http::auth::oauth2::extractor::tests::test_extract_bearer_token_missing_header ... ok
+test transport::adapters::http::auth::oauth2::extractor::tests::test_extract_bearer_token_success ... ok
+test transport::adapters::http::auth_request::tests::test_http_auth_request ... ok
+test transport::adapters::http::axum::builder::tests::test_builder_with_config ... ok
+test transport::adapters::http::axum::builder::tests::test_convenience_methods ... ok
+test transport::adapters::http::axum::builder::tests::test_default_builder ... ok
+test transport::adapters::http::axum::builder::tests::test_build_with_custom_config ... ok
+test transport::adapters::http::axum::builder::tests::test_build_with_defaults ... ok
+test transport::adapters::http::buffer_pool::tests::test_buffer_pool_creation ... ok
+test transport::adapters::http::axum::server::tests::test_axum_server_creation ... ok
+test transport::adapters::http::buffer_pool::tests::test_buffer_get_and_return ... ok
+test transport::adapters::http::buffer_pool::tests::test_buffer_pool_max_capacity ... ok
+test transport::adapters::http::buffer_pool::tests::test_buffer_pool_stats ... ok
+test transport::adapters::http::buffer_pool::tests::test_buffer_strategy_per_request ... ok
+test transport::adapters::http::buffer_pool::tests::test_pooled_buffer_operations ... ok
+test transport::adapters::http::axum::builder::tests::test_progressive_complexity_tiers ... ok
+test transport::adapters::http::buffer_pool::tests::test_buffer_strategy_pooled ... ok
+test transport::adapters::http::axum::server::tests::test_axum_server_bind ... ok
+test transport::adapters::http::builder::tests::test_builder_state_consistency ... ok
+test transport::adapters::http::builder::tests::test_error_conversion_and_propagation ... ok
+test transport::adapters::http::builder::tests::test_phase2_direct_transport_builders ... ok
+test transport::adapters::http::builder::tests::test_phase2_enhanced_error_handling ... ok
+test transport::adapters::http::builder::tests::test_engine_type_flexibility ... ok
+test transport::adapters::http::builder::tests::test_phase2_handler_type_constraints ... ok
+test transport::adapters::http::builder::tests::test_phase2_handler_validation_edge_cases ... ok
+test transport::adapters::http::builder::tests::test_phase2_transport_trait_compatibility ... ok
+test transport::adapters::http::builder::tests::test_phase2_adr011_compliance_validation ... ok
+test transport::adapters::http::builder::tests::test_transport_builder_interface_success ... ok
+test transport::adapters::http::builder::tests::test_transport_builder_requires_handler ... ok
+test transport::adapters::http::builder::tests::test_with_configured_engine_error_handling ... ok
+test transport::adapters::http::builder::tests::test_transport_builder_direct_usage ... ok
+test transport::adapters::http::builder::tests::test_with_configured_engine_success ... ok
+test transport::adapters::http::builder::tests::test_with_engine_success ... ok
+test transport::adapters::http::config::tests::test_buffer_pool_config ... ok
+test transport::adapters::http::builder::tests::test_with_default_success ... ok
+test transport::adapters::http::config::tests::test_buffer_pool_size_convenience ... ok
+test transport::adapters::http::config::tests::test_builder_pattern ... ok
+test transport::adapters::http::config::tests::test_default_config ... ok
+test transport::adapters::http::connection_manager::tests::test_connection_activity_update ... ok
+test transport::adapters::http::connection_manager::tests::test_connection_degradation_on_request_limit ... ok
+test transport::adapters::http::connection_manager::tests::test_connection_limit ... ok
+test transport::adapters::http::connection_manager::tests::test_connection_manager_creation ... ok
+test transport::adapters::http::connection_manager::tests::test_connection_registration ... ok
+test transport::adapters::http::connection_manager::tests::test_connection_unregistration ... ok
+test transport::adapters::http::context::tests::test_http_context_chaining ... ok
+test transport::adapters::http::context::tests::test_http_context_content_type_checks ... ok
+test transport::adapters::http::context::tests::test_http_context_creation ... ok
+test transport::adapters::http::context::tests::test_http_context_method_checks ... ok
+test transport::adapters::http::context::tests::test_http_context_with_headers ... ok
+test transport::adapters::http::context::tests::test_http_context_with_query_params ... ok
+Echo #1: GET request 'test' from unknown
+Generated echo response for request ID: Number(1)
+test transport::adapters::http::handlers::tests::test_mcp_http_handler_creation ... ok
+Echo #2: GET request 'test' from unknown
+Generated echo response for request ID: Number(2)
+Echo #3: GET request 'test' from unknown
+Generated echo response for request ID: Number(3)
+MCP initialize request from unknown via POST /mcp
+test transport::adapters::http::handlers::tests::test_echo_handler_message_counting ... ok
+test transport::adapters::http::handlers::tests::test_mcp_http_handler_initialize ... ok
+MCP initialize request from unknown via POST /mcp
+test transport::adapters::http::handlers::tests::test_mcp_http_handler_invalid_content_type ... ok
+test transport::adapters::http::handlers::tests::test_static_file_handler_add_file ... ok
+test transport::adapters::http::handlers::tests::test_static_file_handler_content_type_detection ... ok
+test transport::adapters::http::handlers::tests::test_static_file_handler_default_files ... ok
+Static file request #1: GET /health from unknown
+Served file: /health (2 bytes, text/plain)
+Static file request #1: GET /nonexistent from unknown
+File not found: /nonexistent
+test transport::adapters::http::handlers::tests::test_static_file_handler_get_request ... ok
+test transport::adapters::http::handlers::tests::test_static_file_handler_not_found ... ok
+test transport::adapters::http::mcp_request_handler_builder::tests::test_builder_default_construction ... ok
+test transport::adapters::http::handlers::tests::test_static_file_handler_security ... ok
+test transport::adapters::http::mcp_request_handler_builder::tests::test_builder_type_evolution ... ok
+test transport::adapters::http::parser::tests::test_clone_parser ... ok
+test transport::adapters::http::parser::tests::test_parse_invalid_json ... ok
+test transport::adapters::http::parser::tests::test_parse_request_too_large ... ok
+test transport::adapters::http::parser::tests::test_parse_simple_request ... ok
+test transport::adapters::http::parser::tests::test_parser_creation ... ok
+test transport::adapters::http::parser::tests::test_parse_with_metrics ... ok
+test transport::adapters::http::parser::tests::test_parser_with_buffer_pool ... ok
+test transport::adapters::http::sse::config::tests::test_deprecation_phases ... ok
+test transport::adapters::http::sse::config::tests::test_http_config_to_sse_conversion ... ok
+test transport::adapters::http::parser::tests::test_serialize_response ... ok
+test transport::adapters::http::sse::config::tests::test_migration_mode_behavior ... ok
+test transport::adapters::http::sse::config::tests::test_sse_config_builder ... ok
+test transport::adapters::http::sse::config::tests::test_sse_config_defaults ... ok
+test transport::adapters::http::sse::handlers::tests::test_initialize_request_processing ... ok
+test transport::adapters::http::sse::handlers::tests::test_health_handler_response ... ok
+test transport::adapters::http::sse::handlers::tests::test_mcp_request_processing ... ok
+test transport::adapters::http::sse::handlers::tests::test_message_request_deserialization ... ok
+test transport::adapters::http::sse::handlers::tests::test_message_response_serialization ... ok
+test transport::adapters::http::sse::handlers::tests::test_sse_query_params_parsing ... ok
+test transport::adapters::http::sse::handlers::tests::test_unknown_method_handling ... ok
+test transport::adapters::http::sse::transport::tests::test_broadcaster_connection_cleanup ... ok
+test transport::adapters::http::sse::transport::tests::test_broadcaster_request_distribution ... ok
+test transport::adapters::http::sse::transport::tests::test_sse_event_formatting ... ok
+test transport::adapters::http::sse::transport::tests::test_transport_creation ... ok
+test transport::adapters::http::sse::transport::tests::test_transport_request_broadcasting ... ok
+test transport::adapters::stdio::transport::tests::test_bidirectional_communication ... ok
+test transport::adapters::http::builder::tests::test_progressive_tier_patterns ... ok
+test transport::adapters::stdio::transport::tests::test_generic_builder_with_custom_io ... ok
+test integration::server::tests::test_lifecycle_operations ... ok
+{"jsonrpc":"2.0","method":"test_method"}
+test transport::adapters::stdio::transport::tests::test_send_message ... ok
+test transport::adapters::http::builder::tests::test_with_configured_engine_async_error_handling ... ok
+test transport::adapters::stdio::transport::tests::test_session_management ... ok
+test transport::adapters::stdio::transport::tests::test_transport_builder ... ok
+test transport::adapters::stdio::transport::tests::test_transport_creation ... ok
+test transport::adapters::stdio::transport::tests::test_transport_lifecycle ... ok
+test transport::adapters::stdio::transport::tests::test_transport_with_custom_session ... ok
+test transport::adapters::stdio::transport::tests::test_write_failure_handling ... ok
+test transport::adapters::tests::test_backward_compatibility_exports ... ok
+test transport::adapters::tests::test_clean_re_exports ... ok
+test transport::adapters::tests::test_http_handler_examples_available ... ok
+test transport::adapters::tests::test_http_type_aliases_available ... ok
+test transport::adapters::tests::test_module_self_containment ... ok
+test transport::adapters::tests::test_stdio_type_aliases_available ... ok
+test transport::error::tests::test_transport_error_creation ... ok
+test transport::error::tests::test_transport_error_from_io ... ok
+test transport::error::tests::test_transport_error_traits ... ok
+test transport::adapters::http::builder::tests::test_with_configured_engine_async_success ... ok
+test transport::adapters::stdio::transport::tests::test_error_handling_scenarios ... ok
+test transport::adapters::stdio::transport::tests::test_lifecycle_with_mock_io ... ok
+✅ Lifecycle test completed in 22.100375ms without stdin blocking
+test transport::adapters::stdio::transport::tests::test_transport_without_blocking_stdin ... ok
+test transport::adapters::http::builder::tests::test_complex_async_scenarios ... ok
+test transport::adapters::stdio::transport::tests::test_concurrent_message_processing ... ok
+test transport::adapters::http::connection_manager::tests::test_health_check ... ok
+
+test result: ok. 352 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.17s
+
+     Running tests/auth_middleware_integration.rs (target/debug/deps/auth_middleware_integration-1b87f744fc8e591c)
+
+running 12 tests
+test test_http_auth_request_creation ... ok
+HttpAuthMiddleware size: 88 bytes
+test test_stack_allocation ... ok
+test test_auth_config_controls ... ok
+test test_no_auth_skips_all_authentication ... ok
+test test_concurrent_authentication ... ok
+test test_middleware_authentication_failure ... ok
+test test_path_skipping ... ok
+test test_middleware_authentication_success ... ok
+test test_workspace_standards_compliance ... ok
+test test_type_differentiation ... ok
+NoAuth duration: 102.875µs for 1000 requests
+Mock adapter duration: 547.458µs for 1000 requests
+test test_zero_cost_abstraction_performance ... ok
+test test_async_timeout_behavior ... ok
+
+test result: ok. 12 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.16s
+
+     Running tests/authorization_integration.rs (target/debug/deps/authorization_integration-f0627aed4b14334c)
+
+running 7 tests
+✅ Workspace standards compliance documented and verified
+NoAuthServer size: 512 bytes
+ScopeAuthServer size: 536 bytes
+BinaryAuthServer size: 512 bytes
+✅ Zero-cost generic compilation and type safety validated
+test test_workspace_standards_compliance ... ok
+test test_zero_cost_generic_compilation ... ok
+✅ OAuth2 server builder architecture works
+✅ Complete server architecture with custom authorization works
+✅ Complete server architecture with scope authorization works
+✅ Complete server architecture with binary authorization works
+✅ Basic server architecture with authentication works
+test test_oauth2_server_builder_architecture ... ok
+test test_server_with_custom_authorization_architecture ... ok
+test test_server_with_scope_authorization_architecture ... ok
+test test_server_with_binary_authorization_architecture ... ok
+test test_server_with_no_authorization_architecture ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/http_streamable_get_integration.rs (target/debug/deps/http_streamable_get_integration-67e20ff804c2513a)
+
+running 10 tests
+test test_configuration_integration ... ok
+test test_connection_manager_configuration ... ok
+test test_broadcast_channel_behavior ... ok
+test test_sse_event_types ... ok
+test test_sse_event_format ... ok
+test test_sse_event_unique_ids ... ok
+test test_server_state_creation ... ok
+test test_sse_event_broadcasting ... ok
+test test_sse_query_params_structure ... ok
+test test_router_creation_with_get_endpoint ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/sse_integration_tests.rs (target/debug/deps/sse_integration_tests-5e47872ec7a196e4)
+
+running 3 tests
+test test_handler_signatures ... ok
+test test_message_request_serialization ... ok
+test test_handlers_compilation ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests airsprotocols_mcp
+
+running 112 tests
+test protocols/mcp/src/authorization/mod.rs - authorization (line 21) ... ignored
+test protocols/mcp/src/integration/client.rs - integration::client::McpClient<T>::close (line 606) - compile ... ok
+test protocols/mcp/src/integration/client.rs - integration::client (line 61) - compile ... ok
+test protocols/mcp/src/integration/client.rs - integration::client (line 23) - compile ... ok
+test protocols/mcp/src/integration/client.rs - integration::client::McpClientBuilder::build (line 222) - compile ... ok
+test protocols/mcp/src/integration/client.rs - integration::client (line 99) - compile ... ok
+test protocols/mcp/src/authentication/context.rs - authentication::context::AuthContext (line 22) ... ok
+test protocols/mcp/src/authentication/method.rs - authentication::method::AuthMethod (line 21) ... ok
+test protocols/mcp/src/authentication/strategies/oauth2/strategy.rs - authentication::strategies::oauth2::strategy::OAuth2Strategy (line 31) ... ok
+test protocols/mcp/src/authentication/metadata.rs - authentication::metadata::AuthMetadata (line 21) ... ok
+test protocols/mcp/src/lib.rs - (line 138) ... ok
+test protocols/mcp/src/oauth2/middleware/axum.rs - oauth2::middleware::axum::oauth2_middleware_layer (line 312) - compile ... ok
+test protocols/mcp/src/oauth2/middleware/core.rs - oauth2::middleware::core::OAuth2MiddlewareCore::new (line 50) - compile ... ok
+test protocols/mcp/src/oauth2/middleware/mod.rs - oauth2::middleware (line 37) - compile ... ok
+test protocols/mcp/src/lib.rs - (line 120) ... ok
+test protocols/mcp/src/oauth2/middleware/mod.rs - oauth2::middleware (line 66) - compile ... ok
+test protocols/mcp/src/oauth2/middleware/utils.rs - oauth2::middleware::utils::create_default_core (line 28) - compile ... ok
+test protocols/mcp/src/oauth2/mod.rs - oauth2 (line 14) - compile ... ok
+test protocols/mcp/src/lib.rs - (line 101) ... ok
+test protocols/mcp/src/lib.rs - (line 28) ... ok
+test protocols/mcp/src/lib.rs - (line 53) ... ok
+test protocols/mcp/src/lib.rs - (line 67) ... ok
+test protocols/mcp/src/lib.rs - (line 87) ... ok
+test protocols/mcp/src/lib.rs - version (line 249) ... ok
+test protocols/mcp/src/oauth2/validator/validator.rs - oauth2::validator::validator::Validator (line 27) ... ok
+test protocols/mcp/src/oauth2/validator/builder.rs - oauth2::validator::builder::ValidatorBuilder (line 59) ... ok
+test protocols/mcp/src/protocol/message.rs - protocol::message (line 17) ... ok
+test protocols/mcp/src/protocol/message.rs - protocol::message::JsonRpcMessage::create_error_response (line 184) ... ok
+test protocols/mcp/src/protocol/message.rs - protocol::message::JsonRpcMessage::parse_and_validate_from_slice (line 238) ... ok
+test protocols/mcp/src/protocol/message.rs - protocol::message::JsonRpcMessage::validate (line 66) ... ok
+test protocols/mcp/src/protocol/message.rs - protocol::message::JsonRpcMessageTrait (line 323) ... ok
+test protocols/mcp/src/protocol/message.rs - protocol::message::JsonRpcMessageTrait::from_json (line 377) ... ok
+test protocols/mcp/src/protocol/message.rs - protocol::message::JsonRpcMessageTrait::from_json_bytes (line 457) ... ok
+test protocols/mcp/src/protocol/message.rs - protocol::message::JsonRpcMessageTrait::serialize_to_buffer (line 408) ... ok
+test protocols/mcp/src/protocol/message.rs - protocol::message::JsonRpcMessageTrait::to_bytes (line 436) ... ok
+test protocols/mcp/src/protocol/message.rs - protocol::message::JsonRpcMessageTrait::to_json (line 345) ... ok
+test protocols/mcp/src/protocol/message.rs - protocol::message::JsonRpcMessageTrait::to_json_pretty (line 362) ... ok
+test protocols/mcp/src/protocol/message.rs - protocol::message::JsonRpcNotification (line 995) ... ok
+test protocols/mcp/src/protocol/message.rs - protocol::message::JsonRpcNotification::new (line 1034) ... ok
+test protocols/mcp/src/protocol/message.rs - protocol::message::JsonRpcNotification::new_validated (line 1068) ... ok
+test protocols/mcp/src/protocol/message.rs - protocol::message::JsonRpcRequest (line 666) ... ok
+test protocols/mcp/src/protocol/message.rs - protocol::message::JsonRpcRequest::new (line 709) ... ok
+test protocols/mcp/src/protocol/message.rs - protocol::message::JsonRpcRequest::new_validated (line 746) ... ok
+test protocols/mcp/src/protocol/message.rs - protocol::message::JsonRpcResponse (line 806) ... ok
+test protocols/mcp/src/protocol/message.rs - protocol::message::JsonRpcResponse::error (line 876) ... ok
+test protocols/mcp/src/protocol/message.rs - protocol::message::JsonRpcResponse::error_standard (line 908) ... ok
+test protocols/mcp/src/protocol/message.rs - protocol::message::JsonRpcResponse::success (line 849) ... ok
+test protocols/mcp/src/protocol/message.rs - protocol::message::RequestId (line 513) ... ok
+test protocols/mcp/src/protocol/message.rs - protocol::message::RequestId::new_null (line 632) ... ok
+test protocols/mcp/src/protocol/message.rs - protocol::message::RequestId::new_number (line 619) ... ok
+test protocols/mcp/src/protocol/message.rs - protocol::message::RequestId::new_string (line 606) ... ok
+test protocols/mcp/src/protocol/transport.rs - protocol::transport (line 27) ... ok
+test protocols/mcp/src/protocol/transport.rs - protocol::transport::BoxedTransportClient (line 613) ... ok
+test protocols/mcp/src/protocol/transport.rs - protocol::transport::MessageContext (line 198) ... ok
+test protocols/mcp/src/protocol/transport.rs - protocol::transport::MessageHandler (line 348) ... ok
+test protocols/mcp/src/protocol/transport.rs - protocol::transport::Transport (line 421) ... ok
+test protocols/mcp/src/protocol/transport.rs - protocol::transport::TransportClient (line 529) ... ok
+test protocols/mcp/src/protocol/transport.rs - protocol::transport::TransportClientResult (line 631) ... ok
+test protocols/mcp/src/protocol/transport.rs - protocol::transport::TransportError::invalid_response (line 157) ... ok
+test protocols/mcp/src/protocol/transport.rs - protocol::transport::TransportError::not_ready (line 179) ... ok
+test protocols/mcp/src/protocol/transport.rs - protocol::transport::TransportError::request_timeout (line 136) ... ok
+test protocols/mcp/src/protocol/types.rs - protocol::types (line 15) ... ok
+test protocols/mcp/src/protocol/types.rs - protocol::types::Base64Data (line 311) ... ok
+test protocols/mcp/src/protocol/types.rs - protocol::types::ClientInfo (line 384) ... ok
+test protocols/mcp/src/protocol/types.rs - protocol::types::MimeType (line 230) ... ok
+test protocols/mcp/src/protocol/types.rs - protocol::types::ProtocolVersion (line 55) ... ok
+test protocols/mcp/src/protocol/types.rs - protocol::types::ServerConfig (line 1110) ... ok
+test protocols/mcp/src/protocol/types.rs - protocol::types::ServerInfo (line 407) ... ok
+test protocols/mcp/src/protocol/types.rs - protocol::types::Uri (line 149) ... ok
+test protocols/mcp/src/providers/prompt.rs - providers::prompt::PromptProvider (line 30) ... ok
+test protocols/mcp/src/providers/resource.rs - providers::resource::ResourceProvider (line 36) ... ok
+test protocols/mcp/src/providers/tool.rs - providers::tool::ToolProvider (line 32) ... ok
+test protocols/mcp/src/transport/adapters/http/axum/server.rs - transport::adapters::http::axum::server::AxumHttpServer (line 93) - compile ... ok
+test protocols/mcp/src/transport/adapters/http/axum/server.rs - transport::adapters::http::axum::server::AxumHttpServer<A,NoAuthorizationPolicy<NoAuthContext>,NoAuthContext>::with_scope_authorization (line 365) - compile ... ok
+test protocols/mcp/src/transport/adapters/http/axum/server.rs - transport::adapters::http::axum::server::AxumHttpServer<A,P,C>::register_custom_mcp_handler (line 573) - compile ... ok
+test protocols/mcp/src/transport/adapters/http/axum/server.rs - transport::adapters::http::axum::server::AxumHttpServer<NoAuth>::with_authentication (line 200) - compile ... ok
+test protocols/mcp/src/transport/adapters/http/auth/axum_middleware.rs - transport::adapters::http::auth::axum_middleware::AxumHttpAuthMiddleware (line 40) ... ok
+test protocols/mcp/src/transport/adapters/http/axum/server.rs - transport::adapters::http::axum::server::AxumHttpServer<NoAuth>::with_oauth2_authorization (line 261) - compile ... ok
+test protocols/mcp/src/transport/adapters/http/builder.rs - transport::adapters::http::builder::HttpTransport (line 65) - compile ... ok
+test protocols/mcp/src/transport/adapters/http/builder.rs - transport::adapters::http::builder::HttpTransportBuilder (line 283) - compile ... ok
+test protocols/mcp/src/transport/adapters/http/builder.rs - transport::adapters::http::builder::HttpTransportBuilder<E>::with_configured_engine (line 510) - compile ... ok
+test protocols/mcp/src/transport/adapters/http/auth/middleware.rs - transport::adapters::http::auth::middleware::HttpAuthConfig (line 27) ... ok
+test protocols/mcp/src/transport/adapters/http/builder.rs - transport::adapters::http::builder::HttpTransportBuilder<E>::with_default (line 436) - compile ... ok
+test protocols/mcp/src/transport/adapters/http/builder.rs - transport::adapters::http::builder::HttpTransportBuilder<E>::with_configured_engine_async (line 556) - compile ... ok
+test protocols/mcp/src/transport/adapters/http/builder.rs - transport::adapters::http::builder::HttpTransportBuilder<E>::with_engine (line 471) - compile ... ok
+test protocols/mcp/src/transport/adapters/http/client.rs - transport::adapters::http::client::HttpTransportClientBuilder (line 270) - compile ... ok
+test protocols/mcp/src/transport/adapters/http/client.rs - transport::adapters::http::client::HttpTransportClient (line 38) - compile ... ok
+test protocols/mcp/src/transport/adapters/http/auth/middleware.rs - transport::adapters::http::auth::middleware::HttpAuthMiddleware (line 261) ... ok
+test protocols/mcp/src/transport/adapters/http/auth/middleware.rs - transport::adapters::http::auth::middleware::HttpAuthMiddleware<A>::new (line 317) ... ok
+test protocols/mcp/src/transport/adapters/http/auth/middleware.rs - transport::adapters::http::auth::middleware::HttpAuthRequest::new (line 103) ... ok
+test protocols/mcp/src/transport/adapters/http/auth/middleware.rs - transport::adapters::http::auth::middleware::HttpAuthStrategyAdapter (line 166) ... ok
+test protocols/mcp/src/transport/adapters/http/axum/builder.rs - transport::adapters::http::axum::builder::AxumHttpServerBuilder (line 26) ... ok
+test protocols/mcp/src/transport/adapters/http/buffer_pool.rs - transport::adapters::http::buffer_pool::BufferPool (line 25) ... ok
+test protocols/mcp/src/transport/adapters/http/config.rs - transport::adapters::http::config::HttpTransportConfig (line 21) ... ok
+test protocols/mcp/src/transport/adapters/http/context.rs - transport::adapters::http::context::HttpContext (line 23) ... ok
+test protocols/mcp/src/transport/adapters/http/handlers.rs - transport::adapters::http::handlers::EchoHttpHandler (line 235) ... ok
+test protocols/mcp/src/transport/adapters/http/handlers.rs - transport::adapters::http::handlers::McpHttpHandler (line 37) ... ok
+test protocols/mcp/src/transport/adapters/http/handlers.rs - transport::adapters::http::handlers::StaticFileHandler (line 380) ... ok
+test protocols/mcp/src/transport/adapters/http/mcp_request_handler.rs - transport::adapters::http::mcp_request_handler::AxumMcpRequestHandler (line 43) ... ok
+test protocols/mcp/src/transport/adapters/stdio/client.rs - transport::adapters::stdio::client::StdioTransportClient (line 41) - compile ... ok
+test protocols/mcp/src/transport/adapters/stdio/client.rs - transport::adapters::stdio::client::StdioTransportClientBuilder (line 231) - compile ... ok
+test protocols/mcp/src/transport/adapters/http/mcp_request_handler_builder.rs - transport::adapters::http::mcp_request_handler_builder::AxumMcpRequestHandlerBuilder (line 34) ... ok
+test protocols/mcp/src/transport/adapters/stdio/transport.rs - transport::adapters::stdio::transport::StdioTransport (line 60) - compile ... ok
+test protocols/mcp/src/transport/adapters/stdio/transport.rs - transport::adapters::stdio::transport::StdioTransportBuilder (line 576) - compile ... ok
+test protocols/mcp/src/transport/adapters/stdio/transport.rs - transport::adapters::stdio::transport::StdioTransportBuilder<DefaultStdin,DefaultStdout>::with_custom_io (line 709) - compile ... ok
+test protocols/mcp/src/transport/adapters/http/parser.rs - transport::adapters::http::parser::RequestParser (line 32) ... ok
+test protocols/mcp/src/transport/adapters/http/sse/config.rs - transport::adapters::http::sse::config::HttpSseConfig (line 23) ... ok
+test protocols/mcp/src/transport/adapters/http/sse/mod.rs - transport::adapters::http::sse (line 17) ... ok
+test protocols/mcp/src/transport/adapters/http/sse/mod.rs - transport::adapters::http::sse (line 34) ... ok
+test protocols/mcp/src/transport/adapters/mod.rs - transport::adapters (line 32) ... ok
+test protocols/mcp/src/transport/adapters/mod.rs - transport::adapters (line 50) ... ok
+test protocols/mcp/src/transport/adapters/stdio/config.rs - transport::adapters::stdio::config::StdioTransportConfig (line 28) ... ok
+
+test result: ok. 111 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 26.18s
+
