@@ -335,6 +335,50 @@ protocols/mcp/
 
 ---
 
-### Next Step: Step 2.3 (Update Example Projects' Cargo.toml)
+### Step 2.3: Update Example Projects' Cargo.toml Files ✅
+**Completed:** 09:14
+**Duration:** ~2 minutes
+
+**Actions Taken:**
+- Found all example Cargo.toml files: 6 files
+- Updated dependency references in each file
+- Verified path references remain correct
+- Cleaned up backup files
+
+**Examples Updated:**
+1. `examples/http-apikey-client-integration/Cargo.toml` ✅
+2. `examples/http-apikey-server-integration/Cargo.toml` ✅
+3. `examples/http-oauth2-client-integration/Cargo.toml` ✅
+4. `examples/http-oauth2-server-integration/Cargo.toml` ✅
+5. `examples/stdio-client-integration/Cargo.toml` ✅
+6. `examples/stdio-server-integration/Cargo.toml` ✅
+
+**Changes Made in Each File:**
+```toml
+# BEFORE:
+airs-mcp = { path = "../../" }
+
+# AFTER:
+airsprotocols-mcp = { path = "../../" }
+```
+
+**Verification Results:**
+- Old references found: 0 ✅
+- New references found: 6 ✅
+- Path references verified: `../../` (all correct) ✅
+- Backup files cleaned: 6 files deleted ✅
+
+**Sample Verification:**
+```toml
+# examples/stdio-client-integration/Cargo.toml
+[dependencies]
+airsprotocols-mcp = { path = "../../" }
+```
+
+**Result:** All example Cargo.toml files updated successfully ✅
+
+---
+
+### Next Step: Step 2.4 (Update Source Code Imports)
 
 **Status:** ⏸️ AWAITING APPROVAL TO PROCEED

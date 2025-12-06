@@ -17,7 +17,7 @@ path = "src/mock_server/main.rs"
 
 [dependencies]
 # AIRS Foundation Crates (Priority §5.1)
-airs-mcp = { path = "../../" }
+airsprotocols-mcp = { path = "../../" }
 
 # Core Runtime Dependencies
 tokio = { version = "1.47", features = ["full"] }
