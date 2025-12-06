@@ -192,7 +192,7 @@ python3 run_tests.py --help            # Show help
 
 ✅ MCP Initialize successful!
   • Protocol Version: 2024-11-05
-  • Server Name: airs-mcp-server
+  • Server Name: airsprotocols-mcp-server
 
 🎉 Basic OAuth2 MCP integration is working correctly!
 ```

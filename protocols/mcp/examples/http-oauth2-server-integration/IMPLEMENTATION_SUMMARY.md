@@ -47,7 +47,7 @@ This OAuth2 MCP integration example is now **COMPLETE** and **FULLY FUNCTIONAL**
 
 ### Quick Test (30 seconds)
 ```bash
-cd crates/airs-mcp/examples/oauth2-integration
+cd crates/airsprotocols-mcp/examples/oauth2-integration
 python3 tests/run_tests.py
 ```
 
@@ -107,7 +107,7 @@ oauth2-integration/
 1. ✅ MCP Endpoint - Accessible (HTTP 401 - auth required as expected)
 2. ✅ JWKS Server - Accessible  
 3. ✅ Token Fetch - Successfully extracted 4 tokens
-4. ✅ Initialize (full) - Success - Protocol: 2024-11-05, Server: airs-mcp-server
+4. ✅ Initialize (full) - Success - Protocol: 2024-11-05, Server: airsprotocols-mcp-server
 5. ✅ Scope Validation - Token scope validation working
 6. ✅ Resources List (full) - Success - Found 3 resources
 7. ✅ Tools List (full) - Success - Found 10 tools

@@ -1,10 +1,52 @@
-# airs-mcp
+# airsprotocols-mcp
+
+> **📦 Migration Notice:** This crate was previously published as `airs-mcp` in the 
+> [airsstack](https://github.com/airsstack/airsstack) repository. It has been migrated 
+> to the `airsprotocols` repository as of December 2025 for better organization of 
+> protocol implementations.
+>
+> **Original Source:** https://github.com/airsstack/airsstack/tree/main/crates/airs-mcp
 
 A Rust implementation of the Model Context Protocol (MCP).
 
+## Migrating from `airs-mcp` to `airsprotocols-mcp`
+
+If you're updating from the old `airs-mcp` crate, follow these steps:
+
+### 1. Update your `Cargo.toml`:
+
+```toml
+# Before (old)
+[dependencies]
+airs-mcp = "0.2.3"
+
+# After (new)
+[dependencies]
+airsprotocols-mcp = { git = "https://github.com/airsstack/airsprotocols" }
+# Or when published to crates.io:
+# airsprotocols-mcp = "0.2.3"
+```
+
+### 2. Update your imports:
+
+```rust
+// Before (old)
+use airs_mcp::client::McpClient;
+use airs_mcp::types::*;
+
+// After (new)
+use airsprotocols_mcp::client::McpClient;
+use airsprotocols_mcp::types::*;
+```
+
+### 3. Update any documentation or examples:
+
+Replace all references to `airs-mcp` with `airsprotocols-mcp` in your project 
+documentation, examples, and comments.
+
 ## Overview
 
-`airs-mcp` provides the core components for building clients and servers that communicate using the Model Context Protocol (MCP). The protocol is designed to facilitate communication between a language model and a host environment, enabling the model to access external capabilities like tools, resources, and prompt templates. This crate offers a type-safe, asynchronous API for implementing the full MCP specification.
+`airsprotocols-mcp` provides the core components for building clients and servers that communicate using the Model Context Protocol (MCP). The protocol is designed to facilitate communication between a language model and a host environment, enabling the model to access external capabilities like tools, resources, and prompt templates. This crate offers a type-safe, asynchronous API for implementing the full MCP specification.
 
 ## Core Features
 
@@ -22,13 +64,15 @@ A Rust implementation of the Model Context Protocol (MCP).
 
 ## Installation
 
-Add `airs-mcp` to your project's `Cargo.toml`:
+Add `airsprotocols-mcp` to your project's `Cargo.toml`:
 
 ```toml
 [dependencies]
-airs-mcp = { path = "path/to/airsstack/crates/airs-mcp" }
-# or if published
-# airs-mcp = "0.1.0"
+# From git repository:
+airsprotocols-mcp = { git = "https://github.com/airsstack/airsprotocols" }
+
+# Or when published to crates.io:
+# airsprotocols-mcp = "0.2.3"
 ```
 
 ## Usage
@@ -43,10 +87,10 @@ Here is a minimal example of an MCP server that provides a simple "add" tool and
 use std::sync::Arc;
 use async_trait::async_trait;
 use serde_json::json;
-use airs_mcp::protocol::{JsonRpcMessage, MessageContext, MessageHandler};
-use airs_mcp::providers::{ToolProvider, ToolCall, ToolResult};
-use airs_mcp::transport::adapters::stdio::StdioTransport;
-use airs_mcp::IntegrationError;
+use airsprotocols_mcp::protocol::{JsonRpcMessage, MessageContext, MessageHandler};
+use airsprotocols_mcp::providers::{ToolProvider, ToolCall, ToolResult};
+use airsprotocols_mcp::transport::adapters::stdio::StdioTransport;
+use airsprotocols_mcp::IntegrationError;
 
 // 1. Implement a Tool Provider
 struct MyToolProvider;
@@ -104,8 +148,8 @@ Here is how you could create an `McpClient` to connect to the server. This examp
 use std::process::Stdio;
 use std::time::Duration;
 use tokio::process::Command;
-use airs_mcp::McpClientBuilder;
-use airs_mcp::transport::adapters::stdio::StdioTransport;
+use airsprotocols_mcp::McpClientBuilder;
+use airsprotocols_mcp::transport::adapters::stdio::StdioTransport;
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
@@ -148,7 +192,7 @@ flowchart TD
         ClientApp["Client Application (e.g., IDE, Chatbot)"]
     end
 
-    subgraph "airs-mcp Crate"
+    subgraph "airsprotocols-mcp Crate"
         Integration["Integration Layer (McpServer, McpClient)"]
         
         subgraph "Core Capabilities"
@@ -191,10 +235,10 @@ cargo install mdbook
 
 ### Building and Viewing the Book
 
-Once `mdBook` is installed, navigate to this crate's root directory (`crates/airs-mcp`) and use the `mdbook serve` command to build the book and start a local web server.
+Once `mdBook` is installed, navigate to this crate's root directory (`crates/airsprotocols-mcp`) and use the `mdbook serve` command to build the book and start a local web server.
 
 ```bash
-# From the airs-mcp/docs crate directory
+# From the airsprotocols-mcp/docs crate directory
 mdbook serve docs
 ```
 

@@ -1,6 +1,6 @@
 # AIRS-MCP Examples
 
-This directory contains **production-ready example implementations** demonstrating modern usage patterns for the `airs-mcp` library with the **TransportClient architecture**.
+This directory contains **production-ready example implementations** demonstrating modern usage patterns for the `airsprotocols-mcp` library with the **TransportClient architecture**.
 
 ## 🏗️ Example Architecture
 

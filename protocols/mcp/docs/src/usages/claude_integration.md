@@ -29,7 +29,7 @@ Claude Desktop requires configuration in its settings file. The typical location
 ```json
 {
   "mcpServers": {
-    "airs-mcp-server": {
+    "airsprotocols-mcp-server": {
       "command": "/path/to/your/mcp-server",
       "args": [],
       "env": {}
@@ -43,8 +43,8 @@ Claude Desktop requires configuration in its settings file. The typical location
 Basic MCP server for Claude Desktop:
 
 ```rust
-use airs_mcp::integration::server::McpServer;
-use airs_mcp::transport::adapters::stdio::StdioTransport;
+use airsprotocols_mcp::integration::server::McpServer;
+use airsprotocols_mcp::transport::adapters::stdio::StdioTransport;
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
@@ -81,7 +81,7 @@ A complete working example is available in the examples directory:
 
 ```bash
 # Navigate to example
-cd crates/airs-mcp/examples/simple-mcp-server
+cd crates/airsprotocols-mcp/examples/simple-mcp-server
 
 # Build the server
 cargo build --release
@@ -160,9 +160,9 @@ Claude Desktop reads MCP servers from:
 ```json
 {
   "mcpServers": {
-    "airs-mcp-server": {
-      "command": "/usr/local/bin/airs-mcp-server",
-      "args": ["--config", "/etc/airs-mcp/config.json"],
+    "airsprotocols-mcp-server": {
+      "command": "/usr/local/bin/airsprotocols-mcp-server",
+      "args": ["--config", "/etc/airsprotocols-mcp/config.json"],
       "env": {
         "RUST_LOG": "debug",
         "MCP_SERVER_NAME": "AIRS Production Server",
@@ -181,8 +181,8 @@ Claude Desktop reads MCP servers from:
 Tools appear in Claude Desktop's **MCP Tools interface** and can be executed in real-time:
 
 ```rust
-use airs_mcp::integration::mcp::{ToolProvider, McpError};
-use airs_mcp::protocol::protocol::Tool;
+use airsprotocols_mcp::integration::mcp::{ToolProvider, McpError};
+use airsprotocols_mcp::protocol::protocol::Tool;
 use async_trait::async_trait;
 use serde_json::{json, Value};
 
@@ -232,8 +232,8 @@ impl ToolProvider for CalculatorTool {
 Resources are accessible through Claude Desktop's **attachment menu**:
 
 ```rust
-use airs_mcp::integration::mcp::{ResourceProvider, McpError};
-use airs_mcp::protocol::protocol::{Resource, Content, Uri, MimeType};
+use airsprotocols_mcp::integration::mcp::{ResourceProvider, McpError};
+use airsprotocols_mcp::protocol::protocol::{Resource, Content, Uri, MimeType};
 use async_trait::async_trait;
 
 #[derive(Debug)]
@@ -291,8 +291,8 @@ impl ResourceProvider for FileSystemProvider {
 Prompts appear in Claude Desktop's **prompt template interface**:
 
 ```rust
-use airs_mcp::integration::mcp::{PromptProvider, McpError};
-use airs_mcp::protocol::protocol::{Prompt, PromptArgument, PromptMessage};
+use airsprotocols_mcp::integration::mcp::{PromptProvider, McpError};
+use airsprotocols_mcp::protocol::protocol::{Prompt, PromptArgument, PromptMessage};
 use async_trait::async_trait;
 use serde_json::Value;
 
@@ -354,8 +354,8 @@ impl PromptProvider for CodeReviewPrompts {
 ### Complete MCP Server
 
 ```rust
-use airs_mcp::integration::mcp::McpServerBuilder;
-use airs_mcp::protocol::protocol::ServerCapabilities;
+use airsprotocols_mcp::integration::mcp::McpServerBuilder;
+use airsprotocols_mcp::protocol::protocol::ServerCapabilities;
 use tracing::info;
 
 #[tokio::main]
@@ -397,7 +397,7 @@ fn init_logging() -> Result<(), Box<dyn std::error::Error>> {
     
     let file_appender = RollingFileAppender::new(
         Rotation::DAILY,
-        "/tmp/airs-mcp-server",
+        "/tmp/airsprotocols-mcp-server",
         "server.log",
     );
 
@@ -434,7 +434,7 @@ npx @modelcontextprotocol/inspector /path/to/your/server
 
 ```bash
 # Monitor server logs
-tail -f /tmp/airs-mcp-server/server.log
+tail -f /tmp/airsprotocols-mcp-server/server.log
 
 # Debug integration status
 ./scripts/debug_integration.sh
@@ -470,7 +470,7 @@ impl FileSystemProvider {
 ### Performance Optimization
 
 ```rust
-use airs_mcp::protocol::jsonrpc::concurrent::ConcurrentJsonRpcConfig;
+use airsprotocols_mcp::protocol::jsonrpc::concurrent::ConcurrentJsonRpcConfig;
 use std::time::Duration;
 
 let config = ConcurrentJsonRpcConfig::builder()

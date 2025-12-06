@@ -1,6 +1,6 @@
 # Performance Benchmarks
 
-This document contains performance benchmarks for airs-mcp v0.2.0.
+This document contains performance benchmarks for airsprotocols-mcp v0.2.0.
 
 ## Running Benchmarks
 
@@ -8,13 +8,13 @@ This document contains performance benchmarks for airs-mcp v0.2.0.
 
 ```bash
 # Run all lightweight benchmarks
-cargo bench --package airs-mcp --bench lightweight_benchmarks
+cargo bench --package airsprotocols-mcp --bench lightweight_benchmarks
 
 # Run specific benchmark groups
-cargo bench --package airs-mcp --bench lightweight_benchmarks jsonrpc_serialization
-cargo bench --package airs-mcp --bench lightweight_benchmarks message_creation
-cargo bench --package airs-mcp --bench lightweight_benchmarks payload_sizes
-cargo bench --package airs-mcp --bench lightweight_benchmarks async_operations
+cargo bench --package airsprotocols-mcp --bench lightweight_benchmarks jsonrpc_serialization
+cargo bench --package airsprotocols-mcp --bench lightweight_benchmarks message_creation
+cargo bench --package airsprotocols-mcp --bench lightweight_benchmarks payload_sizes
+cargo bench --package airsprotocols-mcp --bench lightweight_benchmarks async_operations
 ```
 
 ## Benchmark Categories

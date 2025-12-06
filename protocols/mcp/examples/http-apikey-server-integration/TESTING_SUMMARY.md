@@ -142,4 +142,4 @@ The HTTP API Key server integration is now **production-ready** with:
 - Security hardening
 - Complete documentation
 
-The implementation successfully demonstrates how to build a secure, scalable HTTP MCP server with API key authentication using the airs-mcp foundation crate.
+The implementation successfully demonstrates how to build a secure, scalable HTTP MCP server with API key authentication using the airsprotocols-mcp foundation crate.

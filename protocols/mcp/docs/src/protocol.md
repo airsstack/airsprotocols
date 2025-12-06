@@ -11,7 +11,7 @@ The Model Context Protocol (MCP) is a standardized communication protocol for AI
 The implementation is built on a complete JSON-RPC 2.0 message system:
 
 ```rust
-use airs_mcp::protocol::types::{JsonRpcRequest, JsonRpcResponse, RequestId};
+use airsprotocols_mcp::protocol::types::{JsonRpcRequest, JsonRpcResponse, RequestId};
 use serde_json::json;
 
 // Create a request
@@ -76,7 +76,7 @@ The protocol is transport-agnostic and supports:
 Process-based communication for local servers:
 
 ```rust
-use airs_mcp::transport::adapters::stdio::StdioTransportClientBuilder;
+use airsprotocols_mcp::transport::adapters::stdio::StdioTransportClientBuilder;
 
 let transport = StdioTransportClientBuilder::new()
     .command("your-mcp-server")
@@ -89,7 +89,7 @@ let transport = StdioTransportClientBuilder::new()
 RESTful communication with authentication:
 
 ```rust
-use airs_mcp::transport::adapters::http::{HttpTransportClientBuilder, AuthMethod};
+use airsprotocols_mcp::transport::adapters::http::{HttpTransportClientBuilder, AuthMethod};
 
 let transport = HttpTransportClientBuilder::new()
     .endpoint("http://localhost:3000/mcp")?

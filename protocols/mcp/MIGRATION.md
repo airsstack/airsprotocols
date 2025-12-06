@@ -29,7 +29,7 @@ These changes provide significant benefits but require adopting new patterns ent
 
 ```toml
 [dependencies]
-airs-mcp = "0.2.0"
+airsprotocols-mcp = "0.2.0"
 ```
 
 ### 2. Choose Your Starting Point
@@ -37,7 +37,7 @@ airs-mcp = "0.2.0"
 Pick the most relevant integration example for your use case:
 
 ```
-crates/airs-mcp/examples/
+crates/airsprotocols-mcp/examples/
 ├── stdio-server-integration/       # STDIO server implementation
 ├── stdio-client-integration/       # STDIO client with testing
 ├── http-oauth2-server-integration/ # OAuth2 authentication server  
@@ -76,14 +76,14 @@ Rather than migrating code line-by-line:
 
 ```rust
 // OLD imports (v0.1.x)
-use airs_mcp::shared::protocol::{Content, Tool};
-use airs_mcp::integration::mcp::{McpError, McpResult};
+use airsprotocols_mcp::shared::protocol::{Content, Tool};
+use airsprotocols_mcp::integration::mcp::{McpError, McpResult};
 
 // NEW imports (v0.2.0)
-use airs_mcp::protocol::types::{Content, Tool};
-use airs_mcp::integration::{McpError, McpResult};
-use airs_mcp::transport::{TransportClient, StdioTransportBuilder};
-use airs_mcp::integration::MessageHandler;
+use airsprotocols_mcp::protocol::types::{Content, Tool};
+use airsprotocols_mcp::integration::{McpError, McpResult};
+use airsprotocols_mcp::transport::{TransportClient, StdioTransportBuilder};
+use airsprotocols_mcp::integration::MessageHandler;
 ```
 
 ## What You Gain in v0.2.0
@@ -113,8 +113,8 @@ use airs_mcp::integration::MessageHandler;
 ## Getting Help
 
 ### Documentation
-- **Examples**: Start with `crates/airs-mcp/examples/`
-- **API Docs**: https://docs.rs/airs-mcp/0.2.0
+- **Examples**: Start with `crates/airsprotocols-mcp/examples/`
+- **API Docs**: https://docs.rs/airsprotocols-mcp/0.2.0
 - **Architecture Guide**: See mdBook documentation in `docs/`
 
 ### Common Patterns

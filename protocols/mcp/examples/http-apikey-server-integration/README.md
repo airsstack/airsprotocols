@@ -55,7 +55,7 @@ For development and testing, the server includes pre-configured API keys:
 
 ```bash
 # Navigate to the example directory
-cd crates/airs-mcp/examples/http-apikey-server-integration
+cd crates/airsprotocols-mcp/examples/http-apikey-server-integration
 
 # Start the server (default port 3000)
 cargo run --bin http-apikey-server

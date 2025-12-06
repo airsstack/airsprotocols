@@ -78,8 +78,8 @@ JSON-RPC 2.0 Foundation
 Basic client usage:
 
 ```rust
-use airs_mcp::integration::McpClientBuilder;
-use airs_mcp::transport::adapters::stdio::StdioTransportClientBuilder;
+use airsprotocols_mcp::integration::McpClientBuilder;
+use airsprotocols_mcp::transport::adapters::stdio::StdioTransportClientBuilder;
 
 // Create transport
 let transport = StdioTransportClientBuilder::new()
@@ -100,8 +100,8 @@ let tools = client.list_tools().await?;
 Basic server setup:
 
 ```rust
-use airs_mcp::integration::server::McpServer;
-use airs_mcp::transport::adapters::stdio::StdioTransport;
+use airsprotocols_mcp::integration::server::McpServer;
+use airsprotocols_mcp::transport::adapters::stdio::StdioTransport;
 
 // Create server with providers
 let server = McpServer::new()

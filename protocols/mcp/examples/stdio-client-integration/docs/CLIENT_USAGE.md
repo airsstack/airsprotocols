@@ -218,8 +218,8 @@ async fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
 ### 2. Custom Transport Builder
 
 ```rust
-use airs_mcp::transport::adapters::stdio::StdioTransportClientBuilder;
-use airs_mcp::integration::McpClientBuilder;
+use airsprotocols_mcp::transport::adapters::stdio::StdioTransportClientBuilder;
+use airsprotocols_mcp::integration::McpClientBuilder;
 
 // Build custom transport
 let transport = StdioTransportClientBuilder::new()

@@ -18,7 +18,7 @@ This integration example provides:
 Run the complete test suite:
 
 ```bash
-cd crates/airs-mcp/examples/http-apikey-client-integration/tests
+cd crates/airsprotocols-mcp/examples/http-apikey-client-integration/tests
 ./run_tests.sh
 ```
 

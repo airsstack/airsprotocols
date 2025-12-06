@@ -1,10 +1,10 @@
 # Versioning Policy
 
-This document outlines the versioning and release policies for airs-mcp starting from v0.2.0.
+This document outlines the versioning and release policies for airsprotocols-mcp starting from v0.2.0.
 
 ## Semantic Versioning
 
-airs-mcp follows [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.0.html) with the format `MAJOR.MINOR.PATCH`.
+airsprotocols-mcp follows [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.0.html) with the format `MAJOR.MINOR.PATCH`.
 
 ### Version Format: `MAJOR.MINOR.PATCH`
 

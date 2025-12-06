@@ -7,8 +7,8 @@ Examples showing common usage patterns with the actual AIRS MCP implementation.
 ### Basic Client Operations
 
 ```rust
-use airs_mcp::integration::{McpClientBuilder, McpResult};
-use airs_mcp::transport::adapters::stdio::StdioTransportClientBuilder;
+use airsprotocols_mcp::integration::{McpClientBuilder, McpResult};
+use airsprotocols_mcp::transport::adapters::stdio::StdioTransportClientBuilder;
 use serde_json::json;
 use std::time::Duration;
 
@@ -58,8 +58,8 @@ async fn main() -> McpResult<()> {
 ### HTTP Client Example
 
 ```rust
-use airs_mcp::integration::{McpClientBuilder, McpResult};
-use airs_mcp::transport::adapters::http::{HttpTransportClientBuilder, AuthMethod};
+use airsprotocols_mcp::integration::{McpClientBuilder, McpResult};
+use airsprotocols_mcp::transport::adapters::http::{HttpTransportClientBuilder, AuthMethod};
 use std::time::Duration;
 
 #[tokio::main]
@@ -97,7 +97,7 @@ async fn main() -> McpResult<()> {
 ### Error Handling Patterns
 
 ```rust
-use airs_mcp::integration::{McpError, McpClientBuilder, McpResult};
+use airsprotocols_mcp::integration::{McpError, McpClientBuilder, McpResult};
 
 async fn robust_client_handling() -> McpResult<()> {
     // ... create transport and client ...
@@ -146,8 +146,8 @@ async fn robust_client_handling() -> McpResult<()> {
 ### Client Configuration
 
 ```rust
-use airs_mcp::integration::McpClientBuilder;
-use airs_mcp::protocol::types::{ClientCapabilities, ProtocolVersion};
+use airsprotocols_mcp::integration::McpClientBuilder;
+use airsprotocols_mcp::protocol::types::{ClientCapabilities, ProtocolVersion};
 use std::time::Duration;
 
 let client = McpClientBuilder::new()
@@ -201,7 +201,7 @@ let api_key_transport = HttpTransportClientBuilder::new()
 ### Working with Prompts
 
 ```rust
-use airs_mcp::protocol::types::{GetPromptRequest, RequestId, GetPromptParams};
+use airsprotocols_mcp::protocol::types::{GetPromptRequest, RequestId, GetPromptParams};
 
 // List available prompts
 let prompts_response = client.list_prompts().await?;
@@ -231,7 +231,7 @@ if let Some(prompt) = prompts_response.prompts.first() {
 ### Working with Resources
 
 ```rust
-use airs_mcp::protocol::types::{ReadResourceRequest, ReadResourceParams};
+use airsprotocols_mcp::protocol::types::{ReadResourceRequest, ReadResourceParams};
 
 // List resources
 let resources_response = client.list_resources().await?;
@@ -329,8 +329,8 @@ async fn main() -> McpResult<()> {
 ### Comprehensive Error Handling
 
 ```rust
-use airs_mcp::integration::{McpClientBuilder, McpError};
-use airs_mcp::transport::adapters::stdio::StdioTransportClientBuilder;
+use airsprotocols_mcp::integration::{McpClientBuilder, McpError};
+use airsprotocols_mcp::transport::adapters::stdio::StdioTransportClientBuilder;
 use std::time::Duration;
 use serde_json::json;
 
@@ -388,7 +388,7 @@ Creating your own transport adapter allows you to support different communicatio
 #### Implementing TransportClient Trait
 
 ```rust
-use airs_mcp::protocol::{TransportClient, JsonRpcRequest, JsonRpcResponse, TransportError};
+use airsprotocols_mcp::protocol::{TransportClient, JsonRpcRequest, JsonRpcResponse, TransportError};
 use async_trait::async_trait;
 use std::time::Duration;
 use tokio::time::timeout;
@@ -508,7 +508,7 @@ impl TcpTransportClientBuilder {
 #### Using Your Custom Transport
 
 ```rust
-use airs_mcp::integration::{McpClientBuilder, McpResult};
+use airsprotocols_mcp::integration::{McpClientBuilder, McpResult};
 
 async fn use_custom_transport() -> McpResult<()> {
     // Create your custom transport
@@ -571,8 +571,8 @@ impl TransportClient for WebSocketTransportClient {
 
 ```rust
 use tokio::time::{timeout, Duration};
-use airs_mcp::integration::{McpClientBuilder, McpResult};
-use airs_mcp::transport::adapters::stdio::StdioTransportClientBuilder;
+use airsprotocols_mcp::integration::{McpClientBuilder, McpResult};
+use airsprotocols_mcp::transport::adapters::stdio::StdioTransportClientBuilder;
 
 // Graceful connection handling
 async fn managed_connection() -> McpResult<()> {

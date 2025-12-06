@@ -194,8 +194,8 @@ set -e
 cargo build --example stdio-server-integration
 
 # Run tests
-python3 crates/airs-mcp/examples/stdio-server-integration/tests/test_stdio_basic.py
-python3 crates/airs-mcp/examples/stdio-server-integration/tests/test_stdio_integration.py
+python3 crates/airsprotocols-mcp/examples/stdio-server-integration/tests/test_stdio_basic.py
+python3 crates/airsprotocols-mcp/examples/stdio-server-integration/tests/test_stdio_integration.py
 
 echo "All STDIO MCP tests passed!"
 ```

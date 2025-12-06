@@ -40,7 +40,7 @@
 
 ### Quick Start
 ```bash
-cd crates/airs-mcp/examples/oauth2-integration
+cd crates/airsprotocols-mcp/examples/oauth2-integration
 cargo run --bin oauth2-mcp-server
 ```
 

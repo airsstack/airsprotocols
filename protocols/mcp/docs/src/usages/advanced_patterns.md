@@ -10,7 +10,7 @@
 AIRS MCP provides a production-ready HTTP buffer pool that reduces allocation overhead:
 
 ```rust
-use airs_mcp::transport::http::{BufferPool, BufferPoolConfig};
+use airsprotocols_mcp::transport::http::{BufferPool, BufferPoolConfig};
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
@@ -35,7 +35,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 ### Buffer Pool Metrics and Monitoring
 
 ```rust
-use airs_mcp::transport::http::BufferPool;
+use airsprotocols_mcp::transport::http::BufferPool;
 
 async fn monitor_buffer_performance(pool: &BufferPool) {
     let stats = pool.stats();
@@ -53,7 +53,7 @@ async fn monitor_buffer_performance(pool: &BufferPool) {
 ### Working with Different Message Types
 
 ```rust
-use airs_mcp::{JsonRpcRequest, JsonRpcResponse, JsonRpcNotification, RequestId, JsonRpcMessageTrait};
+use airsprotocols_mcp::{JsonRpcRequest, JsonRpcResponse, JsonRpcNotification, RequestId, JsonRpcMessageTrait};
 use serde_json::json;
 
 #[tokio::main]
@@ -87,7 +87,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 ### Request ID Patterns
 
 ```rust
-use airs_mcp::{JsonRpcRequest, RequestId};
+use airsprotocols_mcp::{JsonRpcRequest, RequestId};
 use serde_json::json;
 
 fn request_id_examples() -> Result<(), Box<dyn std::error::Error>> {
@@ -121,8 +121,8 @@ fn request_id_examples() -> Result<(), Box<dyn std::error::Error>> {
 ### Basic Client Usage
 
 ```rust
-use airs_mcp::integration::{McpClientBuilder, McpResult};
-use airs_mcp::transport::adapters::stdio::StdioTransportClientBuilder;
+use airsprotocols_mcp::integration::{McpClientBuilder, McpResult};
+use airsprotocols_mcp::transport::adapters::stdio::StdioTransportClientBuilder;
 use std::time::Duration;
 
 async fn basic_client_example() -> McpResult<()> {
@@ -160,8 +160,8 @@ async fn basic_client_example() -> McpResult<()> {
 ### HTTP Client with Authentication
 
 ```rust
-use airs_mcp::integration::{McpClientBuilder, McpResult};
-use airs_mcp::transport::adapters::http::{HttpTransportClientBuilder, AuthMethod};
+use airsprotocols_mcp::integration::{McpClientBuilder, McpResult};
+use airsprotocols_mcp::transport::adapters::http::{HttpTransportClientBuilder, AuthMethod};
 use std::time::Duration;
 
 async fn http_client_example() -> McpResult<()> {
@@ -200,8 +200,8 @@ async fn http_client_example() -> McpResult<()> {
 ### Comprehensive Error Handling
 
 ```rust
-use airs_mcp::integration::{McpClient, McpError, McpResult};
-use airs_mcp::transport::adapters::stdio::StdioTransportClient;
+use airsprotocols_mcp::integration::{McpClient, McpError, McpResult};
+use airsprotocols_mcp::transport::adapters::stdio::StdioTransportClient;
 
 async fn error_handling_example(
     client: &mut McpClient<StdioTransportClient>
@@ -236,8 +236,8 @@ async fn error_handling_example(
 ### Multi-Tool Workflow
 
 ```rust
-use airs_mcp::integration::{McpClient, McpResult};
-use airs_mcp::transport::adapters::stdio::StdioTransportClient;
+use airsprotocols_mcp::integration::{McpClient, McpResult};
+use airsprotocols_mcp::transport::adapters::stdio::StdioTransportClient;
 use serde_json::json;
 
 async fn multi_tool_workflow(
@@ -281,8 +281,8 @@ async fn multi_tool_workflow(
 ### Resource Management
 
 ```rust
-use airs_mcp::integration::{McpClient, McpResult};
-use airs_mcp::transport::adapters::stdio::StdioTransportClient;
+use airsprotocols_mcp::integration::{McpClient, McpResult};
+use airsprotocols_mcp::transport::adapters::stdio::StdioTransportClient;
 
 async fn resource_management_example(
     client: &mut McpClient<StdioTransportClient>
@@ -317,7 +317,7 @@ async fn resource_management_example(
 ### Custom Configuration
 
 ```rust
-use airs_mcp::transport::adapters::stdio::StdioTransportClientBuilder;
+use airsprotocols_mcp::transport::adapters::stdio::StdioTransportClientBuilder;
 use std::time::Duration;
 
 async fn custom_transport_config() -> Result<(), Box<dyn std::error::Error>> {
@@ -339,7 +339,7 @@ async fn custom_transport_config() -> Result<(), Box<dyn std::error::Error>> {
 ### Mock Responses for Testing
 
 ```rust
-use airs_mcp::{JsonRpcResponse, RequestId, JsonRpcMessageTrait};
+use airsprotocols_mcp::{JsonRpcResponse, RequestId, JsonRpcMessageTrait};
 use serde_json::json;
 
 fn create_test_responses() -> Result<(), Box<dyn std::error::Error>> {
@@ -371,8 +371,8 @@ fn create_test_responses() -> Result<(), Box<dyn std::error::Error>> {
 ### Session Management
 
 ```rust
-use airs_mcp::integration::{McpClientBuilder, McpSessionState, McpResult, McpError};
-use airs_mcp::transport::adapters::stdio::StdioTransportClientBuilder;
+use airsprotocols_mcp::integration::{McpClientBuilder, McpSessionState, McpResult, McpError};
+use airsprotocols_mcp::transport::adapters::stdio::StdioTransportClientBuilder;
 use std::time::Duration;
 
 async fn session_management_example() -> McpResult<()> {

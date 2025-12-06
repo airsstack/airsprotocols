@@ -5,6 +5,41 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### 🔄 Migration
+
+**BREAKING CHANGE:** Crate renamed and repository migrated
+
+- **Crate Renamed:** `airs-mcp` → `airsprotocols-mcp`
+- **Repository Migrated:** Moved from `airsstack/airsstack` to `airsstack/airsprotocols`
+- **New Repository:** https://github.com/airsstack/airsprotocols
+- **Original Source:** https://github.com/airsstack/airsstack/tree/main/crates/airs-mcp
+
+#### Migration Guide
+
+**Update Cargo.toml:**
+```toml
+# Before:
+airs-mcp = "0.2.3"
+
+# After:
+airsprotocols-mcp = { git = "https://github.com/airsstack/airsprotocols" }
+```
+
+**Update imports:**
+```rust
+// Before:
+use airs_mcp::McpClient;
+
+// After:
+use airsprotocols_mcp::McpClient;
+```
+
+All imports must be updated from `airs_mcp` to `airsprotocols_mcp` throughout your codebase.
+
+---
+
 ## [0.2.3] - 2025-09-24
 
 ### 🔒 Security
@@ -98,12 +133,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Updated import paths**:
   ```rust
   // OLD import paths
-  use airs_mcp::shared::protocol::{Content, Tool};
-  use airs_mcp::integration::mcp::{McpError, McpResult};
+  use airsprotocols_mcp::shared::protocol::{Content, Tool};
+  use airsprotocols_mcp::integration::mcp::{McpError, McpResult};
   
   // NEW import paths  
-  use airs_mcp::protocol::types::{Content, Tool};
-  use airs_mcp::integration::{McpError, McpResult};
+  use airsprotocols_mcp::protocol::types::{Content, Tool};
+  use airsprotocols_mcp::integration::{McpError, McpResult};
   ```
 
 #### HTTP Transport API Changes
@@ -167,7 +202,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 **Recommendation**: Start fresh with v0.2.0 architecture rather than migrating v0.1.x code.
 
 **Key Changes Required**:
-1. **Update dependencies**: `airs-mcp = "0.2.0"`
+1. **Update dependencies**: `airsprotocols-mcp = "0.2.0"`
 2. **Adopt new patterns**: Use `TransportClient + MessageHandler<T>` architecture
 3. **Update imports**: Use new module organization paths
 4. **Follow examples**: 6 integration examples provide implementation patterns
@@ -178,7 +213,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 #### Examples Structure
 ```
-crates/airs-mcp/examples/
+crates/airsprotocols-mcp/examples/
 ├── stdio-server-integration/     # Complete STDIO server implementation
 ├── stdio-client-integration/     # STDIO client with testing suite
 ├── http-oauth2-server-integration/   # OAuth2 authentication server  
@@ -217,10 +252,10 @@ Due to the extensive architectural improvements in v0.2.0, we recommend starting
 - **Enhanced Security**: OAuth2 + PKCE authentication support
 - **Developer Experience**: 6 working examples and comprehensive documentation
 
-For detailed implementation patterns, see the integration examples in `crates/airs-mcp/examples/`.
+For detailed implementation patterns, see the integration examples in `crates/airsprotocols-mcp/examples/`.
 
 ## Support
 
-- **Documentation**: [airs-mcp documentation](https://docs.rs/airs-mcp)
-- **Examples**: See `crates/airs-mcp/examples/` for working implementations
+- **Documentation**: [airsprotocols-mcp documentation](https://docs.rs/airsprotocols-mcp)
+- **Examples**: See `crates/airsprotocols-mcp/examples/` for working implementations
 - **Issues**: [GitHub Issues](https://github.com/airsstack/airsstack/issues)

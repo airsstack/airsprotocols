@@ -67,7 +67,7 @@ The tests use the following configuration:
 - **Server Port**: 3001 (to avoid conflicts with development instances)
 - **API Keys**: `dev-key-123`, `test-key-456`, `demo-key-789`
 - **Timeout**: 30 seconds for server startup, 10 seconds for requests
-- **Logging**: `RUST_LOG=info,airs_mcp=debug`
+- **Logging**: `RUST_LOG=info,airsprotocols_mcp=debug`
 
 ## Expected Outputs
 
@@ -154,6 +154,6 @@ Add to your CI pipeline:
 ```yaml
 - name: Run HTTP API Key Integration Tests
   run: |
-    cd crates/airs-mcp/examples/http-apikey-server-integration
+    cd crates/airsprotocols-mcp/examples/http-apikey-server-integration
     ./tests/run_tests.sh
 ```

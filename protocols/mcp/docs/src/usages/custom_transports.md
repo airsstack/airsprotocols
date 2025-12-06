@@ -50,7 +50,7 @@ All transport implementations must satisfy the `Transport` trait:
 
 ```rust
 use std::future::Future;
-use airs_mcp::transport::{Transport, TransportError};
+use airsprotocols_mcp::transport::{Transport, TransportError};
 
 pub trait Transport: Send + Sync {
     /// Transport-specific error type
@@ -84,7 +84,7 @@ The production-ready STDIO transport serves as both the primary MCP transport an
 STDIO transport uses newline-delimited JSON for message framing:
 
 ```rust
-use airs_mcp::transport::{Transport, StdioTransport};
+use airsprotocols_mcp::transport::{Transport, StdioTransport};
 
 async fn stdio_example() -> Result<(), Box<dyn std::error::Error>> {
     let mut transport = StdioTransportClientBuilder::new().await?;
@@ -107,7 +107,7 @@ async fn stdio_example() -> Result<(), Box<dyn std::error::Error>> {
 STDIO transport supports buffer pooling:
 
 ```rust
-use airs_mcp::transport::{StdioTransport, BufferConfig};
+use airsprotocols_mcp::transport::{StdioTransport, BufferConfig};
 
 async fn high_performance_stdio() -> Result<(), Box<dyn std::error::Error>> {
     // Configure buffer management
@@ -137,7 +137,7 @@ async fn high_performance_stdio() -> Result<(), Box<dyn std::error::Error>> {
 Implement `ZeroCopyTransport` for maximum performance:
 
 ```rust
-use airs_mcp::transport::{ZeroCopyTransport, TransportError};
+use airsprotocols_mcp::transport::{ZeroCopyTransport, TransportError};
 use bytes::BytesMut;
 
 async fn zero_copy_example<T: ZeroCopyTransport>(
@@ -175,7 +175,7 @@ Here's a template for implementing custom transports:
 use std::sync::Arc;
 use tokio::sync::Mutex;
 use async_trait::async_trait;
-use airs_mcp::transport::{Transport, TransportError};
+use airsprotocols_mcp::transport::{Transport, TransportError};
 
 /// Custom transport implementation
 pub struct CustomTransport {
@@ -317,7 +317,7 @@ use std::sync::Arc;
 use tokio::sync::RwLock;
 use reqwest::{Client, Url};
 use serde_json::Value;
-use airs_mcp::transport::{Transport, TransportError};
+use airsprotocols_mcp::transport::{Transport, TransportError};
 
 pub struct HttpTransport {
     client: Client,
@@ -402,7 +402,7 @@ use tokio::net::TcpStream;
 use tokio_tungstenite::tungstenite::Message;
 use std::sync::Arc;
 use tokio::sync::Mutex;
-use airs_mcp::transport::{Transport, TransportError};
+use airsprotocols_mcp::transport::{Transport, TransportError};
 
 pub struct WebSocketTransport {
     ws_stream: Arc<Mutex<Option<WebSocketStream<MaybeTlsStream<TcpStream>>>>>,
@@ -516,7 +516,7 @@ Different transport protocols require different message framing strategies:
 Implement robust error handling for network failures:
 
 ```rust
-use airs_mcp::transport::TransportError;
+use airsprotocols_mcp::transport::TransportError;
 
 #[derive(Debug, thiserror::Error)]
 pub enum CustomTransportError {
@@ -618,7 +618,7 @@ impl<T> SecureTransport<T> {
 Integrate with AIRS MCP's buffer management:
 
 ```rust
-use airs_mcp::transport::buffer::{BufferManager, BufferConfig};
+use airsprotocols_mcp::transport::buffer::{BufferManager, BufferConfig};
 use std::sync::Arc;
 
 pub struct BufferedTransport<T> {
@@ -672,15 +672,15 @@ impl<T: Transport> Transport for BufferedTransport<T> {
 Leverage streaming capabilities for large messages:
 
 ```rust
-use airs_mcp::transport::streaming::{StreamingTransport, StreamingStats};
-use airs_mcp::protocol::jsonrpc::streaming::StreamingConfig;
+use airsprotocols_mcp::transport::streaming::{StreamingTransport, StreamingStats};
+use airsprotocols_mcp::protocol::jsonrpc::streaming::StreamingConfig;
 
 async fn create_streaming_transport<T>(
     base_transport: T,
     max_message_size: usize
 ) -> StreamingTransport<T>
 where
-    T: Transport + airs_mcp::transport::ZeroCopyTransport + Send + Sync,
+    T: Transport + airsprotocols_mcp::transport::ZeroCopyTransport + Send + Sync,
 {
     let config = StreamingConfig {
         max_message_size,
@@ -702,7 +702,7 @@ Create mock transports for comprehensive testing:
 use std::collections::VecDeque;
 use std::sync::Arc;
 use tokio::sync::Mutex;
-use airs_mcp::transport::{Transport, TransportError};
+use airsprotocols_mcp::transport::{Transport, TransportError};
 
 pub struct MockTransport {
     messages: Arc<Mutex<Vec<Vec<u8>>>>,
@@ -787,8 +787,8 @@ mod tests {
 Test transport integration with the MCP protocol:
 
 ```rust
-use airs_mcp::integration::server::JsonRpcServer;
-use airs_mcp::protocol::jsonrpc::message::*;
+use airsprotocols_mcp::integration::server::JsonRpcServer;
+use airsprotocols_mcp::protocol::jsonrpc::message::*;
 
 #[tokio::test]
 async fn test_custom_transport_integration() {

@@ -51,7 +51,7 @@ The quickest way to verify OAuth2 MCP integration:
 
 ```bash
 # Navigate to the project directory
-cd crates/airs-mcp/examples/oauth2-integration
+cd crates/airsprotocols-mcp/examples/oauth2-integration
 
 # Quick setup with virtual environment
 cd tests/
@@ -170,7 +170,7 @@ A successful test run will show:
 ℹ️ 🔧 Testing MCP Initialize...
 ✅ MCP Initialize successful!
   • Protocol Version: 2024-11-05
-  • Server Name: airs-mcp-server
+  • Server Name: airsprotocols-mcp-server
   • Server Capabilities: ['experimental', 'logging', 'prompts', 'resources', 'tools']
 
 🎉 Basic OAuth2 MCP integration is working correctly!
@@ -185,7 +185,7 @@ For manual testing and development:
 RUST_LOG=info cargo run
 
 # Or from the workspace root
-cd crates/airs-mcp/examples/oauth2-integration && RUST_LOG=info cargo run
+cd crates/airsprotocols-mcp/examples/oauth2-integration && RUST_LOG=info cargo run
 ```
 
 The server will start:

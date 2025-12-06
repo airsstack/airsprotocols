@@ -8,7 +8,7 @@ Add AIRS MCP to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-airs-mcp = "0.1.0"
+airsprotocols-mcp = "0.1.0"
 tokio = { version = "1.35", features = ["full"] }
 serde_json = "1.0"
 ```
@@ -16,8 +16,8 @@ serde_json = "1.0"
 ## Your First MCP Client
 
 ```rust
-use airs_mcp::integration::{McpClientBuilder, McpResult};
-use airs_mcp::transport::adapters::stdio::StdioTransportClientBuilder;
+use airsprotocols_mcp::integration::{McpClientBuilder, McpResult};
+use airsprotocols_mcp::transport::adapters::stdio::StdioTransportClientBuilder;
 use std::time::Duration;
 
 #[tokio::main]
@@ -57,8 +57,8 @@ async fn main() -> McpResult<()> {
 ## Your First HTTP MCP Client
 
 ```rust
-use airs_mcp::integration::{McpClientBuilder, McpResult};
-use airs_mcp::transport::adapters::http::{HttpTransportClientBuilder, AuthMethod};
+use airsprotocols_mcp::integration::{McpClientBuilder, McpResult};
+use airsprotocols_mcp::transport::adapters::http::{HttpTransportClientBuilder, AuthMethod};
 use std::time::Duration;
 
 #[tokio::main]
@@ -91,13 +91,13 @@ async fn main() -> McpResult<()> {
 ## Working with Tools
 
 ```rust
-use airs_mcp::protocol::types::{CallToolRequest, RequestId};
+use airsprotocols_mcp::protocol::types::{CallToolRequest, RequestId};
 use serde_json::json;
 
 // Call a tool (after client initialization)
 let tool_result = client.call_tool(CallToolRequest {
     method: "tools/call".to_string(),
-    params: airs_mcp::protocol::types::CallToolParams {
+    params: airsprotocols_mcp::protocol::types::CallToolParams {
         name: "echo".to_string(),
         arguments: Some(json!({"message": "Hello, World!"})),
     },
@@ -111,12 +111,12 @@ println!("Tool result: {:?}", tool_result);
 ## Working with Resources
 
 ```rust
-use airs_mcp::protocol::types::{ReadResourceRequest, RequestId};
+use airsprotocols_mcp::protocol::types::{ReadResourceRequest, RequestId};
 
 // Read a resource (after client initialization)  
 let resource_content = client.read_resource(ReadResourceRequest {
     method: "resources/read".to_string(),
-    params: airs_mcp::protocol::types::ReadResourceParams {
+    params: airsprotocols_mcp::protocol::types::ReadResourceParams {
         uri: "file:///path/to/file.txt".to_string(),
     },
     id: RequestId::new_string("resource-read-1".to_string()),
@@ -129,7 +129,7 @@ println!("Resource content: {:?}", resource_content);
 ## Error Handling
 
 ```rust
-use airs_mcp::integration::{McpError, McpResult};
+use airsprotocols_mcp::integration::{McpError, McpResult};
 
 async fn handle_mcp_operations() -> McpResult<()> {
     // ... create client ...
@@ -161,7 +161,7 @@ async fn handle_mcp_operations() -> McpResult<()> {
 ### Client Configuration
 
 ```rust
-use airs_mcp::protocol::types::{ClientCapabilities, ClientInfo, ProtocolVersion};
+use airsprotocols_mcp::protocol::types::{ClientCapabilities, ClientInfo, ProtocolVersion};
 use std::time::Duration;
 
 let client = McpClientBuilder::new()
@@ -215,16 +215,16 @@ let http_transport = HttpTransportClientBuilder::new()
 The AIRS MCP library supports generic authentication middleware:
 
 ```rust
-use airs_mcp::transport::adapters::http::axum::AxumHttpServer;
-use airs_mcp::transport::adapters::http::auth::middleware::HttpAuthConfig;
-use airs_mcp::transport::adapters::http::auth::apikey::ApiKeyStrategyAdapter;
-use airs_mcp::authentication::strategies::apikey::{ApiKeyStrategy, InMemoryApiKeyValidator, ApiKeyAuthData};
-use airs_mcp::authentication::{AuthMethod, AuthContext};
-use airs_mcp::authentication::strategies::apikey::types::ApiKeySource;
-use airs_mcp::protocol::jsonrpc::concurrent::{ConcurrentProcessor, ProcessorConfig};
-use airs_mcp::transport::adapters::http::config::HttpTransportConfig;
-use airs_mcp::transport::adapters::http::connection_manager::HttpConnectionManager;
-use airs_mcp::transport::adapters::http::session::SessionManager;
+use airsprotocols_mcp::transport::adapters::http::axum::AxumHttpServer;
+use airsprotocols_mcp::transport::adapters::http::auth::middleware::HttpAuthConfig;
+use airsprotocols_mcp::transport::adapters::http::auth::apikey::ApiKeyStrategyAdapter;
+use airsprotocols_mcp::authentication::strategies::apikey::{ApiKeyStrategy, InMemoryApiKeyValidator, ApiKeyAuthData};
+use airsprotocols_mcp::authentication::{AuthMethod, AuthContext};
+use airsprotocols_mcp::authentication::strategies::apikey::types::ApiKeySource;
+use airsprotocols_mcp::protocol::jsonrpc::concurrent::{ConcurrentProcessor, ProcessorConfig};
+use airsprotocols_mcp::transport::adapters::http::config::HttpTransportConfig;
+use airsprotocols_mcp::transport::adapters::http::connection_manager::HttpConnectionManager;
+use airsprotocols_mcp::transport::adapters::http::session::SessionManager;
 use std::collections::HashMap;
 use std::sync::Arc;
 

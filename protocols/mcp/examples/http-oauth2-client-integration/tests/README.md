@@ -14,7 +14,7 @@ graph TB
     
     subgraph "Application Layer"
         RC[Rust OAuth2 Client Binary<br/>http-oauth2-client]
-        AMCP[AIRS MCP Library<br/>airs_mcp::integration]
+        AMCP[AIRS MCP Library<br/>airsprotocols_mcp::integration]
     end
     
     subgraph "Server Layer"
@@ -61,7 +61,7 @@ Tests that run the complete flow through our Rust client:
 ### Protocol Standards
 - **OAuth2**: Standard authorization code flow with PKCE
 - **MCP**: JSON-RPC 2.0 over HTTP (single endpoint: `/`)
-- **AIRS MCP**: Uses `airs_mcp::integration` library for proper MCP client implementation
+- **AIRS MCP**: Uses `airsprotocols_mcp::integration` library for proper MCP client implementation
 
 ## Quick Start
 
@@ -141,7 +141,7 @@ cargo run --bin http-oauth2-client -- \
 3. **Rust Client** initiates OAuth2 authorization flow
 4. **Rust Client** receives OAuth2 authorization code  
 5. **Rust Client** exchanges code for JWT access token
-6. **Rust Client** creates MCP session using `airs_mcp::integration`
+6. **Rust Client** creates MCP session using `airsprotocols_mcp::integration`
 7. **AIRS MCP Library** sends JSON-RPC requests to MCP server with OAuth2 token
 8. **MCP Server** validates JWT token and responds
 9. **Rust Client** executes MCP operations (tools/list, resources/list, tools/call)
@@ -244,7 +244,7 @@ python tests/debug_headers.py
 python tests/quick_test.py
 
 # Debug specific authentication flows
-RUST_LOG=debug,airs_mcp=trace python tests/debug_headers.py
+RUST_LOG=debug,airsprotocols_mcp=trace python tests/debug_headers.py
 
 # Manual server startup for debugging
 cargo run --bin http-oauth2-mock-server -- --host 127.0.0.1 --port 3002 &

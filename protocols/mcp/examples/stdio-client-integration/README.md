@@ -56,8 +56,8 @@ cargo run
 This example demonstrates the **TransportClient interface**, which provides a clean separation between client logic and transport concerns:
 
 ```rust
-use airs_mcp::transport::adapters::stdio::StdioTransportClientBuilder;
-use airs_mcp::integration::McpClientBuilder;
+use airsprotocols_mcp::transport::adapters::stdio::StdioTransportClientBuilder;
+use airsprotocols_mcp::integration::McpClientBuilder;
 
 // Clean client setup with TransportClient
 let transport = StdioTransportClientBuilder::new()
