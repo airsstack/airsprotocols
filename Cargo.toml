@@ -1,7 +1,5 @@
 [workspace]
-members = [
-    "protocols/mcp",
-]
+members = ["protocols/mcp"]
 resolver = "2"
 
 [workspace.lints.clippy]
@@ -14,15 +12,15 @@ clone_on_ref_ptr = "warn"
 inefficient_to_string = "warn"
 large_stack_arrays = "warn"
 # Code quality
-missing_docs_in_private_items = "allow"  # Too verbose for internal code
+missing_docs_in_private_items = "allow" # Too verbose for internal code
 needless_pass_by_value = "warn"
 
 [workspace.package]
 edition = "2021"
 authors = ["rstlix0x0 <rstlix.dev@gmail.com>"]
-license = "MIT"
+license = "MIT OR Apache-2.0"
 repository = "https://github.com/airsstack/airsprotocols"
-rust-version = "1.70"
+rust-version = "1.88"
 
 [workspace.dependencies]
 # Layer 1: AIRS Protocols Crates
@@ -73,7 +71,12 @@ regex = { version = "1.11.1" }
 serde_yml = { version = "0.0.12" }
 
 # Layer 10: CLI Framework
-clap = { version = "4.5", features = ["derive", "help", "usage", "error-context"] }
+clap = { version = "4.5", features = [
+    "derive",
+    "help",
+    "usage",
+    "error-context",
+] }
 
 # Layer 11: Testing Utilities
 tempfile = { version = "3.20.0" }

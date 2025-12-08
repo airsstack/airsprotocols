@@ -1,10 +1,10 @@
 # Versioning Policy
 
-This document outlines the versioning and release policies for airsprotocols-mcp starting from v0.2.0.
+This document outlines the versioning and release policies for `airsprotocols-mcp` starting from `v1.0.0-rc.1`.
 
 ## Semantic Versioning
 
-airsprotocols-mcp follows [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.0.html) with the format `MAJOR.MINOR.PATCH`.
+`airsprotocols-mcp` follows [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.0.html) with the format `MAJOR.MINOR.PATCH`.
 
 ### Version Format: `MAJOR.MINOR.PATCH`
 
@@ -16,14 +16,14 @@ airsprotocols-mcp follows [Semantic Versioning 2.0.0](https://semver.org/spec/v2
 - Changes requiring migration guides
 
 **Examples of major changes:**
-- Transport architecture refactoring (v0.1.x → v0.2.0)
+- Significant architectural refactoring
 - Module reorganization affecting import paths
 - API signature changes in core interfaces
 - Authentication system overhauls
 
 **Requirements for major releases:**
 - Comprehensive migration documentation
-- Minimum 3-month advance notice (after v1.0.0)
+- Minimum 3-month advance notice
 - Clear deprecation timeline for removed features
 - Updated examples demonstrating new patterns
 
@@ -36,8 +36,8 @@ airsprotocols-mcp follows [Semantic Versioning 2.0.0](https://semver.org/spec/v2
 - New integration examples
 
 **Examples of minor changes:**
-- Adding WebSocket transport support
-- New OAuth2 authentication flows
+- Adding additional transport support
+- New authentication flows
 - Additional message handler implementations
 - Enhanced error handling capabilities
 
@@ -56,7 +56,7 @@ airsprotocols-mcp follows [Semantic Versioning 2.0.0](https://semver.org/spec/v2
 - Internal refactoring without API changes
 
 **Examples of patch changes:**
-- Fixing JSON-RPC serialization edge cases
+- Fixing serialization edge cases
 - Documentation corrections and improvements
 - Memory leak fixes
 - Error message improvements
@@ -69,7 +69,7 @@ airsprotocols-mcp follows [Semantic Versioning 2.0.0](https://semver.org/spec/v2
 
 ## Deprecation Policy
 
-Starting from v0.2.0, we implement a **two-version deprecation cycle**:
+We implement a **two-version deprecation cycle**:
 
 ### Deprecation Process
 
@@ -101,21 +101,20 @@ Starting from v0.2.0, we implement a **two-version deprecation cycle**:
 - Impact assessment on existing codebases
 
 **Minimum deprecation timeline:**
-- **Pre-1.0**: 2 versions (flexible for rapid development)
-- **Post-1.0**: 6 months minimum between deprecation and removal
+- **v1.0.0+**: 3 months minimum between deprecation and removal (or 2 major versions)
 
 ## Release Cadence
 
 ### Target Release Schedule
 - **Major releases**: As needed for architectural improvements
-- **Minor releases**: Monthly for new features
+- **Minor releases**: Monthly for new features (if applicable)
 - **Patch releases**: As needed for bugs/security (within 1-2 weeks)
 
 ### Release Process
 
 #### Pre-Release Requirements
 1. **All tests passing** across supported Rust versions
-2. **Documentation updated** including API docs and examples  
+2. **Documentation updated** including API docs and examples
 3. **Changelog updated** with user-facing changes
 4. **Examples validated** and working correctly
 5. **Performance benchmarks** run and compared
@@ -132,7 +131,7 @@ Starting from v0.2.0, we implement a **two-version deprecation cycle**:
 
 ## API Stability Commitment
 
-### Stable APIs (v0.2.0+)
+### Stable APIs (v1.0.0+)
 APIs marked as stable will follow the deprecation policy:
 - `JsonRpcRequest`, `JsonRpcResponse`, `JsonRpcNotification`
 - `TransportClient` trait
@@ -147,7 +146,7 @@ APIs marked as experimental may change without deprecation:
 - Features explicitly marked as experimental in documentation
 
 ### Compatibility Promise
-Starting from v0.2.0:
+Starting from v1.0.0:
 - **Patch versions**: 100% backward compatible
 - **Minor versions**: 100% backward compatible with new features
 - **Major versions**: May include breaking changes with migration guides
@@ -163,8 +162,8 @@ Starting from v0.2.0:
 - Security vulnerabilities in EOL versions will not be patched
 - Users strongly encouraged to upgrade to supported versions
 
-### Long Term Support (Future)
-- After v1.0.0, we may designate specific versions as LTS
+### Long Term Support
+- We may designate specific versions as LTS
 - LTS versions would receive security patches for 18 months
 - LTS designation would be clearly communicated at release time
 
@@ -209,8 +208,6 @@ Starting from v0.2.0:
 
 ## Effective Date
 
-This versioning policy takes effect with the release of v0.2.0 on September 22, 2025.
-
-Previous versions (v0.1.x) are governed by pre-policy practices and are now considered end-of-life.
+This versioning policy takes effect with the release of v1.0.0-rc.1 on December 8, 2025.
 
 For questions about this policy, please open a GitHub Discussion or Issue.

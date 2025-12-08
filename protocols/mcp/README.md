@@ -1,48 +1,8 @@
 # airsprotocols-mcp
 
-> **📦 Migration Notice:** This crate was previously published as `airs-mcp` in the 
-> [airsstack](https://github.com/airsstack/airsstack) repository. It has been migrated 
-> to the `airsprotocols` repository as of December 2025 for better organization of 
-> protocol implementations.
->
-> **Original Source:** https://github.com/airsstack/airsstack/tree/main/crates/airs-mcp
-
 A Rust implementation of the Model Context Protocol (MCP).
 
-## Migrating from `airs-mcp` to `airsprotocols-mcp`
 
-If you're updating from the old `airs-mcp` crate, follow these steps:
-
-### 1. Update your `Cargo.toml`:
-
-```toml
-# Before (old)
-[dependencies]
-airs-mcp = "0.2.3"
-
-# After (new)
-[dependencies]
-airsprotocols-mcp = { git = "https://github.com/airsstack/airsprotocols" }
-# Or when published to crates.io:
-# airsprotocols-mcp = "0.2.3"
-```
-
-### 2. Update your imports:
-
-```rust
-// Before (old)
-use airs_mcp::client::McpClient;
-use airs_mcp::types::*;
-
-// After (new)
-use airsprotocols_mcp::client::McpClient;
-use airsprotocols_mcp::types::*;
-```
-
-### 3. Update any documentation or examples:
-
-Replace all references to `airs-mcp` with `airsprotocols-mcp` in your project 
-documentation, examples, and comments.
 
 ## Overview
 
@@ -72,7 +32,7 @@ Add `airsprotocols-mcp` to your project's `Cargo.toml`:
 airsprotocols-mcp = { git = "https://github.com/airsstack/airsprotocols" }
 
 # Or when published to crates.io:
-# airsprotocols-mcp = "0.2.3"
+# airsprotocols-mcp = "1.0.0-rc.1"
 ```
 
 ## Usage
