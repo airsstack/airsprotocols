@@ -4,6 +4,11 @@
 
 A comprehensive Rust workspace providing production-ready implementations of agent communication protocols and LLM provider APIs. Built with performance, type safety, and interoperability in mind.
 
+[![Documentation](https://img.shields.io/badge/docs-online-blue?style=flat-square)](https://airsstack.github.io/airsprotocols/)
+[![License](https://img.shields.io/badge/license-MIT%2FApache--2.0-blue?style=flat-square)](LICENSE-MIT)
+
+📚 **[Read the Documentation](https://airsstack.github.io/airsprotocols/)** | 🚀 **[Get Started](https://airsstack.github.io/airsprotocols/getting-started/)** | 🔧 **[MCP Protocol](https://airsstack.github.io/airsprotocols/protocols/mcp/)**
+
 ---
 
 ## 📦 What's Inside
@@ -132,10 +137,17 @@ For detailed documentation, see [`protocols/mcp/README.md`](protocols/mcp/README
 
 ## 📚 Documentation
 
-- **[MCP Documentation](protocols/mcp/docs/)** - Complete MCP implementation guide
-- **Protocol Specifications:**
-  - [Model Context Protocol](https://modelcontextprotocol.io/)
-  - [Agent-to-Agent Protocol](https://a2a-protocol.org/)
+**📖 [Complete Documentation](https://airsstack.github.io/airsprotocols/)** - Comprehensive guides, API references, and examples
+
+- **[Getting Started](https://airsstack.github.io/airsprotocols/getting-started/)** - Quick start guide
+- **[MCP Protocol Guide](https://airsstack.github.io/airsprotocols/protocols/mcp/)** - Complete MCP implementation guide
+- **[Architecture](https://airsstack.github.io/airsprotocols/architecture/)** - System design and architecture
+- **[Examples](https://airsstack.github.io/airsprotocols/examples/)** - Practical examples and tutorials
+- **[Contributing](https://airsstack.github.io/airsprotocols/contributing/)** - Contribution guidelines
+
+### Protocol Specifications
+- [Model Context Protocol](https://modelcontextprotocol.io/)
+- [Agent-to-Agent Protocol](https://a2a-protocol.org/)
 
 ---
 
@@ -200,7 +212,8 @@ This project follows open-source best practices:
 - [ ] CI/CD pipeline
 
 ### Phase 2: Core Protocols
-- [ ] Complete MCP documentation
+- [x] Complete MCP documentation
+- [x] Documentation website (https://airsstack.github.io/airsprotocols/)
 - [ ] A2A protocol implementation
 - [ ] MCP ↔ A2A bridge adapters
 
