@@ -1,0 +1,97 @@
+/* AirsStack Custom Styling - AIRS Protocols */
+
+:root {
+  --rust-orange: #CE422B;
+  --deep-blue: #1B4965;
+  --teal-accent: #62B6CB;
+}
+
+/* Custom banner styling */
+.md-banner {
+  background: linear-gradient(135deg, var(--rust-orange) 0%, #ff6b4a 100%);
+  color: white;
+  padding: 0.5rem 0;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.md-banner a {
+  color: white;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.md-banner a:hover {
+  color: #ffe;
+}
+
+/* Enhanced code blocks for Rust */
+.md-typeset code {
+  font-size: 0.85em;
+  font-weight: 500;
+}
+
+/* Rust code highlighting tweaks */
+.highlight .language-rust,
+.highlight .language-toml {
+  background-color: rgba(206, 66, 43, 0.05);
+}
+
+/* Custom admonition for protocol concepts */
+.md-typeset .admonition.protocol {
+  border-left-color: var(--rust-orange);
+}
+
+.md-typeset .admonition.protocol > .admonition-title {
+  background-color: rgba(206, 66, 43, 0.1);
+}
+
+/* Custom admonition for API information */
+.md-typeset .admonition.api {
+  border-left-color: var(--teal-accent);
+}
+
+.md-typeset .admonition.api > .admonition-title {
+  background-color: rgba(98, 182, 203, 0.1);
+}
+
+/* Logo styling */
+.md-header__button.md-logo img,
+.md-logo img {
+  height: 28px;
+  width: auto;
+}
+
+/* Footer customization */
+.md-footer-meta {
+  background-color: var(--deep-blue);
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Better table styling for API references */
+.md-typeset table:not([class]) {
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.2rem;
+}
+
+/* Version badge styling */
+.version-badge {
+  display: inline-block;
+  padding: 0.2em 0.6em;
+  font-size: 0.75em;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+  background-color: var(--rust-orange);
+  border-radius: 0.25rem;
+  margin-left: 0.5em;
+}
+
+/* Cargo.toml code blocks special styling */
+.md-typeset .highlight .language-toml {
+  border-left: 3px solid var(--rust-orange);
+}

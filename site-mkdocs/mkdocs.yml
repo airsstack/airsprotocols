@@ -1,0 +1,137 @@
+site_name: AIRS Protocols
+site_url: https://airsstack.github.io/airsprotocols/
+site_description: Common AI Communication Protocols and LLM API Implementations in Rust
+site_author: AirsStack
+repo_name: airsstack/airsprotocols
+repo_url: https://github.com/airsstack/airsprotocols
+edit_uri: edit/main/docs/
+
+copyright: Copyright &copy; 2025 AirsStack
+
+theme:
+  name: material
+  custom_dir: overrides
+  language: en
+  
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep orange
+      accent: teal
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep orange
+      accent: teal
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  
+  font:
+    text: Inter
+    code: JetBrains Mono
+  
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+plugins:
+  - search:
+      lang: en
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/airsstack
+      name: AirsStack on GitHub
+
+docs_dir: ../docs
+site_dir: site
+
+nav:
+  - Home:
+      - Welcome: index.md
+      - Overview: overview.md
+      - Getting Started: getting-started.md
+      - Architecture: architecture.md
+  
+  - Protocols:
+      - Overview: protocols/index.md
+      - MCP:
+          - Overview: protocols/mcp/index.md
+          - Quick Start: protocols/mcp/quick-start.md
+          - Installation: protocols/mcp/installation.md
+          - Usage:
+              - Basic Examples: protocols/mcp/usage/basic-examples.md
+              - Advanced Patterns: protocols/mcp/usage/advanced-patterns.md
+              - Claude Integration: protocols/mcp/usage/claude-integration.md
+              - Custom Transports: protocols/mcp/usage/custom-transports.md
+          - Protocol Specification:
+              - Architecture: protocols/mcp/protocol/architecture.md
+              - Server Implementation: protocols/mcp/protocol/server.md
+              - Client Implementation: protocols/mcp/protocol/client.md
+              - Security: protocols/mcp/protocol/security.md
+          - Architecture:
+              - Core Components: protocols/mcp/architecture/core.md
+              - Data Flow: protocols/mcp/architecture/data-flow.md
+              - Component Interaction: protocols/mcp/architecture/component-interaction.md
+          - API Reference: protocols/mcp/api-reference.md
+          - Changelog: protocols/mcp/changelog.md
+      - A2A:
+          - Overview: protocols/a2a/index.md
+  
+  - APIs:
+      - Overview: apis/index.md
+  
+  - Examples:
+      - Overview: examples/index.md
+  
+  - Contributing: contributing.md

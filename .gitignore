@@ -24,3 +24,6 @@ target
 # Cargo.lock for library workspace
 # Libraries should not commit Cargo.lock
 Cargo.lock
+
+# MkDocs build output
+site-mkdocs/site/
