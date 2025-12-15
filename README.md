@@ -22,13 +22,26 @@ Communication protocols for AI agents and intelligent systems:
   - JSON-RPC 2.0 foundation with transport abstraction
   - Built-in authentication (API Key, OAuth2) and authorization
   - Stdio and HTTP transport implementations
-  - **Status:** ✅ Available (v0.2.3)
+  - **Status:** ✅ Available on [crates.io](https://crates.io/crates/airsprotocols-mcp) (v1.0.0-rc.1)
 
 - **`airsprotocols-a2a`** - Agent-to-Agent Protocol (A2A/ACP)
   - Enable communication between independent AI agents
   - Multiple protocol bindings (JSON-RPC, gRPC, REST)
   - Task lifecycle management and streaming support
   - **Status:** 🚧 Planned
+
+### **Servers** (`mcp/servers/`)
+
+Production-ready MCP server implementations:
+
+- **[`airsprotocols-mcpserver-filesystem`](mcp/servers/filesystem/)** - Secure Filesystem MCP Server
+  - Security-first filesystem operations for AI agents
+  - Human-in-the-loop approval workflows with configurable policies
+  - Complete file operations: read, write, create, delete, move, copy
+  - Binary file protection and comprehensive audit logging
+  - Sub-100ms performance with efficient memory management
+  - **Status:** ✅ Available on [crates.io](https://crates.io/crates/airsprotocols-mcpserver-filesystem) (v1.0.0-rc.1)
+  - **Install:** `cargo install airsprotocols-mcpserver-filesystem`
 
 ### **APIs** (`apis/`)
 
@@ -56,6 +69,10 @@ airsprotocols/
 │   ├── mcp/           # Model Context Protocol
 │   └── a2a/           # Agent-to-Agent Protocol
 │
+├── mcp/
+│   └── servers/       # MCP Server implementations
+│       └── filesystem/ # Secure filesystem server
+│
 └── apis/              # LLM provider clients
     ├── anthropic/     # Claude API
     ├── openai/        # GPT API
@@ -73,9 +90,7 @@ Add to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-airsprotocols-mcp = { git = "https://github.com/airsstack/airsprotocols" }
-# Or when published to crates.io:
-# airsprotocols-mcp = "0.2.3"
+airsprotocols-mcp = "1.0.0-rc.1"
 ```
 
 Example usage:
@@ -103,6 +118,34 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 For detailed documentation, see [`protocols/mcp/README.md`](protocols/mcp/README.md)
 
+### Using MCP Filesystem Server
+
+Install the filesystem server:
+
+```bash
+cargo install airsprotocols-mcpserver-filesystem
+```
+
+Configure Claude Desktop (add to `claude_desktop_config.json`):
+
+```json
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "airsprotocols-mcpserver-filesystem",
+      "args": ["serve", "--allowed-path", "/path/to/your/project"]
+    }
+  }
+}
+```
+
+Now Claude Desktop can securely read and write files in your project directory!
+
+For detailed documentation, see:
+- **[Installation Guide](https://airsstack.github.io/airsprotocols/servers/filesystem/installation/)**
+- **[Configuration Guide](https://airsstack.github.io/airsprotocols/servers/filesystem/configuration/)**
+- **[Security Guide](https://airsstack.github.io/airsprotocols/servers/filesystem/security/)**
+
 ---
 
 ## 🎯 Design Philosophy
@@ -123,6 +166,12 @@ For detailed documentation, see [`protocols/mcp/README.md`](protocols/mcp/README
 - Extensive testing (unit, integration, property-based)
 - Performance benchmarks
 
+### Security First
+- Human-in-the-loop approval workflows
+- Configurable security policies
+- Comprehensive audit logging
+- Path validation and threat detection
+
 ### Async Native
 - Built on `tokio` async runtime
 - Non-blocking I/O throughout
@@ -141,6 +190,7 @@ For detailed documentation, see [`protocols/mcp/README.md`](protocols/mcp/README
 
 - **[Getting Started](https://airsstack.github.io/airsprotocols/getting-started/)** - Quick start guide
 - **[MCP Protocol Guide](https://airsstack.github.io/airsprotocols/protocols/mcp/)** - Complete MCP implementation guide
+- **[Filesystem Server Guide](https://airsstack.github.io/airsprotocols/servers/filesystem/)** - Secure filesystem server documentation
 - **[Architecture](https://airsstack.github.io/airsprotocols/architecture/)** - System design and architecture
 - **[Examples](https://airsstack.github.io/airsprotocols/examples/)** - Practical examples and tutorials
 - **[Contributing](https://airsstack.github.io/airsprotocols/contributing/)** - Contribution guidelines
@@ -151,11 +201,25 @@ For detailed documentation, see [`protocols/mcp/README.md`](protocols/mcp/README
 
 ---
 
+## 📦 Published Packages
+
+### Available on crates.io
+
+- **[`airsprotocols-mcp`](https://crates.io/crates/airsprotocols-mcp)** v1.0.0-rc.1
+  - Model Context Protocol implementation
+  - `cargo add airsprotocols-mcp`
+
+- **[`airsprotocols-mcpserver-filesystem`](https://crates.io/crates/airsprotocols-mcpserver-filesystem)** v1.0.0-rc.1
+  - Secure filesystem MCP server
+  - `cargo install airsprotocols-mcpserver-filesystem`
+
+---
+
 ## 🔗 Related Projects
 
 - **[airsstack](https://github.com/airsstack/airsstack)** - Application-level agent implementations
-  - `airs-mcpserver-fs` - Secure filesystem MCP server
-  - Example applications and servers
+  - Example applications and integrations
+  - Additional MCP server implementations
 
 ---
 
@@ -165,6 +229,7 @@ Contributions are welcome! This project is in active development.
 
 ### Current Focus
 - ✅ MCP protocol implementation complete
+- ✅ MCP filesystem server published
 - 🚧 A2A protocol implementation
 - 🚧 LLM provider APIs
 
@@ -209,6 +274,7 @@ This project follows open-source best practices:
 - [x] Project structure setup
 - [x] Workspace configuration
 - [x] MCP protocol implementation
+- [x] MCP filesystem server published
 - [ ] CI/CD pipeline
 
 ### Phase 2: Core Protocols
@@ -223,6 +289,7 @@ This project follows open-source best practices:
 - [ ] Unified LLM interface
 
 ### Phase 4: Ecosystem
+- [ ] Additional MCP servers
 - [ ] Additional LLM providers
 - [ ] Performance optimizations
 - [ ] Advanced features and extensions
