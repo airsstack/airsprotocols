@@ -1,5 +1,5 @@
 [workspace]
-members = ["protocols/mcp"]
+members = ["protocols/mcp", "mcp/servers/filesystem"]
 resolver = "2"
 
 [workspace.lints.clippy]
@@ -89,3 +89,17 @@ wiremock = { version = "0.6" }
 # Layer 12: Cryptographic Dependencies (for OAuth2 examples)
 rsa = { version = "0.10.0-rc.8" }
 sha2 = { version = "0.10" }
+
+# Layer 13: Filesystem Server Dependencies
+anyhow = { version = "1.0" }
+globset = { version = "0.4" }
+image = { version = "0.25" }
+infer = { version = "0.16" }
+config = { version = "0.14" }
+toml = { version = "0.8" }
+path-clean = { version = "1.0" }
+glob = { version = "0.3" }
+walkdir = { version = "2.5" }
+unicode-normalization = { version = "0.1" }
+dirs = { version = "5.0" }
+assert_fs = { version = "1.1" }

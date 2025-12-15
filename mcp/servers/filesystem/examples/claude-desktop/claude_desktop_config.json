@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "airs-mcp-fs": {
+      "command": "/Users/YOUR_USERNAME/.cargo/bin/airsprotocols-mcpserver-fs",
+      "env": {
+        "AIRSPROTOCOLS_MCPSERVER_FS_CONFIG_DIR": "/Users/YOUR_USERNAME/.airsprotocols-mcpserver-fs/config",
+        "AIRSPROTOCOLS_MCPSERVER_FS_ENV": "local",
+        "AIRSPROTOCOLS_MCPSERVER_FS_LOG_DIR": "/Users/YOUR_USERNAME/.airsprotocols-mcpserver-fs/logs"
+      }
+    }
+  }
+}

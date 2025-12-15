@@ -52,7 +52,7 @@ impl BufferPool {
     ///
     /// Returns a `PooledBuffer` smart pointer that automatically
     /// returns the buffer to the pool when dropped.
-    pub fn get_buffer(&self) -> PooledBuffer {
+    pub fn get_buffer(&self) -> PooledBuffer<'_> {
         let buffer = {
             let mut buffers = self.buffers.lock().expect("Buffer pool mutex poisoned");
             buffers.pop().unwrap_or_else(|| {
@@ -241,7 +241,7 @@ pub enum BufferStrategy {
 
 impl BufferStrategy {
     /// Get a buffer according to the strategy
-    pub fn get_buffer(&self) -> BufferHandle {
+    pub fn get_buffer(&self) -> BufferHandle<'_> {
         match self {
             BufferStrategy::PerRequest => BufferHandle::Owned(Vec::new()),
             BufferStrategy::Pooled(pool) => BufferHandle::Pooled(pool.get_buffer()),
