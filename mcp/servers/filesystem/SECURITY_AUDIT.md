@@ -1,7 +1,7 @@
-# Security Audit Report - airsprotocols-mcpserver-fs v1.0.0-rc.1
+# Security Audit Report - airsprotocols-mcpserver-filesystem v1.0.0-rc.1
 
 **Report Date**: 2025-12-15  
-**Package**: airsprotocols-mcpserver-fs v1.0.0-rc.1  
+**Package**: airsprotocols-mcpserver-filesystem v1.0.0-rc.1  
 **Audit Tool**: `cargo audit`  
 **Status**: ✅ **CLEARED FOR RELEASE**
 
@@ -24,8 +24,8 @@
 - **Status**: ✅ **FIXED** 
 - **Action**: Moved RSA dependency to dev-dependencies in airsprotocols-mcp
 - **Production Impact**: ❌ **ELIMINATED** - RSA no longer in production dependency tree
-- **Verification**: `cargo tree --package airsprotocols-mcpserver-fs -i rsa` returns "package not found"
-- **Result**: airsprotocols-mcpserver-fs production builds no longer include RSA vulnerability
+- **Verification**: `cargo tree --package airsprotocols-mcpserver-filesystem -i rsa` returns "package not found"
+- **Result**: airsprotocols-mcpserver-filesystem production builds no longer include RSA vulnerability
 
 ### ✅ Acceptable Risks
 
@@ -41,12 +41,12 @@
 #### RUSTSEC-2025-0067: libyml unsound
 - **Path**: airsprotocols-mcp → serde_yml → libyml  
 - **Impact**: ✅ **LOW** - YAML parsing in MCP client only
-- **Justification**: No direct YAML processing in airsprotocols-mcpserver-fs
+- **Justification**: No direct YAML processing in airsprotocols-mcpserver-filesystem
 
 #### RUSTSEC-2025-0068: serde_yml unsound
 - **Path**: airsprotocols-mcp → serde_yml
 - **Impact**: ✅ **LOW** - MCP client configuration parsing only
-- **Justification**: No direct YAML processing in airsprotocols-mcpserver-fs
+- **Justification**: No direct YAML processing in airsprotocols-mcpserver-filesystem
 
 ## Security Framework Assessment
 

@@ -1,4 +1,4 @@
-//! MessageHandler implementation for airsprotocols-mcpserver-fs
+//! MessageHandler implementation for airsprotocols-mcpserver-filesystem
 //!
 //! This module provides the MessageHandler<()> implementation that integrates
 //! the existing ToolProvider business logic with the new airsprotocols-mcp architecture.
@@ -25,7 +25,7 @@ use airsprotocols_mcp::providers::ToolProvider;
 use crate::mcp::handlers::{DirectoryOperations, FileOperations};
 use crate::mcp::server::FilesystemMcpServer;
 
-/// MCP Message Handler for airsprotocols-mcpserver-fs STDIO Transport
+/// MCP Message Handler for airsprotocols-mcpserver-filesystem STDIO Transport
 ///
 /// This handler wraps the existing FilesystemMcpServer (ToolProvider) and provides
 /// the MessageHandler<()> interface required by the new airsprotocols-mcp architecture.
@@ -107,7 +107,7 @@ where
             protocol_version,
             capabilities: capabilities_json,
             server_info: ServerInfo {
-                name: "airsprotocols-mcpserver-fs".to_string(),
+                name: "airsprotocols-mcpserver-filesystem".to_string(),
                 version: env!("CARGO_PKG_VERSION").to_string(),
             },
         };

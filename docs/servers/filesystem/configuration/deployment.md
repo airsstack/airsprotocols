@@ -4,24 +4,24 @@
 
 ### **Hierarchical Configuration System**
 ```toml
-# Global configuration: ~/.config/airsprotocols-mcpserver-fs/config.toml
+# Global configuration: ~/.config/airsprotocols-mcpserver-filesystem/config.toml
 [server]
-name = "airsprotocols-mcpserver-fs"
+name = "airsprotocols-mcpserver-filesystem"
 version = "1.0.0"
 transport = "stdio"
 
 [performance]
 max_concurrent_operations = 10
 cache_size_mb = 50
-temp_directory = "/tmp/airsprotocols-mcpserver-fs"
+temp_directory = "/tmp/airsprotocols-mcpserver-filesystem"
 
 [logging]
 level = "info"
-file = "~/.config/airsprotocols-mcpserver-fs/logs/airsprotocols-mcpserver-fs.log"
+file = "~/.config/airsprotocols-mcpserver-filesystem/logs/airsprotocols-mcpserver-filesystem.log"
 max_size_mb = 100
 max_files = 10
 
-# Project-specific configuration: ./.airsprotocols-mcpserver-fs.toml
+# Project-specific configuration: ./.airsprotocols-mcpserver-filesystem.toml
 [project]
 name = "my-awesome-project"
 root_path = "./"
@@ -62,7 +62,7 @@ impl FsConfig {
     fn load_global_config() -> Result<Self, ConfigError> {
         let config_path = dirs::config_dir()
             .ok_or(ConfigError::NoConfigDir)?
-            .join("airsprotocols-mcpserver-fs")
+            .join("airsprotocols-mcpserver-filesystem")
             .join("config.toml");
             
         if config_path.exists() {
@@ -82,15 +82,15 @@ impl FsConfig {
 # Install from source for development
 git clone https://github.com/airsstack/airsprotocols.git
 cd airs
-cargo build --release --bin airsprotocols-mcpserver-fs
+cargo build --release --bin airsprotocols-mcpserver-filesystem
 
 # Configure for Claude Desktop
 # Add to Claude Desktop MCP configuration:
 {
   "mcpServers": {
-    "airsprotocols-mcpserver-fs": {
-      "command": "path/to/airsprotocols-mcpserver-fs",
-      "args": ["--config", "./.airsprotocols-mcpserver-fs.toml"]
+    "airsprotocols-mcpserver-filesystem": {
+      "command": "path/to/airsprotocols-mcpserver-filesystem",
+      "args": ["--config", "./.airsprotocols-mcpserver-filesystem.toml"]
     }
   }
 }
@@ -99,15 +99,15 @@ cargo build --release --bin airsprotocols-mcpserver-fs
 ### **Production Deployment**
 ```bash
 # Install via cargo
-cargo install airs-mcp-fs
+cargo install airsprotocols-mcpserver-filesystem
 
 # System-wide configuration
-sudo mkdir -p /etc/airs-mcp-fs
-sudo cp config.toml /etc/airs-mcp-fs/
+sudo mkdir -p /etc/airsprotocols-mcpserver-filesystem
+sudo cp config.toml /etc/airsprotocols-mcpserver-filesystem/
 
 # User configuration
-mkdir -p ~/.config/airs-mcp-fs
-cp user-config.toml ~/.config/airs-mcp-fs/config.toml
+mkdir -p ~/.config/airsprotocols-mcpserver-filesystem
+cp user-config.toml ~/.config/airsprotocols-mcpserver-filesystem/config.toml
 
 # Systemd service for enterprise environments
 [Unit]
@@ -117,7 +117,7 @@ After=network.target
 [Service]
 Type=simple
 User=mcp-fs
-ExecStart=/usr/local/bin/airs-mcp-fs --daemon
+ExecStart=/usr/local/bin/airsprotocols-mcpserver-filesystem --daemon
 Restart=always
 RestartSec=5
 

@@ -12,7 +12,6 @@ Environment Detection → Base Configuration → Policy Application → Environm
 
 ### Key Components
 
-1. **Environment Detection**: Automatically detects development/staging/production environments
 2. **Security Policies**: Named policies for different file types and use cases
 3. **Path Validation**: Glob pattern-based path allowlists and denylists
 4. **Operation Controls**: Fine-grained permissions for read/write/delete operations
@@ -23,8 +22,8 @@ Environment Detection → Base Configuration → Policy Application → Environm
 AIRS MCP-FS searches for configuration files in the following order:
 
 1. **Environment Variable**: `AIRSPROTOCOLS_MCPSERVER_FS_CONFIG_DIR`
-2. **User Config Directory**: `~/.config/airsprotocols-mcpserver-fs/`
-3. **System Config Directory**: `/etc/airsprotocols-mcpserver-fs/`
+2. **User Config Directory**: `~/.config/airsprotocols-mcpserver-filesystem/`
+3. **System Config Directory**: `/etc/airsprotocols-mcpserver-filesystem/`
 4. **Built-in Defaults**: Secure production defaults
 
 ### Environment-Specific Files
@@ -62,7 +61,7 @@ max_file_size = 104857600  # 100MB for text files
 
 # Server configuration
 [server]
-name = "airsprotocols-mcpserver-fs"
+name = "airsprotocols-mcpserver-filesystem"
 version = "1.0.0"
 ```
 
@@ -73,8 +72,8 @@ All configuration values can be overridden using environment variables with the 
 | Environment Variable | Configuration Path | Example |
 |---------------------|-------------------|---------|
 | `AIRSPROTOCOLS_MCPSERVER_FS_ENV` | Environment type | `development` |
-| `AIRSPROTOCOLS_MCPSERVER_FS_CONFIG_DIR` | Config directory | `~/.config/airsprotocols-mcpserver-fs` |
-| `AIRSPROTOCOLS_MCPSERVER_FS_LOG_DIR` | Log directory | `~/.local/share/airsprotocols-mcpserver-fs/logs` |
+| `AIRSPROTOCOLS_MCPSERVER_FS_CONFIG_DIR` | Config directory | `~/.config/airsprotocols-mcpserver-filesystem` |
+| `AIRSPROTOCOLS_MCPSERVER_FS_LOG_DIR` | Log directory | `~/.local/share/airsprotocols-mcpserver-filesystem/logs` |
 | `AIRSPROTOCOLS_MCPSERVER_FS_SECURITY_FILESYSTEM_ALLOWED_PATHS` | Filesystem allowed paths | `~/projects/**/*,~/docs/**/*` |
 | `AIRSPROTOCOLS_MCPSERVER_FS_SECURITY_MAX_FILE_SIZE` | Max file size | `52428800` (50MB) |
 
@@ -130,7 +129,7 @@ risk_level = "low"
 
 ### Development Workstation
 ```toml
-# ~/.config/airsprotocols-mcpserver-fs/development.toml
+# ~/.config/airsprotocols-mcpserver-filesystem/development.toml
 [security.filesystem]
 allowed_paths = [
     "~/projects/**/*",
@@ -202,10 +201,10 @@ risk_level = "medium"
 
 ## Advanced Topics
 
-- **[Environment Setup](./configuration/environment.md)**: Environment detection and variable configuration
-- **[Security Policies](./configuration/security.md)**: Detailed security policy configuration
-- **[Claude Desktop Integration](./configuration/claude_desktop.md)**: MCP client configuration
-- **[Troubleshooting](./configuration/troubleshooting.md)**: Common configuration issues and solutions
+- **[Environment Setup](./environment.md)**: Environment detection and variable configuration
+- **[Security Policies](./security.md)**: Detailed security policy configuration
+- **[Claude Desktop Integration](./claude-desktop.md)**: MCP client configuration
+- **[Troubleshooting](./troubleshooting.md)**: Common configuration issues and solutions
 
 ## Best Practices
 
@@ -231,7 +230,7 @@ risk_level = "medium"
 
 Once you understand the configuration basics, explore specific configuration areas:
 
-1. **[Environment Setup](./configuration/environment.md)** - Environment detection and management
-2. **[Security Policies](./configuration/security.md)** - Advanced security configuration
-3. **[Claude Desktop Integration](./configuration/claude_desktop.md)** - MCP client setup
-4. **[Troubleshooting](./configuration/troubleshooting.md)** - Solving configuration problems
+1. **[Environment Setup](./environment.md)** - Environment detection and management
+2. **[Security Policies](./security.md)** - Advanced security configuration
+3. **[Claude Desktop Integration](./claude-desktop.md)** - MCP client setup
+4. **[Troubleshooting](./troubleshooting.md)** - Solving configuration problems

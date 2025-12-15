@@ -1,6 +1,6 @@
 # AIRS MCP-FS Configuration Guide
 
-This comprehensive guide explains how to configure `airsprotocols-mcpserver-fs` using TOML files for a clean, maintainable, and secure setup.
+This comprehensive guide explains how to configure `airsprotocols-mcpserver-filesystem` using TOML files for a clean, maintainable, and secure setup.
 
 ## Overview
 
@@ -20,17 +20,17 @@ Use the new setup command to automatically create the directory structure:
 
 ```bash
 # Automatic setup with default directories
-airsprotocols-mcpserver-fs setup
+airsprotocols-mcpserver-filesystem setup
 
 # Setup with custom directories
-airsprotocols-mcpserver-fs setup --config-dir ~/.config/airsprotocols-mcpserver-fs --logs-dir ~/.local/share/airsprotocols-mcpserver-fs/logs
+airsprotocols-mcpserver-filesystem setup --config-dir ~/.config/airsprotocols-mcpserver-filesystem --logs-dir ~/.local/share/airsprotocols-mcpserver-filesystem/logs
 
 # Generate configuration for specific environment
-airsprotocols-mcpserver-fs config --env production --output ~/.config/airsprotocols-mcpserver-fs
+airsprotocols-mcpserver-filesystem config --env production --output ~/.config/airsprotocols-mcpserver-filesystem
 ```
 
 The setup command will:
-- Create `~/.airsprotocols-mcpserver-fs/config` and `~/.airsprotocols-mcpserver-fs/logs` directories
+- Create `~/.airsprotocols-mcpserver-filesystem/config` and `~/.airsprotocols-mcpserver-filesystem/logs` directories
 - Generate a sample `development.toml` configuration
 - Provide next steps for customization
 
@@ -49,13 +49,13 @@ Start with one of our pre-built configurations from [`examples/config/`](./examp
 
 ```bash
 # Create configuration directory
-mkdir -p ~/.config/airs-mcp-fs
+mkdir -p ~/.config/airsprotocols-mcpserver-filesystem
 
 # Copy your chosen configuration
-cp examples/config/claude-desktop.toml ~/.config/airs-mcp-fs/config.toml
+cp examples/config/claude-desktop.toml ~/.config/airsprotocols-mcpserver-filesystem/config.toml
 
 # Customize paths for your environment
-editor ~/.config/airs-mcp-fs/config.toml
+editor ~/.config/airsprotocols-mcpserver-filesystem/config.toml
 ```
 
 ### 3. Configure Claude Desktop
@@ -76,7 +76,7 @@ editor ~/temp-claude-config.json
 
 ```toml
 [server]
-name = "airs-mcp-fs"
+name = "airsprotocols-mcpserver-filesystem"
 version = "0.1.0"
 
 [binary]
@@ -151,7 +151,7 @@ description = "Configuration files - review changes carefully"
 
 ### Development Environment
 
-**File**: `~/.config/airs-mcp-fs/development.toml`
+**File**: `~/.config/airsprotocols-mcpserver-filesystem/development.toml`
 
 ```toml
 [security.filesystem]
@@ -168,7 +168,7 @@ delete_requires_explicit_allow = true
 
 ### Production Environment
 
-**File**: `~/.config/airs-mcp-fs/production.toml`
+**File**: `~/.config/airsprotocols-mcpserver-filesystem/production.toml`
 
 ```toml
 [security.filesystem]
@@ -185,7 +185,7 @@ create_dir_allowed = false        # No directory creation
 
 ### Secure Environment
 
-**File**: `~/.config/airs-mcp-fs/secure.toml`
+**File**: `~/.config/airsprotocols-mcpserver-filesystem/secure.toml`
 
 ```toml
 [security.filesystem]
@@ -212,18 +212,18 @@ risk_level = "medium"
 
 1. **Configuration Setup**:
    ```bash
-   mkdir -p ~/.config/airs-mcp-fs
-   cp examples/config/claude-desktop.toml ~/.config/airs-mcp-fs/config.toml
+   mkdir -p ~/.config/airsprotocols-mcpserver-filesystem
+   cp examples/config/claude-desktop.toml ~/.config/airsprotocols-mcpserver-filesystem/config.toml
    ```
 
 2. **Claude Desktop Configuration**:
    ```json
    {
      "mcpServers": {
-       "airs-mcp-fs": {
-         "command": "/path/to/airsprotocols-mcpserver-fs",
+       "airsprotocols-mcpserver-filesystem": {
+         "command": "/path/to/airsprotocols-mcpserver-filesystem",
          "env": {
-           "AIRSPROTOCOLS_MCPSERVER_FS_CONFIG_DIR": "/Users/yourname/.config/airsprotocols-mcpserver-fs",
+           "AIRSPROTOCOLS_MCPSERVER_FS_CONFIG_DIR": "/Users/yourname/.config/airsprotocols-mcpserver-filesystem",
            "AIRSPROTOCOLS_MCPSERVER_FS_ENV": "development"
          }
        }
@@ -244,8 +244,8 @@ For different projects with different security requirements:
 ```json
 {
   "mcpServers": {
-    "airs-mcp-fs-project": {
-      "command": "/path/to/airsprotocols-mcpserver-fs",
+    "airsprotocols-mcpserver-filesystem-project": {
+      "command": "/path/to/airsprotocols-mcpserver-filesystem",
       "env": {
         "AIRSPROTOCOLS_MCPSERVER_FS_CONFIG_DIR": "/Users/yourname/projects/sensitive-project/.mcp-config"
       }
@@ -278,13 +278,13 @@ Test your configuration before deployment:
 
 ```bash
 # Generate and validate configuration
-airsprotocols-mcpserver-fs generate-config --output ./test-config --env development
+airsprotocols-mcpserver-filesystem generate-config --output ./test-config --env development
 
 # Test server startup (shows configuration loading)
-echo '{"jsonrpc": "2.0", "method": "initialize", "params": {"protocolVersion": "2024-11-05", "capabilities": {}, "clientInfo": {"name": "test"}}, "id": 1}' | airsprotocols-mcpserver-fs
+echo '{"jsonrpc": "2.0", "method": "initialize", "params": {"protocolVersion": "2024-11-05", "capabilities": {}, "clientInfo": {"name": "test"}}, "id": 1}' | airsprotocols-mcpserver-filesystem
 
 # Check configuration logs
-tail -f ~/.local/share/airs-mcp-fs/logs/airs-mcp-fs.log
+tail -f ~/.local/share/airsprotocols-mcpserver-filesystem/logs/airsprotocols-mcpserver-filesystem.log
 ```
 
 ## Security Best Practices
@@ -331,17 +331,17 @@ description = "Configuration changes require careful review"
 1. **Check config directory**:
    ```bash
    echo $AIRS_MCP_FS_CONFIG_DIR
-   ls -la ~/.config/airs-mcp-fs/
+   ls -la ~/.config/airsprotocols-mcpserver-filesystem/
    ```
 
 2. **Verify file permissions**:
    ```bash
-   chmod 644 ~/.config/airs-mcp-fs/*.toml
+   chmod 644 ~/.config/airsprotocols-mcpserver-filesystem/*.toml
    ```
 
 3. **Test configuration syntax**:
    ```bash
-   airsprotocols-mcpserver-fs generate-config --output /tmp/test --env development
+   airsprotocols-mcpserver-filesystem generate-config --output /tmp/test --env development
    ```
 
 ### Path Access Issues
@@ -351,18 +351,18 @@ description = "Configuration changes require careful review"
 3. **Review security policies** for required operations
 4. **Check logs** for path validation errors:
    ```bash
-   grep "Path" ~/.local/share/airs-mcp-fs/logs/airs-mcp-fs.log
+   grep "Path" ~/.local/share/airsprotocols-mcpserver-filesystem/logs/airsprotocols-mcpserver-filesystem.log
    ```
 
 ### Claude Desktop Integration Issues
 
-#### "spawn airsprotocols-mcpserver-fs ENOENT" Error
+#### "spawn airsprotocols-mcpserver-filesystem ENOENT" Error
 
 This common error occurs when Claude Desktop cannot find the executable:
 
 **Symptoms**: Connection errors in Claude Desktop logs:
 ```
-Error: spawn airsprotocols-mcpserver-fs ENOENT
+Error: spawn airsprotocols-mcpserver-filesystem ENOENT
 Server transport closed unexpectedly
 Server disconnected
 ```
@@ -371,12 +371,12 @@ Server disconnected
 ```json
 {
   "mcpServers": {
-    "airs-mcp-fs": {
-      "command": "/Users/YOUR_USERNAME/.cargo/bin/airsprotocols-mcpserver-fs",
+    "airsprotocols-mcpserver-filesystem": {
+      "command": "/Users/YOUR_USERNAME/.cargo/bin/airsprotocols-mcpserver-filesystem",
       "env": {
-        "AIRSPROTOCOLS_MCPSERVER_FS_CONFIG_DIR": "/Users/YOUR_USERNAME/.airsprotocols-mcpserver-fs/config",
+        "AIRSPROTOCOLS_MCPSERVER_FS_CONFIG_DIR": "/Users/YOUR_USERNAME/.airsprotocols-mcpserver-filesystem/config",
         "AIRSPROTOCOLS_MCPSERVER_FS_ENV": "local",
-        "AIRSPROTOCOLS_MCPSERVER_FS_LOG_DIR": "/Users/YOUR_USERNAME/.airsprotocols-mcpserver-fs/logs"
+        "AIRSPROTOCOLS_MCPSERVER_FS_LOG_DIR": "/Users/YOUR_USERNAME/.airsprotocols-mcpserver-filesystem/logs"
       }
     }
   }
@@ -385,8 +385,8 @@ Server disconnected
 
 **To find your binary path**:
 ```bash
-which airsprotocols-mcpserver-fs
-# Typically: /Users/YOUR_USERNAME/.cargo/bin/airsprotocols-mcpserver-fs
+which airsprotocols-mcpserver-filesystem
+# Typically: /Users/YOUR_USERNAME/.cargo/bin/airsprotocols-mcpserver-filesystem
 ```
 
 #### Other Integration Issues
@@ -396,7 +396,7 @@ which airsprotocols-mcpserver-fs
 3. **Review server logs** for startup errors
 4. **Test server manually**:
    ```bash
-   airsprotocols-mcpserver-fs --help
+   airsprotocols-mcpserver-filesystem --help
    ```
 
 ## Migration Guide

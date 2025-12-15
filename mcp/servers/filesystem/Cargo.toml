@@ -1,5 +1,5 @@
 [package]
-name = "airsprotocols-mcpserver-fs"
+name = "airsprotocols-mcpserver-filesystem"
 version = "1.0.0-rc.1"
 edition.workspace = true
 authors.workspace = true
@@ -10,7 +10,8 @@ description = "Security-first MCP filesystem server enabling Claude Desktop and 
 keywords = ["mcp", "filesystem", "claude", "ai-tools", "security"]
 categories = ["network-programming", "api-bindings", "filesystem"]
 readme = "README.md"
-documentation = "https://docs.rs/airsprotocols-mcpserver-fs"
+exclude = []
+documentation = "https://docs.rs/airsprotocols-mcpserver-filesystem"
 homepage = "https://github.com/airsstack/airsprotocols/tree/main/mcp/servers/filesystem"
 
 [lints]
@@ -64,7 +65,7 @@ urlencoding.workspace = true
 unicode-normalization.workspace = true
 
 [[bin]]
-name = "airsprotocols-mcpserver-fs"
+name = "airsprotocols-mcpserver-filesystem"
 path = "src/main.rs"
 
 [features]

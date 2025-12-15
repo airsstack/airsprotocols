@@ -36,8 +36,8 @@ use crate::mcp::types::OperationType;
 /// # Examples
 ///
 /// ```rust
-/// use airsprotocols_mcpserver_fs::security::permissions::*;
-/// use airsprotocols_mcpserver_fs::OperationType;
+/// use airsprotocols_mcpserver_filesystem::security::permissions::*;
+/// use airsprotocols_mcpserver_filesystem::OperationType;
 /// use std::collections::HashSet;
 /// use std::path::PathBuf;
 ///
@@ -119,7 +119,7 @@ impl PathPermissionValidator {
     /// # Examples
     ///
     /// ```rust
-    /// # use airsprotocols_mcpserver_fs::security::permissions::PathPermissionValidator;
+    /// # use airsprotocols_mcpserver_filesystem::security::permissions::PathPermissionValidator;
     /// // Strict mode for production
     /// let production_validator = PathPermissionValidator::new(true);
     ///
@@ -146,7 +146,7 @@ impl PathPermissionValidator {
     /// # Examples
     ///
     /// ```rust
-    /// # use airsprotocols_mcpserver_fs::security::permissions::{PathPermissionValidator, PathPermissionRule, PermissionLevel};
+    /// # use airsprotocols_mcpserver_filesystem::security::permissions::{PathPermissionValidator, PathPermissionRule, PermissionLevel};
     /// let mut validator = PathPermissionValidator::new(true);
     ///
     /// let high_priority_rule = PathPermissionRule::new(
@@ -188,8 +188,8 @@ impl PathPermissionValidator {
     /// # Examples
     ///
     /// ```rust
-    /// # use airsprotocols_mcpserver_fs::security::permissions::PathPermissionValidator;
-    /// # use airsprotocols_mcpserver_fs::config::settings::{SecurityPolicy, RiskLevel};
+    /// # use airsprotocols_mcpserver_filesystem::security::permissions::PathPermissionValidator;
+    /// # use airsprotocols_mcpserver_filesystem::config::settings::{SecurityPolicy, RiskLevel};
     /// let mut validator = PathPermissionValidator::new(true);
     ///
     /// let policy = SecurityPolicy {
@@ -224,8 +224,8 @@ impl PathPermissionValidator {
     /// # Examples
     ///
     /// ```rust
-    /// # use airsprotocols_mcpserver_fs::security::permissions::{PathPermissionValidator, PathPermissionRule, PermissionLevel};
-    /// # use airsprotocols_mcpserver_fs::mcp::types::OperationType;
+    /// # use airsprotocols_mcpserver_filesystem::security::permissions::{PathPermissionValidator, PathPermissionRule, PermissionLevel};
+    /// # use airsprotocols_mcpserver_filesystem::mcp::types::OperationType;
     /// # use std::collections::HashSet;
     /// # use std::path::PathBuf;
     /// let mut validator = PathPermissionValidator::new(true);
@@ -378,7 +378,7 @@ impl PathPermissionValidator {
     /// # Examples
     ///
     /// ```rust
-    /// # use airsprotocols_mcpserver_fs::security::permissions::{PathPermissionValidator, PathPermissionRule, PermissionLevel};
+    /// # use airsprotocols_mcpserver_filesystem::security::permissions::{PathPermissionValidator, PathPermissionRule, PermissionLevel};
     /// let mut validator = PathPermissionValidator::new(true);
     ///
     /// // Add some rules
@@ -426,7 +426,7 @@ impl PathPermissionValidator {
     /// # Examples
     ///
     /// ```rust
-    /// # use airsprotocols_mcpserver_fs::security::permissions::{PathPermissionValidator, PathPermissionRule, PermissionLevel};
+    /// # use airsprotocols_mcpserver_filesystem::security::permissions::{PathPermissionValidator, PathPermissionRule, PermissionLevel};
     /// let mut validator = PathPermissionValidator::new(true);
     ///
     /// validator.add_rule(PathPermissionRule::new(
@@ -464,7 +464,7 @@ impl PathPermissionValidator {
     /// # Examples
     ///
     /// ```rust
-    /// # use airsprotocols_mcpserver_fs::security::permissions::{PathPermissionValidator, PathPermissionRule, PermissionLevel};
+    /// # use airsprotocols_mcpserver_filesystem::security::permissions::{PathPermissionValidator, PathPermissionRule, PermissionLevel};
     /// # use std::path::PathBuf;
     /// let mut validator = PathPermissionValidator::new(true);
     ///
@@ -506,8 +506,8 @@ impl PathPermissionValidator {
     /// # Examples
     ///
     /// ```rust
-    /// # use airsprotocols_mcpserver_fs::security::permissions::{PathPermissionValidator, PathPermissionRule, PermissionLevel};
-    /// # use airsprotocols_mcpserver_fs::mcp::types::OperationType;
+    /// # use airsprotocols_mcpserver_filesystem::security::permissions::{PathPermissionValidator, PathPermissionRule, PermissionLevel};
+    /// # use airsprotocols_mcpserver_filesystem::mcp::types::OperationType;
     /// # use std::path::PathBuf;
     /// let mut validator = PathPermissionValidator::new(true);
     ///

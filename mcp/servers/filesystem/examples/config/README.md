@@ -1,4 +1,4 @@
-# airsprotocols-mcpserver-fs Configuration Examples
+# airsprotocols-mcpserver-filesystem Configuration Examples
 
 This directory contains example configurations for different deployment environments and use cases.
 

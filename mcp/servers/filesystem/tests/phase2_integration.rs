@@ -8,8 +8,8 @@ use airsprotocols_mcp::providers::ToolProvider;
 use airsprotocols_mcp::transport::adapters::stdio::StdioTransportBuilder;
 
 // Layer 3b: Local crate modules
-use airsprotocols_mcpserver_fs::mcp::FilesystemMessageHandler;
-use airsprotocols_mcpserver_fs::{DefaultFilesystemMcpServer, Settings};
+use airsprotocols_mcpserver_filesystem::mcp::FilesystemMessageHandler;
+use airsprotocols_mcpserver_filesystem::{DefaultFilesystemMcpServer, Settings};
 
 #[tokio::test]
 async fn test_phase2_message_handler_integration() {

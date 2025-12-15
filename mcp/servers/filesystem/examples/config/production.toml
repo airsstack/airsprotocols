@@ -6,7 +6,7 @@
 allowed_paths = [
     "/app/data/**/*",
     "/app/workspace/**/*",
-    "/var/lib/airs-mcp-fs/**/*",
+    "/var/lib/airsprotocols-mcpserver-filesystem/**/*",
 ]
 
 denied_paths = [
@@ -57,7 +57,7 @@ description = "Production data files - controlled access"
 
 [security.policies.application_logs]
 patterns = [
-    "/var/lib/airs-mcp-fs/logs/**/*.log",
+    "/var/lib/airsprotocols-mcpserver-filesystem/logs/**/*.log",
 ]
 operations = ["read"]
 risk_level = "low"

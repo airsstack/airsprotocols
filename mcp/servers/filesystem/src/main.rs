@@ -14,7 +14,7 @@ use anyhow::Result;
 // (None needed for CLI-only entry point)
 
 // Layer 3b: Local crate modules (only through lib.rs gateway)
-use airsprotocols_mcpserver_fs::cli;
+use airsprotocols_mcpserver_filesystem::cli;
 
 #[tokio::main]
 async fn main() -> Result<()> {

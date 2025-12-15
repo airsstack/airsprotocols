@@ -3,7 +3,7 @@
 # Environment-specific files (development.toml, production.toml, etc.) will override these values
 
 [server]
-name = "airs-mcp-fs"
+name = "airsprotocols-mcpserver-filesystem"
 version = "0.1.0"
 
 [binary]

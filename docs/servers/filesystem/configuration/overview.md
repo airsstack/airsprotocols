@@ -7,7 +7,6 @@ This section provides a comprehensive overview of AIRS MCP-FS configuration syst
 AIRS MCP-FS configuration is built on four core principles:
 
 1. **Security by Default**: Safe defaults that protect your system
-2. **Environment Awareness**: Automatic adaptation to development/staging/production
 3. **Policy-Driven Access**: Named policies for different file types and use cases
 4. **12-Factor Compliance**: Environment variable overrides for deployment flexibility
 
@@ -88,7 +87,7 @@ Basic MCP server identity and capabilities:
 
 ```toml
 [server]
-name = "airs-mcp-fs"
+name = "airsprotocols-mcpserver-filesystem"
 version = "1.0.0"
 ```
 
@@ -132,10 +131,10 @@ AIRS MCP-FS searches for configuration files using a systematic approach:
    └── $AIRS_MCP_FS_CONFIG_DIR/{environment}.toml
 
 2. Check user configuration directory
-   └── ~/.config/airs-mcp-fs/{environment}.toml
+   └── ~/.config/airsprotocols-mcpserver-filesystem/{environment}.toml
 
 3. Check system configuration directory
-   └── /etc/airs-mcp-fs/{environment}.toml
+   └── /etc/airsprotocols-mcpserver-filesystem/{environment}.toml
 
 4. Use built-in defaults
    └── Compiled secure defaults
@@ -198,8 +197,8 @@ Environment:   AIRS_MCP_FS_SECURITY_FILESYSTEM_ALLOWED_PATHS
 ```bash
 # Environment and directories
 export AIRS_MCP_FS_ENV=development
-export AIRS_MCP_FS_CONFIG_DIR=~/.config/airs-mcp-fs
-export AIRS_MCP_FS_LOG_DIR=~/.local/share/airs-mcp-fs/logs
+export AIRS_MCP_FS_CONFIG_DIR=~/.config/airsprotocols-mcpserver-filesystem
+export AIRS_MCP_FS_LOG_DIR=~/.local/share/airsprotocols-mcpserver-filesystem/logs
 
 # File size limits
 export AIRS_MCP_FS_BINARY_MAX_FILE_SIZE=52428800  # 50MB
@@ -262,5 +261,5 @@ Configuration errors are handled gracefully:
 
 - **[Environment Setup](./environment.md)**: Detailed environment configuration
 - **[Security Policies](./security.md)**: Advanced security policy configuration  
-- **[Claude Desktop Integration](./claude_desktop.md)**: MCP client setup
+- **[Claude Desktop Integration](./claude-desktop.md)**: MCP client setup
 - **[Troubleshooting](./troubleshooting.md)**: Configuration problem solving

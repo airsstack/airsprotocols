@@ -17,8 +17,8 @@ Add AIRS MCP-FS to your Claude Desktop configuration file:
 ```json
 {
   "mcpServers": {
-    "airs-mcp-fs": {
-      "command": "/path/to/airs-mcp-fs",
+    "airsprotocols-mcpserver-filesystem": {
+      "command": "/path/to/airsprotocols-mcpserver-filesystem",
       "env": {
         "AIRS_MCP_FS_ENV": "development"
       }
@@ -34,12 +34,12 @@ For full control over AIRS MCP-FS behavior:
 ```json
 {
   "mcpServers": {
-    "airs-mcp-fs": {
-      "command": "/Users/username/path/to/airs-mcp-fs",
+    "airsprotocols-mcpserver-filesystem": {
+      "command": "/Users/username/path/to/airsprotocols-mcpserver-filesystem",
       "env": {
         "AIRS_MCP_FS_ENV": "development",
-        "AIRS_MCP_FS_CONFIG_DIR": "/Users/username/.config/airs-mcp-fs",
-        "AIRS_MCP_FS_LOG_DIR": "/Users/username/.local/share/airs-mcp-fs/logs",
+        "AIRS_MCP_FS_CONFIG_DIR": "/Users/username/.config/airsprotocols-mcpserver-filesystem",
+        "AIRS_MCP_FS_LOG_DIR": "/Users/username/.local/share/airsprotocols-mcpserver-filesystem/logs",
         "RUST_LOG": "info"
       }
     }
@@ -56,8 +56,8 @@ AIRS MCP-FS behavior is controlled through environment variables in the Claude D
 | Variable | Purpose | Example | Required |
 |----------|---------|---------|----------|
 | `AIRS_MCP_FS_ENV` | Environment type | `development` | Yes |
-| `AIRS_MCP_FS_CONFIG_DIR` | Configuration directory | `~/.config/airs-mcp-fs` | Recommended |
-| `AIRS_MCP_FS_LOG_DIR` | Log output directory | `~/.local/share/airs-mcp-fs/logs` | Recommended |
+| `AIRS_MCP_FS_CONFIG_DIR` | Configuration directory | `~/.config/airsprotocols-mcpserver-filesystem` | Recommended |
+| `AIRS_MCP_FS_LOG_DIR` | Log output directory | `~/.local/share/airsprotocols-mcpserver-filesystem/logs` | Recommended |
 | `RUST_LOG` | Logging level | `info`, `debug` | Optional |
 
 ### Security Override Variables
@@ -77,12 +77,12 @@ Ideal for local development with broad file access:
 ```json
 {
   "mcpServers": {
-    "airs-mcp-fs": {
-      "command": "/usr/local/bin/airs-mcp-fs",
+    "airsprotocols-mcpserver-filesystem": {
+      "command": "/usr/local/bin/airsprotocols-mcpserver-filesystem",
       "env": {
         "AIRS_MCP_FS_ENV": "development",
-        "AIRS_MCP_FS_CONFIG_DIR": "/Users/developer/.config/airs-mcp-fs",
-        "AIRS_MCP_FS_LOG_DIR": "/Users/developer/.local/share/airs-mcp-fs/logs",
+        "AIRS_MCP_FS_CONFIG_DIR": "/Users/developer/.config/airsprotocols-mcpserver-filesystem",
+        "AIRS_MCP_FS_LOG_DIR": "/Users/developer/.local/share/airsprotocols-mcpserver-filesystem/logs",
         "AIRS_MCP_FS_SECURITY_FILESYSTEM_ALLOWED_PATHS": "/Users/developer/projects/**/*,/Users/developer/Documents/**/*,/Users/developer/Desktop/**/*",
         "RUST_LOG": "info"
       }
@@ -98,11 +98,11 @@ Optimized for writing, blogging, and content management:
 ```json
 {
   "mcpServers": {
-    "airs-mcp-fs": {
-      "command": "/usr/local/bin/airs-mcp-fs",
+    "airsprotocols-mcpserver-filesystem": {
+      "command": "/usr/local/bin/airsprotocols-mcpserver-filesystem",
       "env": {
         "AIRS_MCP_FS_ENV": "development",
-        "AIRS_MCP_FS_CONFIG_DIR": "/Users/writer/.config/airs-mcp-fs",
+        "AIRS_MCP_FS_CONFIG_DIR": "/Users/writer/.config/airsprotocols-mcpserver-filesystem",
         "AIRS_MCP_FS_SECURITY_FILESYSTEM_ALLOWED_PATHS": "/Users/writer/writing/**/*,/Users/writer/blog/**/*,/Users/writer/assets/**/*",
         "AIRS_MCP_FS_BINARY_ENABLE_IMAGE_PROCESSING": "true",
         "AIRS_MCP_FS_BINARY_MAX_FILE_SIZE": "209715200"
@@ -119,12 +119,12 @@ Minimal permissions for production use:
 ```json
 {
   "mcpServers": {
-    "airs-mcp-fs": {
-      "command": "/opt/airs-mcp-fs/bin/airs-mcp-fs",
+    "airsprotocols-mcpserver-filesystem": {
+      "command": "/opt/airsprotocols-mcpserver-filesystem/bin/airsprotocols-mcpserver-filesystem",
       "env": {
         "AIRS_MCP_FS_ENV": "production",
-        "AIRS_MCP_FS_CONFIG_DIR": "/etc/airs-mcp-fs",
-        "AIRS_MCP_FS_LOG_DIR": "/var/log/airs-mcp-fs",
+        "AIRS_MCP_FS_CONFIG_DIR": "/etc/airsprotocols-mcpserver-filesystem",
+        "AIRS_MCP_FS_LOG_DIR": "/var/log/airsprotocols-mcpserver-filesystem",
         "AIRS_MCP_FS_SECURITY_FILESYSTEM_ALLOWED_PATHS": "/app/data/**/*.json",
         "AIRS_MCP_FS_SECURITY_OPERATIONS_WRITE_REQUIRES_POLICY": "true",
         "RUST_LOG": "warn"
@@ -140,12 +140,12 @@ Minimal permissions for production use:
 
 1. **Install AIRS MCP-FS**
    ```bash
-   cargo build --release --bin airs-mcp-fs
+   cargo build --release --bin airsprotocols-mcpserver-filesystem
    ```
 
 2. **Generate Configuration**
    ```bash
-   airs-mcp-fs generate-config --env development
+   airsprotocols-mcpserver-filesystem generate-config --env development
    ```
 
 3. **Configure Claude Desktop**
@@ -171,7 +171,7 @@ After setup, validate your configuration:
 1. **Check Configuration Loading**
    ```bash
    # Run AIRS MCP-FS manually to check configuration
-   AIRS_MCP_FS_ENV=development /path/to/airs-mcp-fs
+   AIRS_MCP_FS_ENV=development /path/to/airsprotocols-mcpserver-filesystem
    ```
 
 2. **Verify File Access**
@@ -195,18 +195,18 @@ Configure different AIRS MCP-FS instances for different environments:
 ```json
 {
   "mcpServers": {
-    "airs-mcp-fs-dev": {
-      "command": "/usr/local/bin/airs-mcp-fs",
+    "airsprotocols-mcpserver-filesystem-dev": {
+      "command": "/usr/local/bin/airsprotocols-mcpserver-filesystem",
       "env": {
         "AIRS_MCP_FS_ENV": "development",
-        "AIRS_MCP_FS_CONFIG_DIR": "/Users/dev/.config/airs-mcp-fs-dev"
+        "AIRS_MCP_FS_CONFIG_DIR": "/Users/dev/.config/airsprotocols-mcpserver-filesystem-dev"
       }
     },
-    "airs-mcp-fs-prod": {
-      "command": "/usr/local/bin/airs-mcp-fs",
+    "airsprotocols-mcpserver-filesystem-prod": {
+      "command": "/usr/local/bin/airsprotocols-mcpserver-filesystem",
       "env": {
         "AIRS_MCP_FS_ENV": "production",
-        "AIRS_MCP_FS_CONFIG_DIR": "/Users/dev/.config/airs-mcp-fs-prod"
+        "AIRS_MCP_FS_CONFIG_DIR": "/Users/dev/.config/airsprotocols-mcpserver-filesystem-prod"
       }
     }
   }
@@ -220,15 +220,15 @@ Use different configurations for different projects:
 ```json
 {
   "mcpServers": {
-    "airs-mcp-fs-project-a": {
-      "command": "/usr/local/bin/airs-mcp-fs",
+    "airsprotocols-mcpserver-filesystem-project-a": {
+      "command": "/usr/local/bin/airsprotocols-mcpserver-filesystem",
       "env": {
         "AIRS_MCP_FS_ENV": "development",
         "AIRS_MCP_FS_SECURITY_FILESYSTEM_ALLOWED_PATHS": "/Users/dev/project-a/**/*"
       }
     },
-    "airs-mcp-fs-project-b": {
-      "command": "/usr/local/bin/airs-mcp-fs", 
+    "airsprotocols-mcpserver-filesystem-project-b": {
+      "command": "/usr/local/bin/airsprotocols-mcpserver-filesystem", 
       "env": {
         "AIRS_MCP_FS_ENV": "development",
         "AIRS_MCP_FS_SECURITY_FILESYSTEM_ALLOWED_PATHS": "/Users/dev/project-b/**/*"
@@ -293,8 +293,8 @@ Claude: *uses list_directory, create_directory, and move_file tools*
 1. **Check Binary Path**
    ```bash
    # Verify binary exists and is executable
-   ls -la /path/to/airs-mcp-fs
-   chmod +x /path/to/airs-mcp-fs
+   ls -la /path/to/airsprotocols-mcpserver-filesystem
+   chmod +x /path/to/airsprotocols-mcpserver-filesystem
    ```
 
 2. **Validate JSON Configuration**
@@ -306,7 +306,7 @@ Claude: *uses list_directory, create_directory, and move_file tools*
 3. **Check Logs**
    ```bash
    # Check AIRS MCP-FS logs
-   tail -f ~/.local/share/airs-mcp-fs/logs/airs-mcp-fs.log
+   tail -f ~/.local/share/airsprotocols-mcpserver-filesystem/logs/airsprotocols-mcpserver-filesystem.log
    ```
 
 #### Permission Denied Errors
@@ -356,13 +356,13 @@ Claude: *uses list_directory, create_directory, and move_file tools*
 2. **Check File Existence**
    ```bash
    # Verify configuration file exists
-   ls -la ~/.config/airs-mcp-fs/development.toml
+   ls -la ~/.config/airsprotocols-mcpserver-filesystem/development.toml
    ```
 
 3. **Validate Configuration Syntax**
    ```bash
    # Test configuration loading
-   AIRS_MCP_FS_ENV=development /path/to/airs-mcp-fs
+   AIRS_MCP_FS_ENV=development /path/to/airsprotocols-mcpserver-filesystem
    ```
 
 ### Debug Mode
@@ -372,8 +372,8 @@ Enable debug logging for detailed troubleshooting:
 ```json
 {
   "mcpServers": {
-    "airs-mcp-fs": {
-      "command": "/usr/local/bin/airs-mcp-fs",
+    "airsprotocols-mcpserver-filesystem": {
+      "command": "/usr/local/bin/airsprotocols-mcpserver-filesystem",
       "env": {
         "AIRS_MCP_FS_ENV": "development",
         "RUST_LOG": "debug"

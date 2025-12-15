@@ -62,7 +62,7 @@ pub async fn handle_config(output: PathBuf, env: &str, force: bool) -> Result<()
         config_file.display()
     );
     info!("   2. Update allowed_paths for your specific use case");
-    info!("   3. Run: airsprotocols-mcpserver-fs serve");
+    info!("   3. Run: airsprotocols-mcpserver-filesystem serve");
     info!("   4. See CONFIGURATION.md for detailed setup instructions");
 
     Ok(())

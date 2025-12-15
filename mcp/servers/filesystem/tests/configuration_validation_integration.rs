@@ -11,7 +11,7 @@
 // (None needed)
 
 // Layer 3: Internal module imports
-use airsprotocols_mcpserver_fs::config::{ConfigurationValidator, Settings};
+use airsprotocols_mcpserver_filesystem::config::{ConfigurationValidator, Settings};
 
 #[test]
 fn test_configuration_validation_integration() {
@@ -28,7 +28,7 @@ fn test_configuration_validation_integration() {
     // Verify that the settings can be loaded successfully (includes validation)
     let loaded_settings =
         Settings::load().expect("Settings should load successfully with validation");
-    assert_eq!(loaded_settings.server.name, "airsprotocols-mcpserver-fs");
+    assert_eq!(loaded_settings.server.name, "airsprotocols-mcpserver-filesystem");
 }
 
 #[test]

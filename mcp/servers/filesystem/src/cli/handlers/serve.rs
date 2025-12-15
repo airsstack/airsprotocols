@@ -65,7 +65,7 @@ pub async fn handle_serve(config_dir: Option<PathBuf>, _logs_dir: Option<PathBuf
             }
             Err(e) => {
                 error!("❌ Failed to load configuration: {}", e);
-                error!("💡 Try running: airsprotocols-mcpserver-fs config");
+                error!("💡 Try running: airsprotocols-mcpserver-filesystem config");
                 process::exit(1);
             }
         }

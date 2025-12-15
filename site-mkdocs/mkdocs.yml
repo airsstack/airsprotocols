@@ -128,6 +128,32 @@ nav:
       - A2A:
           - Overview: protocols/a2a/index.md
   
+  - Servers:
+      - Filesystem:
+          - Overview: servers/filesystem/index.md
+          - Introduction: servers/filesystem/overview.md
+          - Quick Start: servers/filesystem/quick-start.md
+          - Installation: servers/filesystem/installation.md
+          - Features: servers/filesystem/features.md
+          - Architecture: servers/filesystem/architecture.md
+          - Performance: servers/filesystem/performance.md
+          - Configuration:
+              - Overview: servers/filesystem/configuration/index.md
+              - Configuration Guide: servers/filesystem/configuration/overview.md
+              - Environment Setup: servers/filesystem/configuration/environment.md
+              - Security Policies: servers/filesystem/configuration/security.md
+              - Claude Desktop: servers/filesystem/configuration/claude-desktop.md
+              - Deployment: servers/filesystem/configuration/deployment.md
+              - Troubleshooting: servers/filesystem/configuration/troubleshooting.md
+          - Usage:
+              - Common Patterns: servers/filesystem/usage/index.md
+              - Examples & Use Cases: servers/filesystem/usage/examples.md
+              - Integration: servers/filesystem/usage/integration.md
+          - Security:
+              - Security Model: servers/filesystem/security/index.md
+              - Security Policies: servers/filesystem/security/policies.md
+              - Audit Logging: servers/filesystem/security/audit.md
+  
   - APIs:
       - Overview: apis/index.md
   

@@ -6,7 +6,7 @@ This section provides comprehensive troubleshooting guidance for common AIRS MCP
 
 When experiencing issues, run through this checklist:
 
-1. **✅ Binary Accessibility**: Can you run `airs-mcp-fs --help`?
+1. **✅ Binary Accessibility**: Can you run `airsprotocols-mcpserver-filesystem --help`?
 2. **✅ Configuration File**: Does your config file exist and have correct syntax?
 3. **✅ Environment Detection**: Is `AIRS_MCP_FS_ENV` set correctly?
 4. **✅ Path Permissions**: Are your allowed paths accessible?
@@ -32,10 +32,10 @@ When experiencing issues, run through this checklist:
 echo $AIRS_MCP_FS_ENV
 
 # Check if config directory exists
-ls -la ~/.config/airs-mcp-fs/
+ls -la ~/.config/airsprotocols-mcpserver-filesystem/
 
 # Check if config file exists for your environment
-ls -la ~/.config/airs-mcp-fs/development.toml
+ls -la ~/.config/airsprotocols-mcpserver-filesystem/development.toml
 ```
 
 **Solutions**:
@@ -43,19 +43,19 @@ ls -la ~/.config/airs-mcp-fs/development.toml
 1. **Generate Missing Configuration**
    ```bash
    # Generate development configuration
-   airs-mcp-fs generate-config --env development
+   airsprotocols-mcpserver-filesystem generate-config --env development
 
    # Generate for specific environment
-   airs-mcp-fs generate-config --env production --output ~/.config/airs-mcp-fs
+   airsprotocols-mcpserver-filesystem generate-config --env production --output ~/.config/airsprotocols-mcpserver-filesystem
    ```
 
 2. **Set Explicit Config Directory**
    ```json
    {
      "mcpServers": {
-       "airs-mcp-fs": {
+       "airsprotocols-mcpserver-filesystem": {
          "env": {
-           "AIRS_MCP_FS_CONFIG_DIR": "/Users/username/.config/airs-mcp-fs"
+           "AIRS_MCP_FS_CONFIG_DIR": "/Users/username/.config/airsprotocols-mcpserver-filesystem"
          }
        }
      }
@@ -65,10 +65,10 @@ ls -la ~/.config/airs-mcp-fs/development.toml
 3. **Create Manual Configuration**
    ```bash
    # Create config directory
-   mkdir -p ~/.config/airs-mcp-fs
+   mkdir -p ~/.config/airsprotocols-mcpserver-filesystem
 
    # Create basic development configuration
-   cat > ~/.config/airs-mcp-fs/development.toml << 'EOF'
+   cat > ~/.config/airsprotocols-mcpserver-filesystem/development.toml << 'EOF'
    [security.filesystem]
    allowed_paths = ["~/Documents/**/*", "~/projects/**/*"]
    
@@ -89,10 +89,10 @@ ls -la ~/.config/airs-mcp-fs/development.toml
 **Diagnostic Steps**:
 ```bash
 # Validate TOML syntax
-python3 -c "import tomllib; tomllib.load(open('~/.config/airs-mcp-fs/development.toml', 'rb'))"
+python3 -c "import tomllib; tomllib.load(open('~/.config/airsprotocols-mcpserver-filesystem/development.toml', 'rb'))"
 
 # Or use a TOML validator
-toml-validator ~/.config/airs-mcp-fs/development.toml
+toml-validator ~/.config/airsprotocols-mcpserver-filesystem/development.toml
 ```
 
 **Solutions**:
@@ -115,7 +115,7 @@ toml-validator ~/.config/airs-mcp-fs/development.toml
 2. **Validate Configuration Structure**
    ```bash
    # Test configuration loading manually
-   RUST_LOG=debug airs-mcp-fs 2>&1 | grep -i config
+   RUST_LOG=debug airsprotocols-mcpserver-filesystem 2>&1 | grep -i config
    ```
 
 ## Permission and Security Issues
@@ -130,10 +130,10 @@ toml-validator ~/.config/airs-mcp-fs/development.toml
 **Diagnostic Steps**:
 ```bash
 # Check current configuration
-cat ~/.config/airs-mcp-fs/development.toml | grep -A 5 allowed_paths
+cat ~/.config/airsprotocols-mcpserver-filesystem/development.toml | grep -A 5 allowed_paths
 
 # Test path matching manually
-RUST_LOG=debug airs-mcp-fs 2>&1 | grep -i "path validation"
+RUST_LOG=debug airsprotocols-mcpserver-filesystem 2>&1 | grep -i "path validation"
 ```
 
 **Root Causes and Solutions**:
@@ -189,10 +189,10 @@ RUST_LOG=debug airs-mcp-fs 2>&1 | grep -i "path validation"
 **Diagnostic Steps**:
 ```bash
 # Check operation configuration
-cat ~/.config/airs-mcp-fs/development.toml | grep -A 5 operations
+cat ~/.config/airsprotocols-mcpserver-filesystem/development.toml | grep -A 5 operations
 
 # Check security policies
-cat ~/.config/airs-mcp-fs/development.toml | grep -A 10 policies
+cat ~/.config/airsprotocols-mcpserver-filesystem/development.toml | grep -A 10 policies
 ```
 
 **Solutions**:
@@ -218,7 +218,7 @@ cat ~/.config/airs-mcp-fs/development.toml | grep -A 10 policies
    ```json
    {
      "mcpServers": {
-       "airs-mcp-fs": {
+       "airsprotocols-mcpserver-filesystem": {
          "env": {
            "AIRS_MCP_FS_SECURITY_OPERATIONS_WRITE_REQUIRES_POLICY": "false"
          }
@@ -255,7 +255,7 @@ rustc --version
    ```json
    {
      "mcpServers": {
-       "airs-mcp-fs": {
+       "airsprotocols-mcpserver-filesystem": {
          "env": {
            "AIRS_MCP_FS_ENV": "development"
          }
@@ -283,11 +283,11 @@ rustc --version
 **Diagnostic Steps**:
 ```bash
 # Check if binary exists and is executable
-ls -la /path/to/airs-mcp-fs
-file /path/to/airs-mcp-fs
+ls -la /path/to/airsprotocols-mcpserver-filesystem
+file /path/to/airsprotocols-mcpserver-filesystem
 
 # Test binary directly
-/path/to/airs-mcp-fs --help
+/path/to/airsprotocols-mcpserver-filesystem --help
 
 # Validate JSON configuration
 python3 -m json.tool < "~/Library/Application Support/Claude/claude_desktop_config.json"
@@ -298,18 +298,18 @@ python3 -m json.tool < "~/Library/Application Support/Claude/claude_desktop_conf
 1. **Fix Binary Path**
    ```bash
    # Find correct binary path
-   which airs-mcp-fs
+   which airsprotocols-mcpserver-filesystem
    
    # Or use absolute path
-   realpath target/release/airs-mcp-fs
+   realpath target/release/airsprotocols-mcpserver-filesystem
    ```
 
 2. **Fix JSON Configuration**
    ```json
    {
      "mcpServers": {
-       "airs-mcp-fs": {
-         "command": "/correct/absolute/path/to/airs-mcp-fs",
+       "airsprotocols-mcpserver-filesystem": {
+         "command": "/correct/absolute/path/to/airsprotocols-mcpserver-filesystem",
          "env": {
            "AIRS_MCP_FS_ENV": "development"
          }
@@ -321,10 +321,10 @@ python3 -m json.tool < "~/Library/Application Support/Claude/claude_desktop_conf
 3. **Check Binary Permissions**
    ```bash
    # Make binary executable
-   chmod +x /path/to/airs-mcp-fs
+   chmod +x /path/to/airsprotocols-mcpserver-filesystem
    
    # Check architecture compatibility
-   file /path/to/airs-mcp-fs
+   file /path/to/airsprotocols-mcpserver-filesystem
    ```
 
 ### Problem: "Invalid server response" Errors
@@ -334,10 +334,10 @@ python3 -m json.tool < "~/Library/Application Support/Claude/claude_desktop_conf
 **Diagnostic Steps**:
 ```bash
 # Check log files
-tail -f ~/.local/share/airs-mcp-fs/logs/airs-mcp-fs.log
+tail -f ~/.local/share/airsprotocols-mcpserver-filesystem/logs/airsprotocols-mcpserver-filesystem.log
 
 # Test server communication manually
-echo '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{}}' | /path/to/airs-mcp-fs
+echo '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{}}' | /path/to/airsprotocols-mcpserver-filesystem
 ```
 
 **Solutions**:
@@ -345,19 +345,19 @@ echo '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{}}' | /path/to/air
 1. **Check Log Directory Permissions**
    ```bash
    # Create log directory if it doesn't exist
-   mkdir -p ~/.local/share/airs-mcp-fs/logs
+   mkdir -p ~/.local/share/airsprotocols-mcpserver-filesystem/logs
    
    # Set proper permissions
-   chmod 755 ~/.local/share/airs-mcp-fs/logs
+   chmod 755 ~/.local/share/airsprotocols-mcpserver-filesystem/logs
    ```
 
 2. **Set Explicit Log Directory**
    ```json
    {
      "mcpServers": {
-       "airs-mcp-fs": {
+       "airsprotocols-mcpserver-filesystem": {
          "env": {
-           "AIRS_MCP_FS_LOG_DIR": "/Users/username/.local/share/airs-mcp-fs/logs"
+           "AIRS_MCP_FS_LOG_DIR": "/Users/username/.local/share/airsprotocols-mcpserver-filesystem/logs"
          }
        }
      }
@@ -457,7 +457,7 @@ python3 test_pattern.py "~/Documents/**/*.txt" "~/Documents/notes/todo.txt"
    ```json
    {
      "mcpServers": {
-       "airs-mcp-fs": {
+       "airsprotocols-mcpserver-filesystem": {
          "env": {
            "AIRS_MCP_FS_BINARY_MAX_FILE_SIZE": "209715200"
          }
@@ -473,7 +473,7 @@ python3 test_pattern.py "~/Documents/**/*.txt" "~/Documents/notes/todo.txt"
 **Diagnostic Steps**:
 ```bash
 # Check if binary processing is enabled
-cat ~/.config/airs-mcp-fs/development.toml | grep -A 5 binary
+cat ~/.config/airsprotocols-mcpserver-filesystem/development.toml | grep -A 5 binary
 
 # Test file format
 file ~/Documents/image.jpg
@@ -501,7 +501,7 @@ file ~/Documents/image.jpg
 ```json
 {
   "mcpServers": {
-    "airs-mcp-fs": {
+    "airsprotocols-mcpserver-filesystem": {
       "env": {
         "RUST_LOG": "debug",
         "AIRS_MCP_FS_ENV": "development"
@@ -522,13 +522,13 @@ This provides detailed logging of:
 
 ```bash
 # Monitor logs in real-time
-tail -f ~/.local/share/airs-mcp-fs/logs/airs-mcp-fs.log
+tail -f ~/.local/share/airsprotocols-mcpserver-filesystem/logs/airsprotocols-mcpserver-filesystem.log
 
 # Search for specific errors
-grep -i "error\|denied\|failed" ~/.local/share/airs-mcp-fs/logs/airs-mcp-fs.log
+grep -i "error\|denied\|failed" ~/.local/share/airsprotocols-mcpserver-filesystem/logs/airsprotocols-mcpserver-filesystem.log
 
 # Filter security-related logs
-grep -i "security\|validation\|policy" ~/.local/share/airs-mcp-fs/logs/airs-mcp-fs.log
+grep -i "security\|validation\|policy" ~/.local/share/airsprotocols-mcpserver-filesystem/logs/airsprotocols-mcpserver-filesystem.log
 ```
 
 ### Configuration Validation Tool
@@ -566,12 +566,12 @@ TEMP_ENV=$(mktemp)
 echo "AIRS_MCP_FS_CONFIG_DIR=$(dirname "$CONFIG_FILE")" > "$TEMP_ENV"
 echo "AIRS_MCP_FS_ENV=$(basename "$CONFIG_FILE" .toml)" >> "$TEMP_ENV"
 
-if env -i bash -c "source $TEMP_ENV && timeout 5s airs-mcp-fs" 2>/dev/null; then
+if env -i bash -c "source $TEMP_ENV && timeout 5s airsprotocols-mcpserver-filesystem" 2>/dev/null; then
     echo "✅ Configuration loads successfully"
 else
     echo "❌ Configuration loading failed"
     echo "Check logs for details:"
-    echo "  tail ~/.local/share/airs-mcp-fs/logs/airs-mcp-fs.log"
+    echo "  tail ~/.local/share/airsprotocols-mcpserver-filesystem/logs/airsprotocols-mcpserver-filesystem.log"
 fi
 
 rm "$TEMP_ENV"
@@ -580,7 +580,7 @@ EOF
 chmod +x validate_config.sh
 
 # Use the validator
-./validate_config.sh ~/.config/airs-mcp-fs/development.toml
+./validate_config.sh ~/.config/airsprotocols-mcpserver-filesystem/development.toml
 ```
 
 ## Getting Help
@@ -605,16 +605,16 @@ echo "AIRS_MCP_FS_LOG_DIR: $AIRS_MCP_FS_LOG_DIR"
 echo ""
 
 echo "Binary Information:"
-which airs-mcp-fs
-airs-mcp-fs --version 2>/dev/null || echo "Binary not found or not executable"
+which airsprotocols-mcpserver-filesystem
+airsprotocols-mcpserver-filesystem --version 2>/dev/null || echo "Binary not found or not executable"
 echo ""
 
 echo "Configuration Files:"
-find ~/.config/airs-mcp-fs -name "*.toml" 2>/dev/null | head -5
+find ~/.config/airsprotocols-mcpserver-filesystem -name "*.toml" 2>/dev/null | head -5
 echo ""
 
 echo "Recent Log Entries:"
-tail -20 ~/.local/share/airs-mcp-fs/logs/airs-mcp-fs.log 2>/dev/null || echo "No log file found"
+tail -20 ~/.local/share/airsprotocols-mcpserver-filesystem/logs/airsprotocols-mcpserver-filesystem.log 2>/dev/null || echo "No log file found"
 EOF
 
 chmod +x collect_diagnostics.sh
@@ -633,4 +633,4 @@ chmod +x collect_diagnostics.sh
 - **[Configuration Overview](./overview.md)**: Understanding the configuration system
 - **[Environment Setup](./environment.md)**: Environment-specific configuration
 - **[Security Policies](./security.md)**: Security policy troubleshooting
-- **[Claude Desktop Integration](./claude_desktop.md)**: MCP integration issues
+- **[Claude Desktop Integration](./claude-desktop.md)**: MCP integration issues

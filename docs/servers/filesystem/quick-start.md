@@ -17,14 +17,14 @@ git clone https://github.com/airsstack/airsprotocols.git
 cd airsstack
 
 # Build the binary
-cargo build --release --bin airsprotocols-mcpserver-fs
+cargo build --release --bin airsprotocols-mcpserver-filesystem
 
-# The binary will be at: target/release/airsprotocols-mcpserver-fs
+# The binary will be at: target/release/airsprotocols-mcpserver-filesystem
 ```
 
 ### Option 2: Using Cargo
 ```bash
-cargo install --path mcp-servers/airsprotocols-mcpserver-fs
+cargo install --path mcp-servers/airsprotocols-mcpserver-filesystem
 ```
 
 ## Basic Setup
@@ -32,9 +32,9 @@ cargo install --path mcp-servers/airsprotocols-mcpserver-fs
 ### Step 1: Generate Configuration
 ```bash
 # Generate development configuration
-airsprotocols-mcpserver-fs generate-config
+airsprotocols-mcpserver-filesystem generate-config
 
-# This creates ~/.config/airsprotocols-mcpserver-fs/development.toml
+# This creates ~/.config/airsprotocols-mcpserver-filesystem/development.toml
 ```
 
 ### Step 2: Configure Claude Desktop
@@ -44,19 +44,19 @@ Add to your Claude Desktop MCP configuration (`~/Library/Application Support/Cla
 ```json
 {
   "mcpServers": {
-    "airsprotocols-mcpserver-fs": {
-      "command": "/path/to/airsprotocols-mcpserver-fs",
+    "airsprotocols-mcpserver-filesystem": {
+      "command": "/path/to/airsprotocols-mcpserver-filesystem",
       "env": {
         "AIRSPROTOCOLS_MCPSERVER_FS_ENV": "development",
-        "AIRSPROTOCOLS_MCPSERVER_FS_CONFIG_DIR": "/Users/yourusername/.config/airsprotocols-mcpserver-fs",
-        "AIRSPROTOCOLS_MCPSERVER_FS_LOG_DIR": "/Users/yourusername/.local/share/airsprotocols-mcpserver-fs/logs"
+        "AIRSPROTOCOLS_MCPSERVER_FS_CONFIG_DIR": "/Users/yourusername/.config/airsprotocols-mcpserver-filesystem",
+        "AIRSPROTOCOLS_MCPSERVER_FS_LOG_DIR": "/Users/yourusername/.local/share/airsprotocols-mcpserver-filesystem/logs"
       }
     }
   }
 }
 ```
 
-**Important**: Replace `/path/to/airsprotocols-mcpserver-fs` with the actual path to your binary and `yourusername` with your actual username.
+**Important**: Replace `/path/to/airsprotocols-mcpserver-filesystem` with the actual path to your binary and `yourusername` with your actual username.
 
 ### Step 3: Restart Claude Desktop
 
@@ -93,17 +93,16 @@ Claude: *uses write_file tool* → creates the file with approval prompt
 
 ## Next Steps
 
-- **[Configuration Guide](./configuration.md)**: Customize security policies and file access
+- **[Configuration Guide](./configuration/index.md)**: Customize security policies and file access
 - **[Security Policies](./configuration/security.md)**: Understand the security model
-- **[Claude Desktop Integration](./configuration/claude_desktop.md)**: Advanced integration options
+- **[Claude Desktop Integration](./configuration/claude-desktop.md)**: Advanced integration options
 - **[Troubleshooting](./configuration/troubleshooting.md)**: Solve common problems
 
-## Development Configuration Example
 
 For development work, your configuration should include your project directories:
 
 ```toml
-# ~/.config/airsprotocols-mcpserver-fs/development.toml
+# ~/.config/airsprotocols-mcpserver-filesystem/development.toml
 [security.filesystem]
 allowed_paths = [
     "~/projects/**/*",           # All your projects

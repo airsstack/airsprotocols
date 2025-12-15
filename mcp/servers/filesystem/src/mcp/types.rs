@@ -38,7 +38,7 @@ impl OperationType {
     /// # Examples
     ///
     /// ```rust
-    /// use airsprotocols_mcpserver_fs::mcp::OperationType;
+    /// use airsprotocols_mcpserver_filesystem::mcp::OperationType;
     ///
     /// assert_eq!(OperationType::Read.as_str(), "read");
     /// assert_eq!(OperationType::Write.as_str(), "write");

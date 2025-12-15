@@ -14,6 +14,9 @@ Get up and running with AIRS Protocols in minutes.
 ### 🔧 [Protocols](protocols/index.md)
 Explore communication protocols for AI agents.
 
+### 🖥️ [Servers](servers/filesystem/index.md)
+Production-ready MCP server implementations.
+
 ### 🌐 [APIs](apis/index.md)
 LLM provider client implementations (Coming Soon).
 
@@ -21,7 +24,6 @@ LLM provider client implementations (Coming Soon).
 Learn from practical examples and tutorials.
 
 ---
-
 ## 📦 What's Inside
 
 ### **Protocols** (`protocols/`)
@@ -39,8 +41,18 @@ Communication protocols for AI agents and intelligent systems:
   - Multiple protocol bindings (JSON-RPC, gRPC, REST)
   - Task lifecycle management and streaming support
 
-### **APIs** (`apis/`)
+### **Servers** (`mcp/servers/`)
 
+Production-ready MCP server implementations:
+
+- **[Filesystem Server](servers/filesystem/index.md)** <span class="version-badge">v1.0.0-rc.1</span>
+  - Security-first filesystem operations for Claude Desktop and AI tools
+  - Human-in-the-loop approval workflows with configurable policies
+  - Comprehensive path validation and binary file restriction
+  - Complete file operations: read, write, list, create, delete, move, copy
+  - Sub-100ms response times with audit logging
+
+### **APIs** (`apis/`)
 LLM provider client implementations with unified interfaces (Coming Soon):
 
 - Anthropic Claude API client
@@ -77,6 +89,10 @@ airsprotocols/
 │   ├── mcp/           # Model Context Protocol
 │   └── a2a/           # Agent-to-Agent Protocol (Planned)
 │
+├── mcp/
+│   └── servers/       # MCP server implementations
+│       └── filesystem/ # Filesystem server
+│
 └── apis/              # LLM provider clients (Planned)
     ├── anthropic/     # Claude API
     ├── openai/        # GPT API
@@ -85,7 +101,6 @@ airsprotocols/
 ```
 
 ---
-
 ## 🎯 Use Cases
 
 - **AI Agent Development**: Build intelligent agents that communicate using standard protocols
@@ -143,12 +158,9 @@ For detailed guides, see [Getting Started](getting-started.md).
 
 ## 🔗 Related Projects
 
-- **[airsstack](https://github.com/airsstack/airsstack)** - Application-level agent implementations
-  - `airs-mcpserver-fs` - Secure filesystem MCP server
-  - Example applications and servers
+- **[airsstack](https://github.com/airsstack/airsstack)** - Application-level agent implementations and example applications
 
 ---
-
 ## 📄 License
 
 Dual licensed under:

@@ -137,18 +137,18 @@ AIRS MCP-FS searches for configuration files in order:
 
 1. **Environment Variable Path**
    ```bash
-   export AIRSPROTOCOLS_MCPSERVER_FS_CONFIG_DIR=~/.config/airsprotocols-mcpserver-fs
-   # Looks for: ~/.config/airsprotocols-mcpserver-fs/development.toml
+   export AIRSPROTOCOLS_MCPSERVER_FS_CONFIG_DIR=~/.config/airsprotocols-mcpserver-filesystem
+   # Looks for: ~/.config/airsprotocols-mcpserver-filesystem/development.toml
    ```
 
 2. **User Configuration Directory**
    ```
-   ~/.config/airsprotocols-mcpserver-fs/development.toml
+   ~/.config/airsprotocols-mcpserver-filesystem/development.toml
    ```
 
 3. **System Configuration Directory**
    ```
-   /etc/airsprotocols-mcpserver-fs/development.toml
+   /etc/airsprotocols-mcpserver-filesystem/development.toml
    ```
 
 4. **Built-in Defaults**
@@ -174,8 +174,8 @@ All configuration values can be overridden using environment variables:
 ```bash
 # Core environment setup
 export AIRSPROTOCOLS_MCPSERVER_FS_ENV=development
-export AIRSPROTOCOLS_MCPSERVER_FS_CONFIG_DIR=~/.config/airsprotocols-mcpserver-fs
-export AIRSPROTOCOLS_MCPSERVER_FS_LOG_DIR=~/.local/share/airsprotocols-mcpserver-fs/logs
+export AIRSPROTOCOLS_MCPSERVER_FS_CONFIG_DIR=~/.config/airsprotocols-mcpserver-filesystem
+export AIRSPROTOCOLS_MCPSERVER_FS_LOG_DIR=~/.local/share/airsprotocols-mcpserver-filesystem/logs
 
 # Security overrides
 export AIRSPROTOCOLS_MCPSERVER_FS_SECURITY_OPERATIONS_READ_ALLOWED=true
@@ -208,14 +208,14 @@ Examples:
 ```bash
 # ~/.bashrc or ~/.zshrc
 export AIRSPROTOCOLS_MCPSERVER_FS_ENV=development
-export AIRSPROTOCOLS_MCPSERVER_FS_CONFIG_DIR=~/.config/airsprotocols-mcpserver-fs
-export AIRSPROTOCOLS_MCPSERVER_FS_LOG_DIR=~/.local/share/airsprotocols-mcpserver-fs/logs
+export AIRSPROTOCOLS_MCPSERVER_FS_CONFIG_DIR=~/.config/airsprotocols-mcpserver-filesystem
+export AIRSPROTOCOLS_MCPSERVER_FS_LOG_DIR=~/.local/share/airsprotocols-mcpserver-filesystem/logs
 
 # Allow broader access for development
 export AIRSPROTOCOLS_MCPSERVER_FS_SECURITY_FILESYSTEM_ALLOWED_PATHS="~/projects/**/*,~/Documents/**/*,~/Desktop/**/*,./**/*"
 ```
 
-Configuration file (`~/.config/airsprotocols-mcpserver-fs/development.toml`):
+Configuration file (`~/.config/airsprotocols-mcpserver-filesystem/development.toml`):
 ```toml
 [security.filesystem]
 allowed_paths = [
@@ -290,7 +290,7 @@ AIRS MCP-FS validates environment configuration at startup:
 
 ```
 📋 Configuration loaded from development environment
-   Configuration files: ["/Users/username/.config/airsprotocols-mcpserver-fs/development.toml"]
+   Configuration files: ["/Users/username/.config/airsprotocols-mcpserver-filesystem/development.toml"]
    Environment variables: 3 overrides
    
 ✅ Environment validation passed
@@ -335,16 +335,16 @@ When promoting to production:
 2. **Configuration File Not Found**
    ```bash
    # Check file existence
-   ls -la ~/.config/airsprotocols-mcpserver-fs/
+   ls -la ~/.config/airsprotocols-mcpserver-filesystem/
    
    # Generate missing configuration
-   airsprotocols-mcpserver-fs generate-config --env development
+   airsprotocols-mcpserver-filesystem generate-config --env development
    ```
 
 3. **Permission Denied in Environment**
    ```bash
    # Check allowed paths in configuration
-   cat ~/.config/airsprotocols-mcpserver-fs/development.toml | grep allowed_paths
+   cat ~/.config/airsprotocols-mcpserver-filesystem/development.toml | grep allowed_paths
    
    # Add required paths to configuration
    ```
@@ -356,7 +356,7 @@ Enable debug logging to troubleshoot environment issues:
 ```bash
 export RUST_LOG=debug
 export AIRSPROTOCOLS_MCPSERVER_FS_ENV=development
-airsprotocols-mcpserver-fs
+airsprotocols-mcpserver-filesystem
 ```
 
 This will show detailed information about:
@@ -392,5 +392,5 @@ This will show detailed information about:
 
 - **[Configuration Overview](./overview.md)**: Overall configuration system architecture
 - **[Security Policies](./security.md)**: Detailed security configuration
-- **[Claude Desktop Integration](./claude_desktop.md)**: MCP client environment setup
+- **[Claude Desktop Integration](./claude-desktop.md)**: MCP client environment setup
 - **[Troubleshooting](./troubleshooting.md)**: Environment-specific troubleshooting

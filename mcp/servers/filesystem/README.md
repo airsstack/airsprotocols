@@ -1,10 +1,17 @@
-# airsprotocols-mcpserver-fs
+# airsprotocols-mcpserver-filesystem
+
+[![Crates.io](https://img.shields.io/crates/v/airsprotocols-mcpserver-filesystem.svg)](https://crates.io/crates/airsprotocols-mcpserver-filesystem)
+[![Documentation](https://docs.rs/airsprotocols-mcpserver-filesystem/badge.svg)](https://docs.rs/airsprotocols-mcpserver-filesystem)
+[![License](https://img.shields.io/crates/l/airsprotocols-mcpserver-filesystem.svg)](https://github.com/airsstack/airsprotocols/tree/main/mcp/servers/filesystem#license)
+[![Rust Version](https://img.shields.io/badge/rust-1.88%2B-blue.svg)](https://www.rust-lang.org)
+[![Security Audit](https://img.shields.io/badge/security-audited-green.svg)](./SECURITY_AUDIT.md)
 
 A security-first filesystem bridge that enables Claude Desktop and other MCP-compatible AI tools to intelligently read, write, and manage files in local development environments.
 
+
 ## Overview
 
-`airsprotocols-mcpserver-fs` transforms AI assistance from passive consultation to active collaboration by providing secure, standardized filesystem operations through the Model Context Protocol (MCP). AI agents can now both understand your project context and create tangible artifacts directly in your local environment.
+`airsprotocols-mcpserver-filesystem` transforms AI assistance from passive consultation to active collaboration by providing secure, standardized filesystem operations through the Model Context Protocol (MCP). AI agents can now both understand your project context and create tangible artifacts directly in your local environment.
 
 ## Key Features
 
@@ -26,14 +33,14 @@ A security-first filesystem bridge that enables Claude Desktop and other MCP-com
 
 #### From crates.io (Recommended)
 ```bash
-cargo install airsprotocols-mcpserver-fs
+cargo install airsprotocols-mcpserver-filesystem
 ```
 
 #### From Source
 ```bash
 git clone https://github.com/airsstack/airsprotocols.git
 cd airsstack
-cargo build --release --package airsprotocols-mcpserver-fs
+cargo build --release --package airsprotocols-mcpserver-filesystem
 ```
 
 ### Basic Setup
@@ -41,22 +48,22 @@ cargo build --release --package airsprotocols-mcpserver-fs
 **Step 1: Setup Directory Structure (Optional)**
 ```bash
 # Create directory structure with proper permissions
-airsprotocols-mcpserver-fs setup
+airsprotocols-mcpserver-filesystem setup
 
 # Or specify custom directories
-airsprotocols-mcpserver-fs setup --config-dir ~/.config/airsprotocols-mcpserver-fs --logs-dir ~/.local/share/airsprotocols-mcpserver-fs/logs
+airsprotocols-mcpserver-filesystem setup --config-dir ~/.config/airsprotocols-mcpserver-filesystem --logs-dir ~/.local/share/airsprotocols-mcpserver-filesystem/logs
 ```
 
 **Step 2: Generate Configuration**
 ```bash
 # Generate development configuration
-airsprotocols-mcpserver-fs config
+airsprotocols-mcpserver-filesystem config
 
 # Generate config for specific environment
-airsprotocols-mcpserver-fs config --env development
+airsprotocols-mcpserver-filesystem config --env development
 
 # Generate config in specific directory
-airsprotocols-mcpserver-fs config --output ~/.config/airsprotocols-mcpserver-fs
+airsprotocols-mcpserver-filesystem config --output ~/.config/airsprotocols-mcpserver-filesystem
 ```
 
 **Step 3: Configure Claude Desktop**
@@ -70,21 +77,21 @@ Add to your Claude Desktop MCP configuration:
 ```json
 {
   "mcpServers": {
-    "airsprotocols-mcpserver-fs": {
-      "command": "/path/to/airsprotocols-mcpserver-fs",
+    "airsprotocols-mcpserver-filesystem": {
+      "command": "/path/to/airsprotocols-mcpserver-filesystem",
       "env": {
         "AIRSPROTOCOLS_MCPSERVER_FS_ENV": "development",
-        "AIRSPROTOCOLS_MCPSERVER_FS_CONFIG_DIR": "/Users/yourusername/.config/airsprotocols-mcpserver-fs",
-        "AIRSPROTOCOLS_MCPSERVER_FS_LOG_DIR": "/Users/yourusername/.local/share/airsprotocols-mcpserver-fs/logs"
+        "AIRSPROTOCOLS_MCPSERVER_FS_CONFIG_DIR": "/Users/yourusername/.config/airsprotocols-mcpserver-filesystem",
+        "AIRSPROTOCOLS_MCPSERVER_FS_LOG_DIR": "/Users/yourusername/.local/share/airsprotocols-mcpserver-filesystem/logs"
       }
     }
   }
 }
 ```
 
-**Important**: Replace `/path/to/airsprotocols-mcpserver-fs` with the actual path to your binary:
-- **If installed via cargo**: `~/.cargo/bin/airsprotocols-mcpserver-fs` (or `airsprotocols-mcpserver-fs` if `~/.cargo/bin` is in your PATH)
-- **If built from source**: `path/to/airsstack/target/release/airsprotocols-mcpserver-fs`
+**Important**: Replace `/path/to/airsprotocols-mcpserver-filesystem` with the actual path to your binary:
+- **If installed via cargo**: `~/.cargo/bin/airsprotocols-mcpserver-filesystem` (or `airsprotocols-mcpserver-filesystem` if `~/.cargo/bin` is in your PATH)
+- **If built from source**: `path/to/airsstack/target/release/airsprotocols-mcpserver-filesystem`
 
 Also replace `yourusername` with your actual username.
 
@@ -150,7 +157,7 @@ AIRS MCP-FS uses a sophisticated multi-layered configuration system that automat
 For development work, your configuration should include your project directories:
 
 ```toml
-# ~/.config/airsprotocols-mcpserver-fs/development.toml
+# ~/.config/airsprotocols-mcpserver-filesystem/development.toml
 [security.filesystem]
 allowed_paths = [
     "~/projects/**/*",           # All your projects
@@ -180,9 +187,9 @@ description = "Personal journal and document files"
 
 AIRS MCP-FS automatically detects your environment and loads appropriate configurations:
 
-- **Development**: `~/.config/airsprotocols-mcpserver-fs/development.toml` - Permissive settings for productivity
-- **Staging**: `~/.config/airsprotocols-mcpserver-fs/staging.toml` - Production-like settings for testing  
-- **Production**: `~/.config/airsprotocols-mcpserver-fs/production.toml` - Secure settings for deployment
+- **Development**: `~/.config/airsprotocols-mcpserver-filesystem/development.toml` - Permissive settings for productivity
+- **Staging**: `~/.config/airsprotocols-mcpserver-filesystem/staging.toml` - Production-like settings for testing  
+- **Production**: `~/.config/airsprotocols-mcpserver-filesystem/production.toml` - Secure settings for deployment
 
 ### Configuration Documentation
 
@@ -300,7 +307,7 @@ Extend functionality with custom text file processors:
 - **Cause**: No environment-specific configuration file exists
 - **Solution**: Generate configuration for your environment:
   ```bash
-  airsprotocols-mcpserver-fs config --env development
+  airsprotocols-mcpserver-filesystem config --env development
   ```
 
 #### "Invalid server response" in Claude Desktop
@@ -311,11 +318,11 @@ For comprehensive troubleshooting guidance, see **[Configuration Troubleshooting
 
 ### Debug Mode
 ```bash
-RUST_LOG=debug airsprotocols-mcpserver-fs --config ./debug-config.toml
+RUST_LOG=debug airsprotocols-mcpserver-filesystem --config ./debug-config.toml
 ```
 
 ### Log Analysis
-- Check `~/.local/share/airsprotocols-mcpserver-fs/logs/` for detailed operation logs
+- Check `~/.local/share/airsprotocols-mcpserver-filesystem/logs/` for detailed operation logs
 - Review audit trail for security-related events
 - Monitor performance metrics for optimization opportunities
 
@@ -325,7 +332,7 @@ RUST_LOG=debug airsprotocols-mcpserver-fs --config ./debug-config.toml
 ```bash
 # Clone the repository
 git clone https://github.com/airsstack/airsprotocols.git
-cd airsstack/mcp-servers/airsprotocols-mcpserver-fs
+cd airsstack/mcp-servers/airsprotocols-mcpserver-filesystem
 
 # Install dependencies
 cargo build
@@ -406,7 +413,7 @@ For comprehensive guides and advanced configuration:
 cargo install mdbook
 
 # Build and serve documentation
-cd crates/airsprotocols-mcpserver-fs/docs
+cd crates/airsprotocols-mcpserver-filesystem/docs
 mdbook serve
 
 # Open http://localhost:3000 in your browser

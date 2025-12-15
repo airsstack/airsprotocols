@@ -24,7 +24,7 @@ rust-version = "1.88"
 
 [workspace.dependencies]
 # Layer 1: AIRS Protocols Crates
-airsprotocols-mcp = { path = "protocols/mcp" }
+airsprotocols-mcp = { version = "1.0.0-rc.1", path = "protocols/mcp" }
 
 # Layer 2: Core Runtime Dependencies
 tokio = { version = "1.47", features = ["full"] }

@@ -30,7 +30,7 @@ allowed_paths = [
     "~/projects/**/*",              # All files in projects directory
     "~/Documents/**/*.{md,txt}",    # Only markdown and text in Documents
     "./**/*",                       # Current directory and subdirectories
-    "/tmp/airs-mcp-fs/**/*"        # Temporary files
+    "/tmp/airsprotocols-mcpserver-filesystem/**/*"        # Temporary files
 ]
 ```
 
@@ -472,7 +472,7 @@ Enable security debugging for detailed analysis:
 ```bash
 export RUST_LOG=debug
 export AIRSPROTOCOLS_MCPSERVER_FS_ENV=development
-airs-mcp-fs
+airsprotocols-mcpserver-filesystem
 ```
 
 This provides detailed logging of:
@@ -485,5 +485,5 @@ This provides detailed logging of:
 
 - **[Configuration Overview](./overview.md)**: Overall security architecture
 - **[Environment Setup](./environment.md)**: Environment-specific security
-- **[Claude Desktop Integration](./claude_desktop.md)**: Client security considerations
+- **[Claude Desktop Integration](./claude-desktop.md)**: Client security considerations
 - **[Troubleshooting](./troubleshooting.md)**: Security problem resolution

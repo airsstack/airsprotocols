@@ -31,8 +31,8 @@
 //! ## Quick Start
 //!
 //! ```rust
-//! use airsprotocols_mcpserver_fs::security::permissions::*;
-//! use airsprotocols_mcpserver_fs::OperationType;
+//! use airsprotocols_mcpserver_filesystem::security::permissions::*;
+//! use airsprotocols_mcpserver_filesystem::OperationType;
 //! use std::collections::HashSet;
 //! use std::path::PathBuf;
 //!

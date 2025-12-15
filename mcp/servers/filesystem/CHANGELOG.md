@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to airsprotocols-mcpserver-fs will be documented in this file.
+All notable changes to airsprotocols-mcpserver-filesystem will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
@@ -14,27 +14,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### 🎉 Major Migration Release
 
-This release represents the migration of `airs-mcpserver-fs` to the `airsprotocols` organization with a complete package rename and modernization.
+This release represents the migration of `airsprotocols-mcpserver-filesystem` to the `airsprotocols` organization with a complete package rename and modernization.
 
 #### Package Migration
-- **New package name:** `airsprotocols-mcpserver-fs` (previously `airs-mcpserver-fs`)
+- **New package name:** `airsprotocols-mcpserver-filesystem` (previously `airsprotocols-mcpserver-filesystem`)
 - **New repository:** https://github.com/airsstack/airsprotocols/tree/main/mcp/servers/filesystem
-- **New binary name:** `airsprotocols-mcpserver-fs` (previously `airs-mcpserver-fs`)
+- **New binary name:** `airsprotocols-mcpserver-filesystem` (previously `airsprotocols-mcpserver-filesystem`)
 - **Updated dependency:** Now uses `airsprotocols-mcp` v1.0.0-rc.1 (previously `airs-mcp` v0.2.3)
 
 #### Breaking Changes
-- Package name changed from `airs-mcpserver-fs` to `airsprotocols-mcpserver-fs`
-- Binary name changed from `airs-mcpserver-fs` to `airsprotocols-mcpserver-fs`
+- Package name changed from `airsprotocols-mcpserver-filesystem` to `airsprotocols-mcpserver-filesystem`
+- Binary name changed from `airsprotocols-mcpserver-filesystem` to `airsprotocols-mcpserver-filesystem`
 - Environment variable prefix changed from `AIRS_MCPSERVER_FS_*` to `AIRSPROTOCOLS_MCPSERVER_FS_*`
-- Crate import path changed from `airs_mcpserver_fs::` to `airsprotocols_mcpserver_fs::`
+- Crate import path changed from `airsprotocols_mcpserver_fs::` to `airsprotocols_mcpserver_filesystem::`
 - Repository moved from `airsstack/airsstack` to `airsstack/airsprotocols`
-- Default configuration directory changed from `~/.airs-mcpserver-fs` to `~/.airsprotocols-mcpserver-fs`
+- Default configuration directory changed from `~/.airsprotocols-mcpserver-filesystem` to `~/.airsprotocols-mcpserver-filesystem`
 
 #### Migration Guide
-For users migrating from `airs-mcpserver-fs` v0.1.x, see [MIGRATION.md](./MIGRATION.md)
+For users migrating from `airsprotocols-mcpserver-filesystem` v0.1.x, see [MIGRATION.md](./MIGRATION.md)
 
 #### Features (Carried Over from v0.1.2)
-All features from `airs-mcpserver-fs` v0.1.2 are included and fully functional:
+All features from `airsprotocols-mcpserver-filesystem` v0.1.2 are included and fully functional:
 - Security-first filesystem operations
 - Human-in-the-loop approval workflows
 - Claude Desktop integration
@@ -54,7 +54,7 @@ All features from `airs-mcpserver-fs` v0.1.2 are included and fully functional:
 
 ---
 
-## Previous Versions (as airs-mcpserver-fs)
+## Previous Versions (as airsprotocols-mcpserver-filesystem)
 
 ## [0.1.2] - 2025-09-24
 
@@ -80,8 +80,8 @@ All features from `airs-mcpserver-fs` v0.1.2 are included and fully functional:
 ## [0.1.0] - 2025-09-24
 
 ### Added
-- **Initial release** of airsprotocols-mcpserver-fs as dedicated MCP filesystem server
-- **Architectural migration** from crates/airs-mcp-fs to mcp-servers/airsprotocols-mcpserver-fs
+- **Initial release** of airsprotocols-mcpserver-filesystem as dedicated MCP filesystem server
+- **Architectural migration** from crates/airsprotocols-mcpserver-filesystem to mcp-servers/airsprotocols-mcpserver-filesystem
 - **Complete filesystem operations** through MCP protocol (read, write, list, create, delete, move, copy)
 - **Security-first design** with 5-layer security validation system
 - **Binary file restriction** with comprehensive content and extension-based detection

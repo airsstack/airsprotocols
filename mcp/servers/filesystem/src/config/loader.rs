@@ -253,7 +253,7 @@ impl ConfigurationLoader {
         }
 
         // Default to config/ in current directory for now
-        // In production, this would be more sophisticated (e.g., /etc/airsprotocols-mcpserver-fs/)
+        // In production, this would be more sophisticated (e.g., /etc/airsprotocols-mcpserver-filesystem/)
         PathBuf::from("config")
     }
 
@@ -293,7 +293,7 @@ mod tests {
         // Create a basic config.toml
         let config_content = r#"
 [server]
-name = "test-airsprotocols-mcpserver-fs"
+name = "test-airsprotocols-mcpserver-filesystem"
 version = "0.1.0"
 
 [binary]
@@ -368,7 +368,7 @@ description = "Test policy for txt files"
         let config_path = temp_dir.path().join("config.toml");
 
         let settings = ConfigurationLoader::load_from_file(&config_path).unwrap();
-        assert_eq!(settings.server.name, "test-airsprotocols-mcpserver-fs");
+        assert_eq!(settings.server.name, "test-airsprotocols-mcpserver-filesystem");
         assert_eq!(settings.binary.max_file_size, 52428800);
         assert!(settings.binary.binary_processing_disabled); // Security hardening
     }
@@ -383,7 +383,7 @@ description = "Test policy for txt files"
         let (settings, source_info) = loader.load().unwrap();
 
         // Should have loaded from our test config
-        assert_eq!(settings.server.name, "test-airsprotocols-mcpserver-fs");
+        assert_eq!(settings.server.name, "test-airsprotocols-mcpserver-filesystem");
         assert!(source_info.uses_defaults);
         assert!(!source_info.files.is_empty());
         assert_eq!(source_info.environment, "test");

@@ -3,7 +3,7 @@
 # Suitable for production systems or when working with sensitive codebases
 
 [server]
-name = "airs-mcp-fs"
+name = "airsprotocols-mcpserver-filesystem"
 version = "0.1.0"
 
 [binary]

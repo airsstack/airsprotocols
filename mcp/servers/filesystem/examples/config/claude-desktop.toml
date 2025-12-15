@@ -4,7 +4,7 @@
 # with the AIRS_MCP_FS_CONFIG_DIR environment variable or --config-dir flag
 
 [server]
-name = "airs-mcp-fs"
+name = "airsprotocols-mcpserver-filesystem"
 version = "0.1.0"
 
 [binary]

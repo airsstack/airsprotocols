@@ -3,7 +3,7 @@
 # It should be added to .gitignore and not committed to version control
 
 [server]
-name = "local-airs-mcp-fs"
+name = "local-airsprotocols-mcpserver-filesystem"
 
 [security.filesystem]
 # Local developer paths

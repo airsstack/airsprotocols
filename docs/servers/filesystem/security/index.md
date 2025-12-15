@@ -13,7 +13,7 @@
 
 ### **Configuration-Driven Security**
 ```toml
-# ~/.config/airsprotocols-mcpserver-fs/security.toml
+# ~/.config/airsprotocols-mcpserver-filesystem/security.toml
 [security]
 # Binary processing is completely disabled for security
 binary_processing_disabled = true

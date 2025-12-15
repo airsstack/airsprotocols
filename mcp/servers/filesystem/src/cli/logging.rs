@@ -29,7 +29,7 @@ pub fn initialize_logging(mode: LoggingMode) -> Result<()> {
             tracing_subscriber::fmt()
                 .with_env_filter(
                     tracing_subscriber::EnvFilter::try_from_default_env()
-                        .unwrap_or_else(|_| "airsprotocols_mcpserver_fs=info".into()),
+                        .unwrap_or_else(|_| "airsprotocols_mcpserver_filesystem=info".into()),
                 )
                 .init();
             Ok(())
@@ -40,7 +40,7 @@ pub fn initialize_logging(mode: LoggingMode) -> Result<()> {
                 eprintln!("Warning: Failed to create log directory {log_dir}: {e}");
             }
 
-            let log_file = format!("{log_dir}/airsprotocols-mcpserver-fs.log");
+            let log_file = format!("{log_dir}/airsprotocols-mcpserver-filesystem.log");
             let file_appender = match std::fs::OpenOptions::new()
                 .create(true)
                 .append(true)
@@ -63,7 +63,7 @@ pub fn initialize_logging(mode: LoggingMode) -> Result<()> {
             tracing_subscriber::fmt()
                 .with_env_filter(
                     tracing_subscriber::EnvFilter::try_from_default_env()
-                        .unwrap_or_else(|_| "airsprotocols_mcpserver_fs=info".into()),
+                        .unwrap_or_else(|_| "airsprotocols_mcpserver_filesystem=info".into()),
                 )
                 .with_ansi(false)
                 .with_writer(file_appender)
@@ -100,7 +100,7 @@ pub fn determine_logging_mode(cli: &Cli) -> LoggingMode {
                 .or_else(|_| std::env::var("AIRSPROTOCOLS_MCP_FS_LOG_DIR")) // Backward compatibility
                 .unwrap_or_else(|_| {
                     let home = std::env::var("HOME").unwrap_or_else(|_| "/tmp".to_string());
-                    format!("{home}/.airsprotocols-mcpserver-fs/logs")
+                    format!("{home}/.airsprotocols-mcpserver-filesystem/logs")
                 })
         };
 

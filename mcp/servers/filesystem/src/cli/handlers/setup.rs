@@ -24,7 +24,7 @@ pub async fn handle_setup(
 
     // Determine directories to create
     let home = std::env::var("HOME").unwrap_or_else(|_| "/tmp".to_string());
-    let default_base = format!("{home}/.airsprotocols-mcpserver-fs");
+    let default_base = format!("{home}/.airsprotocols-mcpserver-filesystem");
 
     let config_path = config_dir.unwrap_or_else(|| PathBuf::from(format!("{default_base}/config")));
     let logs_path = logs_dir.unwrap_or_else(|| PathBuf::from(format!("{default_base}/logs")));
@@ -85,7 +85,7 @@ pub async fn handle_setup(
         "   2. Set AIRSPROTOCOLS_MCPSERVER_FS_CONFIG_DIR={}",
         config_path.display()
     );
-    info!("   3. Run: airsprotocols-mcpserver-fs serve");
+    info!("   3. Run: airsprotocols-mcpserver-filesystem serve");
     info!("   4. See CONFIGURATION.md for detailed setup instructions");
 
     Ok(())

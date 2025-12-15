@@ -5,7 +5,7 @@
 
 #![allow(clippy::panic)]
 
-use airsprotocols_mcpserver_fs::{
+use airsprotocols_mcpserver_filesystem::{
     config::{
         settings::{RiskLevel, SecurityPolicy},
         FilesystemConfig, OperationConfig, SecurityConfig,

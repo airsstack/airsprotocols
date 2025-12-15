@@ -300,7 +300,7 @@ impl SettingsBuilder {
                 binary_processing_disabled: true, // Security hardening - always disabled
             },
             server: ServerConfig {
-                name: "airsprotocols-mcpserver-fs".to_string(),
+                name: "airsprotocols-mcpserver-filesystem".to_string(),
                 version: env!("CARGO_PKG_VERSION").to_string(),
             },
         }
@@ -416,7 +416,7 @@ mod tests {
     fn test_default_settings() {
         let settings = Settings::default();
 
-        assert_eq!(settings.server.name, "airsprotocols-mcpserver-fs");
+        assert_eq!(settings.server.name, "airsprotocols-mcpserver-filesystem");
 
         // Default should be secure (production mode)
         assert!(settings.security.operations.write_requires_policy);
@@ -513,7 +513,7 @@ mod tests {
         assert!(result.is_ok());
 
         let settings = result.unwrap();
-        assert_eq!(settings.server.name, "airsprotocols-mcpserver-fs");
+        assert_eq!(settings.server.name, "airsprotocols-mcpserver-filesystem");
     }
 
     #[test]

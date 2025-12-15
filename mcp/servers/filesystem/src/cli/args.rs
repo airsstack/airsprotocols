@@ -13,7 +13,7 @@ use clap::{Parser, Subcommand};
 // (None needed for pure argument definitions)
 
 #[derive(Parser)]
-#[command(name = "airsprotocols-mcpserver-fs")]
+#[command(name = "airsprotocols-mcpserver-filesystem")]
 #[command(about = "AIRS MCP-FS: Security-first filesystem bridge for Model Context Protocol")]
 #[command(version)]
 pub struct Cli {
@@ -25,11 +25,11 @@ pub struct Cli {
 pub enum Commands {
     /// Setup AIRS MCP server directory structure
     Setup {
-        /// Custom configuration directory (default: ~/.airsprotocols-mcpserver-fs/config)
+        /// Custom configuration directory (default: ~/.airsprotocols-mcpserver-filesystem/config)
         #[arg(long, help = "Custom configuration directory")]
         config_dir: Option<PathBuf>,
 
-        /// Custom logs directory (default: ~/.airsprotocols-mcpserver-fs/logs)
+        /// Custom logs directory (default: ~/.airsprotocols-mcpserver-filesystem/logs)
         #[arg(long, help = "Custom logs directory")]
         logs_dir: Option<PathBuf>,
 

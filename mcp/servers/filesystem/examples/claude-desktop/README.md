@@ -12,8 +12,8 @@ This directory contains example configurations and setup instructions for integr
 
 2. **Place the configuration**: Put your chosen configuration file in a dedicated directory:
    ```bash
-   mkdir -p ~/.config/airs-mcp-fs
-   cp ../config/claude-desktop.toml ~/.config/airs-mcp-fs/config.toml
+   mkdir -p ~/.config/airsprotocols-mcpserver-filesystem
+   cp ../config/claude-desktop.toml ~/.config/airsprotocols-mcpserver-filesystem/config.toml
    ```
 
 3. **Configure Claude Desktop**: Add the MCP server configuration to Claude Desktop's `claude_desktop_config.json`:
@@ -22,10 +22,10 @@ This directory contains example configurations and setup instructions for integr
    ```json
    {
      "mcpServers": {
-       "airs-mcp-fs": {
-         "command": "/path/to/airsprotocols-mcpserver-fs",
+       "airsprotocols-mcpserver-filesystem": {
+         "command": "/path/to/airsprotocols-mcpserver-filesystem",
          "env": {
-           "AIRSPROTOCOLS_MCPSERVER_FS_CONFIG_DIR": "/Users/yourname/.config/airsprotocols-mcpserver-fs"
+           "AIRSPROTOCOLS_MCPSERVER_FS_CONFIG_DIR": "/Users/yourname/.config/airsprotocols-mcpserver-filesystem"
          }
        }
      }
@@ -36,8 +36,8 @@ This directory contains example configurations and setup instructions for integr
    ```json
    {
      "mcpServers": {
-       "airs-mcp-fs": {
-         "command": "/path/to/airsprotocols-mcpserver-fs",
+       "airsprotocols-mcpserver-filesystem": {
+         "command": "/path/to/airsprotocols-mcpserver-filesystem",
          "env": {
            "AIRSPROTOCOLS_MCPSERVER_FS__SECURITY__FILESYSTEM__ALLOWED_PATHS": "~/Projects/**/*,~/Documents/**/*.md"
          }
@@ -86,15 +86,15 @@ AIRSPROTOCOLS_MCPSERVER_FS__SECURITY__OPERATIONS__WRITE_REQUIRES_POLICY="false"
 
 ### Common Issues
 
-#### 1. "spawn airsprotocols-mcpserver-fs ENOENT" Error
+#### 1. "spawn airsprotocols-mcpserver-filesystem ENOENT" Error
 
 **Symptoms**: Claude Desktop shows connection errors like:
 ```
-Error: spawn airsprotocols-mcpserver-fs ENOENT
+Error: spawn airsprotocols-mcpserver-filesystem ENOENT
 Server disconnected. For troubleshooting guidance, please visit our debugging documentation
 ```
 
-**Cause**: Claude Desktop cannot find the `airsprotocols-mcpserver-fs` executable because:
+**Cause**: Claude Desktop cannot find the `airsprotocols-mcpserver-filesystem` executable because:
 - The binary is not in Claude Desktop's PATH environment
 - Using relative command name instead of full path
 
@@ -103,12 +103,12 @@ Server disconnected. For troubleshooting guidance, please visit our debugging do
 ```json
 {
   "mcpServers": {
-    "airs-mcp-fs": {
-      "command": "/Users/YOUR_USERNAME/.cargo/bin/airsprotocols-mcpserver-fs",
+    "airsprotocols-mcpserver-filesystem": {
+      "command": "/Users/YOUR_USERNAME/.cargo/bin/airsprotocols-mcpserver-filesystem",
       "env": {
-        "AIRSPROTOCOLS_MCPSERVER_FS_CONFIG_DIR": "/Users/YOUR_USERNAME/.airsprotocols-mcpserver-fs/config",
+        "AIRSPROTOCOLS_MCPSERVER_FS_CONFIG_DIR": "/Users/YOUR_USERNAME/.airsprotocols-mcpserver-filesystem/config",
         "AIRSPROTOCOLS_MCPSERVER_FS_ENV": "local",
-        "AIRSPROTOCOLS_MCPSERVER_FS_LOG_DIR": "/Users/YOUR_USERNAME/.airsprotocols-mcpserver-fs/logs"
+        "AIRSPROTOCOLS_MCPSERVER_FS_LOG_DIR": "/Users/YOUR_USERNAME/.airsprotocols-mcpserver-filesystem/logs"
       }
     }
   }
@@ -117,13 +117,13 @@ Server disconnected. For troubleshooting guidance, please visit our debugging do
 
 **To find your binary location**:
 ```bash
-which airsprotocols-mcpserver-fs
-# Usually: /Users/YOUR_USERNAME/.cargo/bin/airsprotocols-mcpserver-fs
+which airsprotocols-mcpserver-filesystem
+# Usually: /Users/YOUR_USERNAME/.cargo/bin/airsprotocols-mcpserver-filesystem
 ```
 
 #### 2. Configuration Not Loading
 - Check that `AIRSPROTOCOLS_MCPSERVER_FS_CONFIG_DIR` points to the correct directory
-- Verify the TOML file syntax with `cargo run --bin airsprotocols-mcpserver-fs -- generate-config --env development`
+- Verify the TOML file syntax with `cargo run --bin airsprotocols-mcpserver-filesystem -- generate-config --env development`
 - Check the server logs for configuration errors
 
 #### 3. Path Access Denied
@@ -133,7 +133,7 @@ which airsprotocols-mcpserver-fs
 
 #### 4. Claude Desktop Connection Issues
 - Ensure the binary path in `claude_desktop_config.json` is correct
-- Check that the server starts successfully: `./airsprotocols-mcpserver-fs --help`
+- Check that the server starts successfully: `./airsprotocols-mcpserver-filesystem --help`
 - Review Claude Desktop's logs for connection errors
 
 ### Environment Variable Names
@@ -154,12 +154,12 @@ The server supports both current and legacy environment variable names for backw
 
 1. **Test the binary directly**:
    ```bash
-   /Users/YOUR_USERNAME/.cargo/bin/airsprotocols-mcpserver-fs --help
+   /Users/YOUR_USERNAME/.cargo/bin/airsprotocols-mcpserver-filesystem --help
    ```
 
 2. **Check configuration loading**:
    ```bash
-   AIRSPROTOCOLS_MCPSERVER_FS_CONFIG_DIR="/path/to/config" /Users/YOUR_USERNAME/.cargo/bin/airsprotocols-mcpserver-fs config --validate
+   AIRSPROTOCOLS_MCPSERVER_FS_CONFIG_DIR="/path/to/config" /Users/YOUR_USERNAME/.cargo/bin/airsprotocols-mcpserver-filesystem config --validate
    ```
 
 3. **Review Claude Desktop logs**: Check Claude Desktop's console output for detailed error messages

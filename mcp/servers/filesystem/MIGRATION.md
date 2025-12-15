@@ -1,6 +1,6 @@
-# Migration Guide: airs-mcpserver-fs v0.1.x → airsprotocols-mcpserver-fs v1.0.0-rc.1
+# Migration Guide: airs-mcpserver-fs v0.1.x → airsprotocols-mcpserver-filesystem v1.0.0-rc.1
 
-This guide helps you migrate from the legacy `airs-mcpserver-fs` package (v0.1.2 and earlier) to the new `airsprotocols-mcpserver-fs` v1.0.0-rc.1.
+This guide helps you migrate from the legacy `airs-mcpserver-fs` package (v0.1.2 and earlier) to the new `airsprotocols-mcpserver-filesystem` v1.0.0-rc.1.
 
 ## Overview
 
@@ -24,10 +24,10 @@ cargo uninstall airs-mcpserver-fs
 ```bash
 # From source (recommended during RC phase)
 cd /path/to/airsprotocols
-cargo build --release -p airsprotocols-mcpserver-fs
+cargo build --release -p airsprotocols-mcpserver-filesystem
 
 # Or from crates.io (when published)
-# cargo install airsprotocols-mcpserver-fs
+# cargo install airsprotocols-mcpserver-filesystem
 ```
 
 ### 3. Update Claude Desktop Configuration
@@ -54,12 +54,12 @@ cargo build --release -p airsprotocols-mcpserver-fs
 ```json
 {
   "mcpServers": {
-    "airsprotocols-mcpserver-fs": {
-      "command": "airsprotocols-mcpserver-fs",
+    "airsprotocols-mcpserver-filesystem": {
+      "command": "airsprotocols-mcpserver-filesystem",
       "env": {
         "AIRSPROTOCOLS_MCPSERVER_FS_ENV": "development",
-        "AIRSPROTOCOLS_MCPSERVER_FS_CONFIG_DIR": "/Users/yourusername/.config/airsprotocols-mcpserver-fs",
-        "AIRSPROTOCOLS_MCPSERVER_FS_LOG_DIR": "/Users/yourusername/.local/share/airsprotocols-mcpserver-fs/logs"
+        "AIRSPROTOCOLS_MCPSERVER_FS_CONFIG_DIR": "/Users/yourusername/.config/airsprotocols-mcpserver-filesystem",
+        "AIRSPROTOCOLS_MCPSERVER_FS_LOG_DIR": "/Users/yourusername/.local/share/airsprotocols-mcpserver-filesystem/logs"
       }
     }
   }
@@ -70,10 +70,10 @@ cargo build --release -p airsprotocols-mcpserver-fs
 
 ```bash
 # Move configuration to new location
-mv ~/.config/airs-mcpserver-fs ~/.config/airsprotocols-mcpserver-fs
+mv ~/.config/airs-mcpserver-fs ~/.config/airsprotocols-mcpserver-filesystem
 
 # Move logs to new location
-mv ~/.local/share/airs-mcpserver-fs/logs ~/.local/share/airsprotocols-mcpserver-fs/logs
+mv ~/.local/share/airs-mcpserver-fs/logs ~/.local/share/airsprotocols-mcpserver-filesystem/logs
 ```
 
 ### 5. Restart Claude Desktop
@@ -98,7 +98,7 @@ All environment variables have been updated with the new prefix:
 #### Option 1: Update Configuration Files
 ```bash
 # Update your existing config files to use new binary name
-sed -i 's/airs-mcp-fs/airsprotocols-mcpserver-fs/g' ~/.config/airs-mcp-fs/*.toml
+sed -i 's/airsprotocols-mcpserver-filesystem/airsprotocols-mcpserver-filesystem/g' ~/.config/airsprotocols-mcpserver-filesystem/*.toml
 ```
 
 #### Option 2: Use Legacy Configuration
@@ -110,10 +110,10 @@ Update any shell scripts or automation that references the old binary:
 
 ```bash
 # Old
-./target/release/airs-mcp-fs --config development.toml
+./target/release/airsprotocols-mcpserver-filesystem --config development.toml
 
 # New  
-./target/release/airsprotocols-mcpserver-fs --config development.toml
+./target/release/airsprotocols-mcpserver-filesystem --config development.toml
 ```
 
 ## Validation Steps
@@ -122,13 +122,13 @@ After migration, verify everything works correctly:
 
 ### 1. Build Test
 ```bash
-cargo build --release --bin airsprotocols-mcpserver-fs
+cargo build --release --bin airsprotocols-mcpserver-filesystem
 echo "Build status: $?"  # Should be 0
 ```
 
 ### 2. Configuration Test
 ```bash
-./target/release/airsprotocols-mcpserver-fs --help
+./target/release/airsprotocols-mcpserver-filesystem --help
 # Should show help without errors
 ```
 
@@ -157,7 +157,7 @@ cp claude_desktop_config.json.backup ~/Library/Application\ Support/Claude/claud
 ### 2. Use Legacy Binary
 ```bash
 # Build and use the legacy version
-cargo build --release --bin airs-mcp-fs
+cargo build --release --bin airsprotocols-mcpserver-filesystem
 # Update Claude config to point to old binary
 ```
 
@@ -165,15 +165,15 @@ cargo build --release --bin airs-mcp-fs
 ```bash
 # Reset to legacy environment variables
 export AIRS_MCP_FS_ENV=development
-export AIRS_MCP_FS_CONFIG_DIR=~/.config/airs-mcp-fs
+export AIRS_MCP_FS_CONFIG_DIR=~/.config/airsprotocols-mcpserver-filesystem
 ```
 
 ## Backward Compatibility
 
 The workspace maintains both versions during the transition period:
 
-- **Legacy**: `crates/airs-mcp-fs` (preserved for compatibility)
-- **New**: `mcp-servers/airsprotocols-mcpserver-fs` (recommended for new installations)
+- **Legacy**: `crates/airsprotocols-mcpserver-filesystem` (preserved for compatibility)
+- **New**: `mcp-servers/airsprotocols-mcpserver-filesystem` (recommended for new installations)
 
 Both versions:
 - ✅ Provide identical functionality
@@ -185,16 +185,16 @@ Both versions:
 
 ### Side-by-Side Configuration Comparison
 
-**Legacy Configuration (airs-mcp-fs):**
+**Legacy Configuration (airsprotocols-mcpserver-filesystem):**
 ```json
 {
   "mcpServers": {
-    "airs-mcp-fs": {
-      "command": "/path/to/airs/target/release/airs-mcp-fs",
+    "airsprotocols-mcpserver-filesystem": {
+      "command": "/path/to/airs/target/release/airsprotocols-mcpserver-filesystem",
       "args": ["serve"],
       "env": {
         "AIRS_MCP_FS_ENV": "development",
-        "AIRS_MCP_FS_CONFIG_DIR": "/Users/username/.config/airs-mcp-fs",
+        "AIRS_MCP_FS_CONFIG_DIR": "/Users/username/.config/airsprotocols-mcpserver-filesystem",
         "AIRS_MCP_FS_ROOT_DIR": "/Users/username/projects",
         "AIRS_MCP_FS_ALLOWED_PATHS": "/Users/username/projects,/Users/username/docs"
       }
@@ -203,16 +203,16 @@ Both versions:
 }
 ```
 
-**New Configuration (airsprotocols-mcpserver-fs):**
+**New Configuration (airsprotocols-mcpserver-filesystem):**
 ```json
 {
   "mcpServers": {
-    "airsprotocols-mcpserver-fs": {
-      "command": "/path/to/airs/target/release/airsprotocols-mcpserver-fs",
+    "airsprotocols-mcpserver-filesystem": {
+      "command": "/path/to/airs/target/release/airsprotocols-mcpserver-filesystem",
       "args": ["serve"],
       "env": {
         "AIRSPROTOCOLS_MCPSERVER_FS_ENV": "development",
-        "AIRSPROTOCOLS_MCPSERVER_FS_CONFIG_DIR": "/Users/username/.config/airsprotocols-mcpserver-fs",
+        "AIRSPROTOCOLS_MCPSERVER_FS_CONFIG_DIR": "/Users/username/.config/airsprotocols-mcpserver-filesystem",
         "AIRSPROTOCOLS_MCPSERVER_FS_ROOT_DIR": "/Users/username/projects",
         "AIRSPROTOCOLS_MCPSERVER_FS_ALLOWED_PATHS": "/Users/username/projects,/Users/username/docs"
       }
@@ -226,9 +226,9 @@ Both versions:
 #### Issue: "Binary not found" error
 **Symptoms:** Claude Desktop shows connection error or "command not found"
 **Solution:**
-1. Verify binary exists: `ls -la target/release/airsprotocols-mcpserver-fs`
-2. Check permissions: `chmod +x target/release/airsprotocols-mcpserver-fs`
-3. Use absolute path in Claude config: `/full/path/to/airs/target/release/airsprotocols-mcpserver-fs`
+1. Verify binary exists: `ls -la target/release/airsprotocols-mcpserver-filesystem`
+2. Check permissions: `chmod +x target/release/airsprotocols-mcpserver-filesystem`
+3. Use absolute path in Claude config: `/full/path/to/airs/target/release/airsprotocols-mcpserver-filesystem`
 
 #### Issue: Environment variables not recognized
 **Symptoms:** Server starts but can't access expected directories
@@ -240,7 +240,7 @@ Both versions:
 #### Issue: Claude Desktop can't connect to server
 **Symptoms:** "Failed to connect to MCP server" in Claude Desktop
 **Solution:**
-1. Test server manually: `./target/release/airsprotocols-mcpserver-fs --help`
+1. Test server manually: `./target/release/airsprotocols-mcpserver-filesystem --help`
 2. Check Claude Desktop logs: `~/Library/Logs/Claude/`
 3. Try temporary config with minimal settings
 4. Verify JSON syntax in claude_desktop_config.json
@@ -248,21 +248,21 @@ Both versions:
 #### Issue: Configuration directory not found
 **Symptoms:** Server complains about missing config files
 **Solution:**
-1. Create new config directory: `mkdir -p ~/.config/airsprotocols-mcpserver-fs`
-2. Copy existing config: `cp -r ~/.config/airs-mcp-fs/* ~/.config/airsprotocols-mcpserver-fs/`
-3. Or keep existing path: Use `AIRSPROTOCOLS_MCPSERVER_FS_CONFIG_DIR=~/.config/airs-mcp-fs`
+1. Create new config directory: `mkdir -p ~/.config/airsprotocols-mcpserver-filesystem`
+2. Copy existing config: `cp -r ~/.config/airsprotocols-mcpserver-filesystem/* ~/.config/airsprotocols-mcpserver-filesystem/`
+3. Or keep existing path: Use `AIRSPROTOCOLS_MCPSERVER_FS_CONFIG_DIR=~/.config/airsprotocols-mcpserver-filesystem`
 
 ### Validation Commands
 
 **Test new binary:**
 ```bash
 # Build and verify
-cargo build --release --package airsprotocols-mcpserver-fs
-./target/release/airsprotocols-mcpserver-fs --help
+cargo build --release --package airsprotocols-mcpserver-filesystem
+./target/release/airsprotocols-mcpserver-filesystem --help
 
 # Test startup (should show deprecation warning for comparison)
-echo 'exit' | ./target/release/airs-mcp-fs serve
-echo 'exit' | ./target/release/airsprotocols-mcpserver-fs serve
+echo 'exit' | ./target/release/airsprotocols-mcpserver-filesystem serve
+echo 'exit' | ./target/release/airsprotocols-mcpserver-filesystem serve
 ```
 
 **Verify environment:**
@@ -277,9 +277,9 @@ env | grep AIRS_MCP_FS_
 ### Debugging Steps
 
 1. **Isolate the Issue:**
-   - Does legacy version still work? `./target/release/airs-mcp-fs --help`
-   - Does new binary build? `cargo build --release --package airsprotocols-mcpserver-fs`
-   - Can you run new binary? `./target/release/airsprotocols-mcpserver-fs --help`
+   - Does legacy version still work? `./target/release/airsprotocols-mcpserver-filesystem --help`
+   - Does new binary build? `cargo build --release --package airsprotocols-mcpserver-filesystem`
+   - Can you run new binary? `./target/release/airsprotocols-mcpserver-filesystem --help`
 
 2. **Test Configuration:**
    - Validate JSON syntax: Use online JSON validator or `python -m json.tool claude_desktop_config.json`
@@ -295,8 +295,8 @@ env | grep AIRS_MCP_FS_
 **Expected identical performance:**
 ```bash
 # Time comparison (should be nearly identical)
-time ./target/release/airs-mcp-fs --help
-time ./target/release/airsprotocols-mcpserver-fs --help
+time ./target/release/airsprotocols-mcpserver-filesystem --help
+time ./target/release/airsprotocols-mcpserver-filesystem --help
 
 # Memory usage (using Activity Monitor or htop)
 # Response times should remain sub-100ms
@@ -308,13 +308,13 @@ time ./target/release/airsprotocols-mcpserver-fs --help
 **A:** Yes! The new binary maintains full backward compatibility with existing configuration files and directories.
 
 ### Q: Do I need to migrate my configuration directory?
-**A:** No, it's optional. Your existing `~/.config/airs-mcp-fs/` directory will continue to work. Migration to `~/.config/airsprotocols-mcpserver-fs/` is recommended but not required.
+**A:** No, it's optional. Your existing `~/.config/airsprotocols-mcpserver-filesystem/` directory will continue to work. Migration to `~/.config/airsprotocols-mcpserver-filesystem/` is recommended but not required.
 
 ### Q: What if I have custom automation or scripts?
-**A:** Update any hardcoded paths to use `airsprotocols-mcpserver-fs` instead of `airs-mcp-fs`. The command-line interface remains identical.
+**A:** Update any hardcoded paths to use `airsprotocols-mcpserver-filesystem` instead of `airsprotocols-mcpserver-filesystem`. The command-line interface remains identical.
 
 ### Q: Can I run both versions simultaneously?
-**A:** Yes, during the transition period you can have both configured in Claude Desktop with different names (e.g., "airs-mcp-fs-legacy" and "airsprotocols-mcpserver-fs").
+**A:** Yes, during the transition period you can have both configured in Claude Desktop with different names (e.g., "airsprotocols-mcpserver-filesystem-legacy" and "airsprotocols-mcpserver-filesystem").
 
 ### Q: When will the legacy version be deprecated?
 **A:** The legacy version will be maintained until **December 31, 2025** to ensure smooth transition. Here's the timeline:
@@ -341,7 +341,7 @@ If you encounter issues during migration:
 
 ## Migration Checklist
 
-- [ ] Build new binary: `cargo build --release --bin airsprotocols-mcpserver-fs`
+- [ ] Build new binary: `cargo build --release --bin airsprotocols-mcpserver-filesystem`
 - [ ] Update Claude Desktop configuration JSON
 - [ ] Update environment variables (if using)
 - [ ] Update any scripts or automation
