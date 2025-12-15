@@ -2,102 +2,182 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://airsstack.github.io/airsprotocols/</loc>
-         <lastmod>2025-12-08</lastmod>
+         <lastmod>2025-12-15</lastmod>
     </url>
     <url>
          <loc>https://airsstack.github.io/airsprotocols/architecture/</loc>
-         <lastmod>2025-12-08</lastmod>
+         <lastmod>2025-12-15</lastmod>
     </url>
     <url>
          <loc>https://airsstack.github.io/airsprotocols/contributing/</loc>
-         <lastmod>2025-12-08</lastmod>
+         <lastmod>2025-12-15</lastmod>
     </url>
     <url>
          <loc>https://airsstack.github.io/airsprotocols/getting-started/</loc>
-         <lastmod>2025-12-08</lastmod>
+         <lastmod>2025-12-15</lastmod>
     </url>
     <url>
          <loc>https://airsstack.github.io/airsprotocols/overview/</loc>
-         <lastmod>2025-12-08</lastmod>
+         <lastmod>2025-12-15</lastmod>
     </url>
     <url>
          <loc>https://airsstack.github.io/airsprotocols/apis/</loc>
-         <lastmod>2025-12-08</lastmod>
+         <lastmod>2025-12-15</lastmod>
     </url>
     <url>
          <loc>https://airsstack.github.io/airsprotocols/examples/</loc>
-         <lastmod>2025-12-08</lastmod>
+         <lastmod>2025-12-15</lastmod>
     </url>
     <url>
          <loc>https://airsstack.github.io/airsprotocols/protocols/</loc>
-         <lastmod>2025-12-08</lastmod>
+         <lastmod>2025-12-15</lastmod>
     </url>
     <url>
          <loc>https://airsstack.github.io/airsprotocols/protocols/a2a/</loc>
-         <lastmod>2025-12-08</lastmod>
+         <lastmod>2025-12-15</lastmod>
     </url>
     <url>
          <loc>https://airsstack.github.io/airsprotocols/protocols/mcp/</loc>
-         <lastmod>2025-12-08</lastmod>
+         <lastmod>2025-12-15</lastmod>
     </url>
     <url>
          <loc>https://airsstack.github.io/airsprotocols/protocols/mcp/api-reference/</loc>
-         <lastmod>2025-12-08</lastmod>
+         <lastmod>2025-12-15</lastmod>
     </url>
     <url>
          <loc>https://airsstack.github.io/airsprotocols/protocols/mcp/changelog/</loc>
-         <lastmod>2025-12-08</lastmod>
+         <lastmod>2025-12-15</lastmod>
     </url>
     <url>
          <loc>https://airsstack.github.io/airsprotocols/protocols/mcp/installation/</loc>
-         <lastmod>2025-12-08</lastmod>
+         <lastmod>2025-12-15</lastmod>
     </url>
     <url>
          <loc>https://airsstack.github.io/airsprotocols/protocols/mcp/quick-start/</loc>
-         <lastmod>2025-12-08</lastmod>
+         <lastmod>2025-12-15</lastmod>
     </url>
     <url>
          <loc>https://airsstack.github.io/airsprotocols/protocols/mcp/architecture/component-interaction/</loc>
-         <lastmod>2025-12-08</lastmod>
+         <lastmod>2025-12-15</lastmod>
     </url>
     <url>
          <loc>https://airsstack.github.io/airsprotocols/protocols/mcp/architecture/core/</loc>
-         <lastmod>2025-12-08</lastmod>
+         <lastmod>2025-12-15</lastmod>
     </url>
     <url>
          <loc>https://airsstack.github.io/airsprotocols/protocols/mcp/architecture/data-flow/</loc>
-         <lastmod>2025-12-08</lastmod>
+         <lastmod>2025-12-15</lastmod>
     </url>
     <url>
          <loc>https://airsstack.github.io/airsprotocols/protocols/mcp/protocol/architecture/</loc>
-         <lastmod>2025-12-08</lastmod>
+         <lastmod>2025-12-15</lastmod>
     </url>
     <url>
          <loc>https://airsstack.github.io/airsprotocols/protocols/mcp/protocol/client/</loc>
-         <lastmod>2025-12-08</lastmod>
+         <lastmod>2025-12-15</lastmod>
     </url>
     <url>
          <loc>https://airsstack.github.io/airsprotocols/protocols/mcp/protocol/security/</loc>
-         <lastmod>2025-12-08</lastmod>
+         <lastmod>2025-12-15</lastmod>
     </url>
     <url>
          <loc>https://airsstack.github.io/airsprotocols/protocols/mcp/protocol/server/</loc>
-         <lastmod>2025-12-08</lastmod>
+         <lastmod>2025-12-15</lastmod>
     </url>
     <url>
          <loc>https://airsstack.github.io/airsprotocols/protocols/mcp/usage/advanced-patterns/</loc>
-         <lastmod>2025-12-08</lastmod>
+         <lastmod>2025-12-15</lastmod>
     </url>
     <url>
          <loc>https://airsstack.github.io/airsprotocols/protocols/mcp/usage/basic-examples/</loc>
-         <lastmod>2025-12-08</lastmod>
+         <lastmod>2025-12-15</lastmod>
     </url>
     <url>
          <loc>https://airsstack.github.io/airsprotocols/protocols/mcp/usage/claude-integration/</loc>
-         <lastmod>2025-12-08</lastmod>
+         <lastmod>2025-12-15</lastmod>
     </url>
     <url>
          <loc>https://airsstack.github.io/airsprotocols/protocols/mcp/usage/custom-transports/</loc>
-         <lastmod>2025-12-08</lastmod>
+         <lastmod>2025-12-15</lastmod>
+    </url>
+    <url>
+         <loc>https://airsstack.github.io/airsprotocols/servers/filesystem/</loc>
+         <lastmod>2025-12-15</lastmod>
+    </url>
+    <url>
+         <loc>https://airsstack.github.io/airsprotocols/servers/filesystem/architecture/</loc>
+         <lastmod>2025-12-15</lastmod>
+    </url>
+    <url>
+         <loc>https://airsstack.github.io/airsprotocols/servers/filesystem/features/</loc>
+         <lastmod>2025-12-15</lastmod>
+    </url>
+    <url>
+         <loc>https://airsstack.github.io/airsprotocols/servers/filesystem/installation/</loc>
+         <lastmod>2025-12-15</lastmod>
+    </url>
+    <url>
+         <loc>https://airsstack.github.io/airsprotocols/servers/filesystem/overview/</loc>
+         <lastmod>2025-12-15</lastmod>
+    </url>
+    <url>
+         <loc>https://airsstack.github.io/airsprotocols/servers/filesystem/performance/</loc>
+         <lastmod>2025-12-15</lastmod>
+    </url>
+    <url>
+         <loc>https://airsstack.github.io/airsprotocols/servers/filesystem/quick-start/</loc>
+         <lastmod>2025-12-15</lastmod>
+    </url>
+    <url>
+         <loc>https://airsstack.github.io/airsprotocols/servers/filesystem/configuration/</loc>
+         <lastmod>2025-12-15</lastmod>
+    </url>
+    <url>
+         <loc>https://airsstack.github.io/airsprotocols/servers/filesystem/configuration/claude-desktop/</loc>
+         <lastmod>2025-12-15</lastmod>
+    </url>
+    <url>
+         <loc>https://airsstack.github.io/airsprotocols/servers/filesystem/configuration/deployment/</loc>
+         <lastmod>2025-12-15</lastmod>
+    </url>
+    <url>
+         <loc>https://airsstack.github.io/airsprotocols/servers/filesystem/configuration/environment/</loc>
+         <lastmod>2025-12-15</lastmod>
+    </url>
+    <url>
+         <loc>https://airsstack.github.io/airsprotocols/servers/filesystem/configuration/overview/</loc>
+         <lastmod>2025-12-15</lastmod>
+    </url>
+    <url>
+         <loc>https://airsstack.github.io/airsprotocols/servers/filesystem/configuration/security/</loc>
+         <lastmod>2025-12-15</lastmod>
+    </url>
+    <url>
+         <loc>https://airsstack.github.io/airsprotocols/servers/filesystem/configuration/troubleshooting/</loc>
+         <lastmod>2025-12-15</lastmod>
+    </url>
+    <url>
+         <loc>https://airsstack.github.io/airsprotocols/servers/filesystem/security/</loc>
+         <lastmod>2025-12-15</lastmod>
+    </url>
+    <url>
+         <loc>https://airsstack.github.io/airsprotocols/servers/filesystem/security/audit/</loc>
+         <lastmod>2025-12-15</lastmod>
+    </url>
+    <url>
+         <loc>https://airsstack.github.io/airsprotocols/servers/filesystem/security/policies/</loc>
+         <lastmod>2025-12-15</lastmod>
+    </url>
+    <url>
+         <loc>https://airsstack.github.io/airsprotocols/servers/filesystem/usage/</loc>
+         <lastmod>2025-12-15</lastmod>
+    </url>
+    <url>
+         <loc>https://airsstack.github.io/airsprotocols/servers/filesystem/usage/examples/</loc>
+         <lastmod>2025-12-15</lastmod>
+    </url>
+    <url>
+         <loc>https://airsstack.github.io/airsprotocols/servers/filesystem/usage/integration/</loc>
+         <lastmod>2025-12-15</lastmod>
     </url>
 </urlset>
