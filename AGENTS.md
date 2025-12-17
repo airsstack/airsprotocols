@@ -1,0 +1,330 @@
+# AI Agents Context & Intelligence Hub
+
+```
+$ROOT_PROJECT = $(git rev-parse --show-toplevel)
+```
+
+---
+
+## Project Intelligence
+
+**airsprotocols** is a comprehensive Rust workspace providing production-ready implementations of AI agent communication protocols and LLM provider API clients. The project emphasizes type safety, performance, and interoperability across multiple protocol standards (MCP, A2A) and LLM providers (OpenAI, Anthropic, Google, etc.).
+
+**Architecture**: Multi-crate workspace with three primary domains: (1) **Protocols** - communication standards for AI agents (MCP, A2A/ACP), (2) **Servers** - production MCP server implementations (filesystem, etc.), and (3) **APIs** - unified LLM provider client libraries. Built on async Rust (tokio), emphasizing zero-cost abstractions, compile-time protocol verification, and transport-agnostic design.
+
+**Core Components**: `airsprotocols-mcp` (Model Context Protocol with JSON-RPC 2.0, authentication/authorization, stdio/HTTP transports), `airsprotocols-mcpserver-filesystem` (secure filesystem operations with human-in-the-loop approval workflows), and planned API clients for major LLM providers with unified interfaces.
+
+**Status**: Phase 1 complete (MCP protocol + filesystem server published to crates.io v1.0.0-rc.1), Phase 2 in progress (documentation, A2A protocol), Phase 3 planned (LLM API clients starting with OpenRouter).
+
+---
+
+## Project Structure
+
+```
+airsprotocols/
+├── .aiassisted/
+│   ├── guidelines/          # Code quality standards and documentation guidelines
+│   │   ├── documentation/   # Diataxis, quality standards, task documentation
+│   │   └── rust/           # Microsoft Rust guidelines
+│   ├── instructions/        # Operational protocols and AI workflows
+│   └── prompts/            # Specialized AI prompts (git, memory bank, etc.)
+│
+├── .memory-bank/           # Multi-Project Memory Bank System (CRITICAL)
+│   ├── current-context.md  # Currently active sub-project
+│   ├── workspace/          # Workspace-wide shared context
+│   │   ├── project-brief.md
+│   │   ├── shared-patterns.md
+│   │   ├── workspace-architecture.md
+│   │   └── workspace-progress.md
+│   ├── sub-projects/       # Individual sub-project contexts
+│   │   ├── api-openrouter/ # Active: OpenRouter API client
+│   │   ├── mcp-server-filesystem/
+│   │   └── protocols-mcp/
+│   └── templates/          # Standardized documentation templates
+│
+├── docs/                   # MkDocs documentation site
+│   ├── protocols/          # Protocol guides (MCP, A2A)
+│   ├── servers/            # Server implementation guides
+│   ├── apis/               # API client documentation
+│   └── examples/           # Tutorials and examples
+│
+├── protocols/              # Communication protocol implementations
+│   ├── mcp/               # Model Context Protocol (✅ Published v1.0.0-rc.1)
+│   └── a2a/               # Agent-to-Agent Protocol (🚧 Planned)
+│
+├── mcp/
+│   └── servers/           # MCP server implementations
+│       └── filesystem/    # Secure filesystem server (✅ Published v1.0.0-rc.1)
+│
+├── apis/                  # LLM provider client libraries (🚧 Planned)
+│   ├── openrouter/        # OpenRouter API client (🔨 Active Development)
+│   ├── anthropic/         # Anthropic Claude client
+│   ├── openai/            # OpenAI GPT client
+│   └── google/            # Google Gemini client
+│
+├── site-mkdocs/           # Documentation generation
+│   ├── mkdocs.yml
+│   └── overrides/
+│
+├── Cargo.toml             # Workspace configuration
+├── LICENSE-MIT
+├── LICENSE-APACHE
+└── README.md              # Project overview and quick start
+```
+
+---
+
+## Project Standards (CRITICAL)
+
+**⚠️ MANDATORY READING**: Before writing ANY code, agents MUST read and follow:
+
+### Primary Standard
+- **File**: `$ROOT_PROJECT/.memory-bank/workspace/shared-patterns.md`
+- **Description**: MANDATORY project-specific standards including:
+  - Core implementation patterns (error handling, async patterns, type design)
+  - Architecture patterns (transport abstraction, protocol design)
+  - Methodology patterns (testing, documentation, versioning)
+- **Authority**: These standards OVERRIDE generic guidelines if conflicts occur
+- **Integration**: All sub-projects inherit these workspace patterns unless explicitly overridden
+
+### Memory Bank Integration
+- **Multi-Project System**: This project uses the Multi-Project Memory Bank for context management
+- **Required Reading**: ALWAYS read workspace + active sub-project Memory Bank files before starting work
+- **Active Sub-Project**: Check `$ROOT_PROJECT/.memory-bank/current-context.md` for current focus
+- **Context Files**: Each sub-project has dedicated context files (see Memory Bank section below)
+
+---
+
+## Operational Protocols
+
+These instruction files define HOW AI agents should operate within this project:
+
+- **Multi-Project Memory Bank System**: `$ROOT_PROJECT/.aiassisted/instructions/multi-project-memory-bank.instructions.md`  
+  CRITICAL: Complete memory bank framework with workspace/sub-project structure, task taxonomy (Task→Phase→Subtask), single-file-per-task mandate, technical documentation templates (ADRs, technical debt, knowledge docs), context snapshots, and validation system. This is the PRIMARY operational framework.
+
+- **Rust Development Standards**: `$ROOT_PROJECT/.aiassisted/instructions/rust.instructions.md`  
+  Rust-specific development workflows, code patterns, error handling, async programming, testing strategies, and workspace management for this project.
+
+- **Conventional Commits**: `$ROOT_PROJECT/.aiassisted/instructions/conventional-commits.instructions.md`  
+  Git commit message format and standards for this project (follows conventional commits specification).
+
+- **AI Prompt Engineering Safety**: `$ROOT_PROJECT/.aiassisted/instructions/ai-prompt-engineering-safety-best-practices.instructions.md`  
+  Best practices for AI-assisted development, prompt safety, and code generation guidelines.
+
+- **Agents Context Setup**: `$ROOT_PROJECT/.aiassisted/instructions/setup-agents-context.instructions.md`  
+  Instructions for generating and maintaining this AGENTS.md file (this document).
+
+---
+
+## Guidelines & Standards
+
+These files define code quality standards and documentation frameworks:
+
+### Documentation Guidelines
+
+- **Diataxis Framework**: `$ROOT_PROJECT/.aiassisted/guidelines/documentation/diataxis-guidelines.md`  
+  Systematic approach to technical documentation (Tutorials, How-To Guides, Technical Reference, Explanation). All documentation MUST follow this framework.
+
+- **Documentation Quality Standards**: `$ROOT_PROJECT/.aiassisted/guidelines/documentation/documentation-quality-standards.md`  
+  Quality criteria for all documentation including code comments, API docs, guides, and examples. Defines review checklists and maintenance schedules.
+
+- **Task Documentation Standards**: `$ROOT_PROJECT/.aiassisted/guidelines/documentation/task-documentation-standards.md`  
+  Standards for documenting tasks in the Memory Bank system. Covers task file structure, progress tracking, completion criteria, and update protocols.
+
+### Rust Code Guidelines
+
+- **Microsoft Rust Guidelines**: `$ROOT_PROJECT/.aiassisted/guidelines/rust/microsoft-rust-guidelines.md`  
+  Comprehensive Rust coding standards derived from Microsoft's official guidelines. Covers naming conventions, error handling, async patterns, safety, testing, and performance best practices.
+
+---
+
+## Memory Bank System (CRITICAL)
+
+This project uses the **Multi-Project Memory Bank** for context management. Agents MUST understand and follow this system.
+
+### System Architecture
+
+```
+.memory-bank/
+├── current-context.md              # Active sub-project tracker
+├── README.md                       # Memory bank system overview
+├── workspace/                      # Shared workspace context
+│   ├── project-brief.md           # Workspace vision, objectives, architecture
+│   ├── shared-patterns.md         # Core patterns inherited by all sub-projects
+│   ├── workspace-architecture.md  # High-level workspace structure
+│   └── workspace-progress.md      # Cross-crate milestones and decisions
+├── sub-projects/                   # Individual sub-project contexts
+│   ├── [sub-project-name]/
+│   │   ├── project-brief.md       # Sub-project foundation
+│   │   ├── product-context.md     # Why this exists, problems solved
+│   │   ├── active-context.md      # Current work focus, recent changes
+│   │   ├── system-patterns.md     # Architecture, technical decisions
+│   │   ├── tech-context.md        # Technologies, setup, constraints
+│   │   ├── progress.md            # Status, what works, what's left
+│   │   ├── tasks/                 # Task management
+│   │   │   ├── _index.md         # Master task list
+│   │   │   └── task-*.md         # Individual task files
+│   │   └── knowledge/            # Sub-project knowledge base
+│   │       └── *.md              # Knowledge documentation
+│   └── ...
+└── templates/                      # Standardized templates
+    └── docs/
+        ├── technical-debt-template.md
+        ├── knowledge-template.md
+        ├── adr-template.md
+        └── documentation-guidelines.md
+```
+
+### Workflow Requirements
+
+**BEFORE Starting ANY Task**:
+1. ✅ Read `$ROOT_PROJECT/.memory-bank/current-context.md` to identify active sub-project
+2. ✅ Read ALL workspace files in `$ROOT_PROJECT/.memory-bank/workspace/`
+3. ✅ Read ALL sub-project context files for the active sub-project
+4. ✅ Review task status in `tasks/_index.md` and relevant task files
+
+**DURING Task Execution**:
+1. ✅ Update progress in the single canonical task file (`tasks/task-[id]-[name].md`)
+2. ✅ Follow the single-file-per-task mandate (NO separate plan/completion/status files)
+3. ✅ Use task taxonomy: Task → Phase (optional, >4 weeks) → Subtask (mandatory)
+4. ✅ Update both progress tracking table AND progress log
+5. ✅ Update `tasks/_index.md` to reflect current status
+
+**AFTER Task Completion**:
+1. ✅ Add completion summary to the task file (inline, not separate file)
+2. ✅ Update `progress.md` with achievements
+3. ✅ Update `active-context.md` with next steps
+4. ✅ Create technical documentation if required (ADR, knowledge doc, technical debt)
+
+### Critical Rules
+
+⚠️ **Single File Per Task Mandate**:
+- Each task MUST have exactly ONE file: `tasks/task-[id]-[name].md`
+- ALL information goes in this file: plan, progress, logs, completion summary
+- ❌ FORBIDDEN: Separate plan files, completion files, status files, checkpoint files
+
+⚠️ **Task Taxonomy**:
+- **Task** (top level): `[PREFIX]-TASK-###`, duration 1-12 weeks
+- **Phase** (optional): Use only if task >4 weeks, max 8 phases per task
+- **Subtask** (mandatory): Max 10 per phase, duration <1 week, numbered `Phase.Subtask`
+
+⚠️ **Stale Task Detection**:
+- Tasks unchanged for 7+ days MUST be reviewed
+- Update status to blocked/pending/abandoned if not actively worked on
+
+### Memory Bank Commands
+
+Agents can use these commands (reference `multi-project-memory-bank.instructions.md`):
+
+- `show-tasks [sub-project] [filter]` - Display tasks
+- `add-task [sub-project] [task-name]` - Create new task
+- `update-task [sub-project] [task-id]` - Update task file
+- `update-memory-bank [sub-project]` - Review and update all context files
+- `switch-context [sub-project]` - Change active sub-project
+- `save-context [description]` - Create context snapshot
+- `show-memory-bank-summary` - Display current state
+
+---
+
+## Current Active Sub-Project
+
+**Status**: Check `$ROOT_PROJECT/.memory-bank/current-context.md` for the currently active sub-project.
+
+**Recent Active Projects**:
+- `api-openrouter` - OpenRouter API client library (Rust) - Phase: Planning & Design (Sprint 0)
+- `mcp-server-filesystem` - Secure filesystem MCP server (✅ Published v1.0.0-rc.1)
+- `protocols-mcp` - Model Context Protocol implementation (✅ Published v1.0.0-rc.1)
+
+**To work on a sub-project**: Always read workspace context + sub-project context files before starting work.
+
+---
+
+## Development Workflow
+
+### For New Features/Tasks
+
+1. **Context Loading**:
+   ```bash
+   # Check active sub-project
+   cat $ROOT_PROJECT/.memory-bank/current-context.md
+   
+   # Read workspace context
+   cat $ROOT_PROJECT/.memory-bank/workspace/*.md
+   
+   # Read sub-project context
+   cat $ROOT_PROJECT/.memory-bank/sub-projects/[active-project]/*.md
+   ```
+
+2. **Task Creation**:
+   - Create task file: `tasks/task-[id]-[name].md`
+   - Use appropriate template (simple vs multi-phase)
+   - Update `tasks/_index.md`
+
+3. **Implementation**:
+   - Follow `shared-patterns.md` standards
+   - Follow Rust guidelines from `.aiassisted/guidelines/rust/`
+   - Update task progress regularly
+
+4. **Completion**:
+   - Add inline completion summary to task file
+   - Update `progress.md` and `active-context.md`
+   - Create technical documentation as needed
+
+### For Documentation
+
+1. **Follow Diataxis Framework**: All docs must be Tutorial, How-To, Reference, or Explanation
+2. **Use Templates**: Technical debt, knowledge docs, and ADRs use standardized templates
+3. **Cross-Reference**: Link related documentation appropriately
+4. **Maintain Indexes**: Update `_index.md` files in `docs/` subdirectories
+
+### For Git Commits
+
+1. **Follow Conventional Commits**: Use format from `conventional-commits.instructions.md`
+2. **Meaningful Messages**: Explain WHY, not just WHAT
+3. **Scope**: Include affected sub-project or workspace component
+
+---
+
+## Key Technologies
+
+- **Language**: Rust 1.88.0+ (2021 edition)
+- **Async Runtime**: tokio
+- **HTTP**: reqwest, axum
+- **Serialization**: serde, serde_json
+- **Protocols**: JSON-RPC 2.0, SSE, OAuth2
+- **Testing**: tokio-test, wiremock, criterion (benchmarks)
+- **Documentation**: rustdoc, MkDocs (material theme)
+
+---
+
+## External Resources
+
+- **MCP Specification**: https://modelcontextprotocol.io/
+- **A2A Protocol**: https://a2a-protocol.org/
+- **Documentation Site**: https://airsstack.github.io/airsprotocols/
+- **Published Crates**:
+  - https://crates.io/crates/airsprotocols-mcp
+  - https://crates.io/crates/airsprotocols-mcpserver-filesystem
+
+---
+
+## Agent Checklist
+
+Before starting work, ensure you have:
+
+- [ ] Read `$ROOT_PROJECT/.memory-bank/current-context.md`
+- [ ] Read ALL workspace context files
+- [ ] Read ALL active sub-project context files
+- [ ] Reviewed `$ROOT_PROJECT/.memory-bank/workspace/shared-patterns.md`
+- [ ] Checked task status in `tasks/_index.md`
+- [ ] Understood the single-file-per-task mandate
+- [ ] Reviewed relevant guidelines (Rust, documentation, etc.)
+- [ ] Understand task taxonomy (Task → Phase → Subtask)
+
+**Remember**: Your memory resets between sessions. The Memory Bank is your ONLY source of truth. Read it EVERY time.
+
+---
+
+**Last Updated**: 2025-12-17  
+**Generated By**: Setup instructions from `setup-agents-context.instructions.md`  
+**Memory Bank Version**: Multi-Project Memory Bank v2.0 (workspace + sub-projects)
