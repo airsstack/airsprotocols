@@ -203,14 +203,58 @@ airsprotocols/
 
 **⚠️ MANDATORY READING**: Before writing ANY code, agents MUST read and follow:
 
-### Primary Standard
-- **File**: `$ROOT_PROJECT/.memory-bank/workspace/shared-patterns.md`
+### Primary Standards Reference
+- **File**: `$ROOT_PROJECT/PROJECTS_STANDARD.md` (AirsSys Workspace Shared Patterns)
+- **Mirror**: `$ROOT_PROJECT/.memory-bank/workspace/shared-patterns.md`
 - **Description**: MANDATORY project-specific standards including:
   - Core implementation patterns (error handling, async patterns, type design)
   - Architecture patterns (transport abstraction, protocol design)
   - Methodology patterns (testing, documentation, versioning)
 - **Authority**: These standards OVERRIDE generic guidelines if conflicts occur
 - **Integration**: All sub-projects inherit these workspace patterns unless explicitly overridden
+
+### Core Mandatory Patterns (Quick Reference)
+
+**§2.1 3-Layer Import Organization** (ALL Rust files):
+```rust
+// Layer 1: Standard library imports
+use std::collections::HashMap;
+
+// Layer 2: Third-party crate imports  
+use serde::{Deserialize, Serialize};
+
+// Layer 3: Internal module imports
+use crate::protocol::core::McpMethod;
+```
+
+**§3.2 chrono DateTime<Utc> Standard**:
+- ALL time operations MUST use `chrono::DateTime<Utc>`
+- FORBIDDEN: `std::time::SystemTime` (except `Instant` for performance measuring only)
+
+**§4.3 Module Architecture**:
+- `mod.rs` files contain ONLY module declarations and re-exports
+- NO implementation code in `mod.rs`
+
+**§5.1 Dependency Management**:
+- Workspace dependencies in 3 layers: (1) AirsSys Foundation Crates, (2) Core Runtime, (3) External Dependencies
+- Always check `[workspace.dependencies]` before adding new deps
+
+**§6.1 YAGNI Principles**:
+- Build only what is currently required
+- No speculative features or future-proofing
+- Remove unused abstractions immediately
+
+**§6.2 Avoid `dyn` Patterns**:
+- Prefer concrete types > generics > `dyn` trait objects
+- Use static dispatch for compile-time type safety
+
+**§6.4 Implementation Quality Gates**:
+- Zero `unsafe` blocks without justification
+- Zero warnings (clippy clean)
+- >90% test coverage
+- Security logging for all operations
+
+**Full standards documentation**: See `$ROOT_PROJECT/PROJECTS_STANDARD.md` for complete details.
 
 ### Memory Bank Integration
 - **Multi-Project System**: This project uses the Multi-Project Memory Bank for context management
