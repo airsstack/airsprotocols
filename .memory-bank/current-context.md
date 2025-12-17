@@ -1,48 +1,51 @@
 # Current Active Context
 
-**Last Updated**: 2025-12-15
-**Active Sub-Project**: protocols-mcp
-**Phase**: Active Development
-**Status**: Stable - Core protocol implementation complete
+**Last Updated**: 2025-12-17
+**Active Sub-Project**: api-openrouter
+**Phase**: Planning & Design (Sprint 0)
+**Status**: 🚀 New Project - Planning Phase
 
 ## Active Project Overview
 
-The **`protocols-mcp`** sub-project is the foundational Model Context Protocol implementation providing:
-- JSON-RPC 2.0 message handling
-- Transport abstraction (stdio, HTTP, SSE)
-- Authentication strategies (API Key, OAuth2)
-- Authorization middleware
-- Provider framework (Tools, Resources, Prompts)
+The **`api-openrouter`** sub-project is a production-ready Rust client library for the OpenRouter API, providing:
+- Type-safe access to 100+ LLM models across 20+ providers
+- Chat completions with streaming support
+- Cost tracking and usage monitoring
+- Async-first design with tokio
+- Ergonomic builder APIs for requests
 
 ## Current Focus
 
-- Protocol stability and performance optimization
-- Documentation improvements
-- Example implementations
-- Integration testing
+- OpenRouter API research and documentation
+- Core type system design (Message, Model, Request, Response)
+- Architectural decision making (ADRs)
+- Module structure planning
+- Public API surface design
 
 ## Why This Project is Active
 
-`protocols-mcp` serves as the foundation for all MCP-based servers and clients in the AirsProtocols ecosystem. Its stability and completeness directly impact downstream projects like `mcp-server-filesystem`.
+`api-openrouter` represents the workspace's expansion into Phase 3 (LLM APIs). It demonstrates patterns for API client libraries and enables multi-provider LLM access through a unified interface, complementing the MCP protocol work.
 
 ## Related Projects
 
-- **mcp-server-filesystem**: Depends on protocols-mcp for MCP implementation
-- **Future servers**: Will all build on protocols-mcp foundation
+- **protocols-mcp**: Complete - Foundation patterns reference
+- **mcp-server-filesystem**: Complete - Implementation patterns reference
+- **Future api-* projects**: Will follow similar patterns (anthropic, openai, etc.)
 
 ## Recent Context
 
-- v0.2.3 released with comprehensive authentication/authorization
-- Documentation website deployed (https://airsstack.github.io/airsprotocols/)
-- Multiple transport implementations working
-- Examples demonstrate integration patterns
+- 2025-12-17: Project initialization and Memory Bank setup complete
+- Memory Bank structure created with 7 core files
+- Planning phase started (Sprint 0)
+- Workspace patterns reviewed for consistency
 
 ## Next Steps
 
-1. Continue performance optimization
-2. Expand integration test coverage
-3. Document advanced patterns
-4. Support additional transport mechanisms
+1. Complete OpenRouter API research and documentation
+2. Design core type system and create ADRs
+3. Draft public API surface
+4. Initialize Rust crate (Cargo.toml, project structure)
+5. Begin Phase 1 implementation (basic client + chat completions)
 
 ---
 
