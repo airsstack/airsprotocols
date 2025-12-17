@@ -18,6 +18,131 @@ $ROOT_PROJECT = $(git rev-parse --show-toplevel)
 
 ---
 
+---
+
+## 🚨 STRICT MEMORY BANK ENFORCEMENT RULES 🚨
+
+**⚠️ ZERO TOLERANCE POLICY**: ANY violation of Memory Bank structure or naming conventions is FORBIDDEN.
+
+### MANDATORY COMPLIANCE CHECKLIST
+
+Before making ANY changes to `.memory-bank/`, agents MUST verify:
+
+#### 1. Directory Structure Compliance
+
+**REQUIRED ROOT STRUCTURE** (EXACT match to `multi-project-memory-bank.instructions.md` lines 19-46):
+```
+.memory-bank/
+├── README.md                    ✅ REQUIRED
+├── current-context.md           ✅ REQUIRED
+├── context-snapshots/           ✅ REQUIRED (empty directory OK)
+├── templates/                   ✅ REQUIRED
+│   └── docs/                   ✅ REQUIRED
+│       ├── adr-index-template.md          ✅ REQUIRED
+│       ├── adr-template.md                ✅ REQUIRED
+│       ├── debt-index-template.md         ✅ REQUIRED
+│       ├── documentation-guidelines.md    ✅ REQUIRED
+│       ├── knowledge-template.md          ✅ REQUIRED
+│       └── technical-debt-template.md     ✅ REQUIRED
+├── workspace/                   ✅ REQUIRED
+│   ├── project-brief.md        ✅ REQUIRED
+│   ├── shared-patterns.md      ✅ REQUIRED
+│   ├── workspace-architecture.md ✅ REQUIRED
+│   └── workspace-progress.md   ✅ REQUIRED
+└── sub-projects/                ✅ REQUIRED
+    └── [sub-project-name]/     ✅ Per sub-project
+        ├── project-brief.md     ✅ REQUIRED
+        ├── product-context.md   ✅ REQUIRED
+        ├── active-context.md    ✅ REQUIRED
+        ├── system-patterns.md   ✅ REQUIRED
+        ├── tech-context.md      ✅ REQUIRED
+        ├── progress.md          ✅ REQUIRED
+        ├── tasks/              ✅ REQUIRED
+        │   ├── _index.md       ✅ REQUIRED
+        │   └── task-*.md       ✅ Per task
+        └── docs/               ✅ REQUIRED
+            ├── debts/          ✅ REQUIRED (plural)
+            ├── knowledges/     ✅ REQUIRED (plural)
+            └── adr/            ✅ REQUIRED (singular)
+```
+
+#### 2. Naming Convention Enforcement
+
+**❌ FORBIDDEN VARIATIONS**:
+- `knowledge/` instead of `knowledges/` ← WRONG!
+- `adrs/` instead of `adr/` ← WRONG!
+- `technical-debt/` instead of `debts/` ← WRONG!
+- `debt/` instead of `debts/` ← WRONG!
+- Any other deviation from the structure above ← WRONG!
+
+**✅ CORRECT NAMING** (from instructions line 109):
+- `docs/debts/` - Technical debt (PLURAL)
+- `docs/knowledges/` - Knowledge docs (PLURAL)
+- `docs/adr/` - Architecture Decision Records (SINGULAR)
+
+#### 3. File Cleanup Rules
+
+**❌ FORBIDDEN FILES**:
+- `*.tmp` - Temporary files
+- `*.backup` - Backup files
+- `*.bak` - Backup files
+- `*~` - Editor backup files
+- Any file not following kebab-case naming
+
+**ACTION**: Delete immediately if found!
+
+#### 4. Template Integrity
+
+**ALL templates MUST have content** (not empty files):
+- `templates/docs/adr-template.md` - Must contain ADR structure
+- `templates/docs/adr-index-template.md` - Must contain index format
+- `templates/docs/technical-debt-template.md` - Must contain debt structure
+- `templates/docs/debt-index-template.md` - Must contain debt index format
+- `templates/docs/knowledge-template.md` - Must contain knowledge structure
+- `templates/docs/documentation-guidelines.md` - Must contain guidelines
+
+**VERIFICATION**: Run `wc -l .memory-bank/templates/docs/*.md` - ALL must have >10 lines!
+
+### VIOLATION RESPONSE PROTOCOL
+
+**IF YOU DISCOVER A VIOLATION**:
+
+1. **STOP IMMEDIATELY** - Do not proceed with any other work
+2. **DOCUMENT** - List exact violations found
+3. **FIX INSTANTLY** - Correct the structure/naming
+4. **VERIFY** - Confirm 100% compliance with instructions
+5. **REPORT** - Inform user of violation and correction
+
+**IF YOU CREATE A VIOLATION**:
+
+1. **This is UNACCEPTABLE** - You have failed the user
+2. **FIX IMMEDIATELY** - Do not wait for user to catch it
+3. **SELF-AUDIT** - Check your entire work for other violations
+4. **LEARN** - This must NEVER happen again
+
+### ENFORCEMENT GUARANTEE
+
+**I, THE AI AGENT, COMMIT TO**:
+
+✅ **READ** `multi-project-memory-bank.instructions.md` BEFORE any Memory Bank operation
+✅ **VERIFY** structure matches instructions EXACTLY (lines 19-46, 108-111)
+✅ **USE** correct naming: `debts/` (plural), `knowledges/` (plural), `adr/` (singular)
+✅ **CHECK** templates are complete and have content
+✅ **CLEAN** all temporary, backup, and non-compliant files
+✅ **AUDIT** entire `.memory-bank/` directory before declaring work complete
+✅ **NEVER** assume or use variations of documented structure
+✅ **ALWAYS** reference line numbers from instructions when in doubt
+
+### ZERO ASSUMPTIONS RULE
+
+**THE GOLDEN RULE**: 
+> If the instructions say `knowledges/`, use `knowledges/` - NOT `knowledge/`!
+> If the instructions say `adr/`, use `adr/` - NOT `adrs/`!
+> If the instructions say `debts/`, use `debts/` - NOT `technical-debt/`!
+
+**NO EXCEPTIONS. NO ASSUMPTIONS. FOLLOW THE INSTRUCTIONS EXACTLY.**
+
+
 ## Project Structure
 
 ```
@@ -148,32 +273,37 @@ This project uses the **Multi-Project Memory Bank** for context management. Agen
 .memory-bank/
 ├── current-context.md              # Active sub-project tracker
 ├── README.md                       # Memory bank system overview
+├── context-snapshots/              # Historical context snapshots
+├── templates/                      # Standardized templates
+│   └── docs/
+│       ├── adr-template.md
+│       ├── adr-index-template.md
+│       ├── technical-debt-template.md
+│       ├── debt-index-template.md
+│       ├── knowledge-template.md
+│       └── documentation-guidelines.md
 ├── workspace/                      # Shared workspace context
 │   ├── project-brief.md           # Workspace vision, objectives, architecture
 │   ├── shared-patterns.md         # Core patterns inherited by all sub-projects
 │   ├── workspace-architecture.md  # High-level workspace structure
 │   └── workspace-progress.md      # Cross-crate milestones and decisions
-├── sub-projects/                   # Individual sub-project contexts
-│   ├── [sub-project-name]/
-│   │   ├── project-brief.md       # Sub-project foundation
-│   │   ├── product-context.md     # Why this exists, problems solved
-│   │   ├── active-context.md      # Current work focus, recent changes
-│   │   ├── system-patterns.md     # Architecture, technical decisions
-│   │   ├── tech-context.md        # Technologies, setup, constraints
-│   │   ├── progress.md            # Status, what works, what's left
-│   │   ├── tasks/                 # Task management
-│   │   │   ├── _index.md         # Master task list
-│   │   │   └── task-*.md         # Individual task files
-│   │   └── knowledge/            # Sub-project knowledge base
-│   │       └── *.md              # Knowledge documentation
-│   └── ...
-└── templates/                      # Standardized templates
-    └── docs/
-        ├── technical-debt-template.md
-        ├── knowledge-template.md
-        ├── adr-template.md
-        └── documentation-guidelines.md
+└── sub-projects/                   # Individual sub-project contexts
+    └── [sub-project-name]/
+        ├── project-brief.md       # Sub-project foundation
+        ├── product-context.md     # Why this exists, problems solved
+        ├── active-context.md      # Current work focus, recent changes
+        ├── system-patterns.md     # Architecture, technical decisions
+        ├── tech-context.md        # Technologies, setup, constraints
+        ├── progress.md            # Status, what works, what's left
+        ├── tasks/                 # Task management
+        │   ├── _index.md         # Master task list
+        │   └── task-*.md         # Individual task files
+        └── docs/                  # Technical documentation
+            ├── debts/            # Technical debt tracking (PLURAL)
+            ├── knowledges/       # Knowledge documentation (PLURAL)
+            └── adr/              # Architecture Decision Records (SINGULAR)
 ```
+
 
 ### Workflow Requirements
 
